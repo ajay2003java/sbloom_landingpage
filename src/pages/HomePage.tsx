@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { ScrollReveal } from '../components/ScrollReveal';
-import { DigitalGrowthSystem } from '../components/home/DigitalGrowthSystem';
 import { HeroFloatingIcons } from '../components/home/HeroFloatingIcons';
 import { HeroSubtleCurves } from '../components/home/HeroSubtleCurves';
+import { ModularServicesExplorer } from '../components/home/ModularServicesExplorer';
+import { FsmVsAdvisorComparison } from '../components/home/FsmVsAdvisorComparison';
 import { DualPathCards } from '../components/home/DualPathCards';
 import { HomePricingSection } from '../components/home/HomePricingSection';
 import { ClientLogoMarquee } from '../components/home/ClientLogoMarquee';
@@ -70,17 +71,17 @@ export const HomePage: React.FC = () => {
           {/* Left Column: Typography & CTAs */}
           <div className="hero-final-content">
             <div className="hero-final-eyebrow">
-              <span className="eyebrow-text">YOUR AI DIGITAL GROWTH PARTNER</span>
+              <span className="eyebrow-text">✦ 360° HYBRID LEAD GENERATION</span>
               <span className="eyebrow-line" />
             </div>
 
             <h1 className="hero-final-title">
-              We will help you<br />
-              <span className="hero-mocha-gold">bloom socially.</span>
+              We help you get<br />
+              <span className="hero-mocha-gold">more revenue.</span>
             </h1>
 
             <p className="hero-final-desc">
-              Build digital authority, trust, and growth for a growing community of expertise-led businesses.
+              Not with vanity likes or meaningless views. We bring real, paying customers to your business—in person and online.
             </p>
 
             <div className="hero-final-buttons">
@@ -90,9 +91,9 @@ export const HomePage: React.FC = () => {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
-              <Link to="/solutions" className="btn-final-secondary">
-                See How We Help
-              </Link>
+              <a href="#services-explorer" className="btn-final-secondary">
+                Explore 4 Services
+              </a>
             </div>
           </div>
 
@@ -105,29 +106,32 @@ export const HomePage: React.FC = () => {
 
       {/* LOWER LUXURY SILK WRAPPER - Continuous Uninterrupted Background Canvas */}
       <div className="home-lower-silk-wrapper">
-        {/* SECTION 2 - What sBLOOM Changes (BUILD -> CREATE -> PROMOTE -> GROW) */}
-        <DigitalGrowthSystem />
+        {/* SECTION 2 - 4 Modular Ways We Bring You Revenue (FSM, Advisors, Core Digital, Influencers) */}
+        <ModularServicesExplorer />
 
-        {/* SECTION 3 - Dual Paths (How can S-Bloom help you grow?) */}
+        {/* SECTION 3 - FSM vs. Advisor Comparison (Inside Your Team vs. Outside in the Market) */}
+        <FsmVsAdvisorComparison />
+
+        {/* SECTION 4 - Dual Paths (Grow My Business vs. Earn as an Advisor) */}
         <DualPathCards />
 
-        {/* SECTION 4: Why S-Bloom is Best Out of All Digital Marketing Agencies */}
+        {/* SECTION 5: Why S-Bloom is Best Out of All Digital Marketing Agencies */}
         <WhyBetter />
 
-        {/* SECTION 5 - Simple Plans. Real Business Growth (Pricing) */}
+        {/* SECTION 6 - Simple Plans. Real Business Growth (Pricing) */}
         <HomePricingSection />
 
-        {/* SECTION 6 - Trusted Clients Logo Cloud (3 Alternating Scrolling Lines) */}
+        {/* SECTION 7 - Trusted Clients Logo Cloud (3 Alternating Scrolling Lines) */}
         <ClientLogoMarquee />
 
-        {/* SECTION 10 - Final CTA */}
+        {/* SECTION 8 - Final CTA */}
         <section className="home-final-cta-section">
           <div className="container">
             <ScrollReveal delay={0}>
-              <h2 className="home-final-cta-title">Your business has potential. Let’s help the right people see it.</h2>
+              <h2 className="home-final-cta-title">Your business deserves more revenue. Let’s build your pipeline.</h2>
               <div className="home-final-cta-btn-wrap">
                 <Link to="/contact" className="home-final-cta-btn">
-                  <span>Talk to sBLOOM</span>
+                  <span>Talk to sBLOOM About Revenue</span>
                   <span className="cta-arrow">→</span>
                 </Link>
               </div>

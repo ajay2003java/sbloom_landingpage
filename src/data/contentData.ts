@@ -5,6 +5,155 @@ export interface ServicePillar {
   deliverables: string[];
 }
 
+export interface ModularServiceItem {
+  id: 'fsm' | 'advisors' | 'digital' | 'influencers';
+  num: string;
+  name: string;
+  shortLabel: string;
+  category: string;
+  environment: 'In-Person' | 'Digital';
+  source: 'Internal' | 'External';
+  tagline: string;
+  forWho: string;
+  howWeHelp: {
+    title: string;
+    description: string;
+  }[];
+  revenueImpact: string;
+  deliverables: string[];
+}
+
+export const MODULAR_SERVICES: ModularServiceItem[] = [
+  {
+    id: 'fsm',
+    num: '01',
+    name: 'Field Sales Marketing (FSM)',
+    shortLabel: 'Field Sales (FSM)',
+    category: 'In-Person · Internal Team Support',
+    environment: 'In-Person',
+    source: 'Internal',
+    tagline: 'We help your internal sales team close more deals on the ground.',
+    forWho: 'Businesses that already have sales staff or field representatives, but aren’t getting enough closed deals.',
+    howWeHelp: [
+      {
+        title: 'Field Pitching & Objection Handling',
+        description: 'We train your internal team with battle-tested pitch decks, clear presentation scripts, and confidence in handling tough client questions.'
+      },
+      {
+        title: 'Daily Outreach & Target Planning',
+        description: 'We build structured daily outreach schedules, target account lists, and clear field execution playbooks for your reps.'
+      },
+      {
+        title: 'Performance Commission Incentives',
+        description: 'We set up transparent commission and incentive models so your staff is self-motivated to go out and close more business.'
+      }
+    ],
+    revenueImpact: 'Your existing sales staff stops waiting for inquiries and actively brings in paying clients every single week.',
+    deliverables: [
+      'Sales Team Field Training & Pitch Coaching',
+      'Daily Outreach Playbooks & Territory Targets',
+      'Objection Handling & Closing Scripts',
+      'Commission & Performance Incentive Structure'
+    ]
+  },
+  {
+    id: 'advisors',
+    num: '02',
+    name: 'Advisor & Affiliate Network',
+    shortLabel: 'Advisor Network',
+    category: 'In-Person · External Referral System',
+    environment: 'In-Person',
+    source: 'External',
+    tagline: 'Trusted community leaders who send you customers for a commission.',
+    forWho: 'Businesses that want high-trust word-of-mouth referrals without hiring a massive full-time sales army.',
+    howWeHelp: [
+      {
+        title: 'Recruiting Local Connectors',
+        description: 'We connect you with trusted professionals (doctors, teachers, community leaders, executives) who interact with your target audience daily.'
+      },
+      {
+        title: 'Zero Technical Burden for Advisors',
+        description: 'Advisors do not need to memorize technical product details—they simply make warm introductions based on their existing trust.'
+      },
+      {
+        title: 'Automated Commission Management',
+        description: 'We track who brought each lead and handle transparent commission payouts for every paying client they introduce.'
+      }
+    ],
+    revenueImpact: 'You get warm, high-intent clients who are already pre-sold because someone they respect personally recommended you.',
+    deliverables: [
+      'Advisor Recruitment & Onboarding',
+      'Warm Introduction & Referral Workflows',
+      'Lead Attribution & Tracking System',
+      'Commission Payout & Incentive Management'
+    ]
+  },
+  {
+    id: 'digital',
+    num: '03',
+    name: 'Core Digital Presence (Website, Google & Social)',
+    shortLabel: 'Website & Google',
+    category: 'Digital · Internal Conversion Assets',
+    environment: 'Digital',
+    source: 'Internal',
+    tagline: 'Turn people searching for your services into paying customers.',
+    forWho: 'Businesses losing customers because their online presence looks outdated or doesn’t show up when people search for them.',
+    howWeHelp: [
+      {
+        title: 'High-Conversion Website',
+        description: 'Not a slow, bloated brochure. A clean, rapid website engineered for one goal: getting visitors to call, WhatsApp, or book a consultation immediately.'
+      },
+      {
+        title: 'Google Business Profile (Map Pack Top 3)',
+        description: 'We optimize and manage your Google profile to rank in the Top 3 on Google Maps when locals search for your services.'
+      },
+      {
+        title: 'Active Social Media Authority',
+        description: 'Credible, consistent profiles that showcase patient/student proof, address doubts, and validate your reputation before they call.'
+      }
+    ],
+    revenueImpact: 'Whenever someone searches for what you do, they find you first, trust your reputation, and contact your business right away.',
+    deliverables: [
+      'Conversion-Optimized High-Speed Website',
+      'Google Business Profile (GBP) Local SEO & Reviews',
+      'Social Media Profiles & Trust Nurturing',
+      'Direct WhatsApp & Call Lead Funnels'
+    ]
+  },
+  {
+    id: 'influencers',
+    num: '04',
+    name: 'Influencer Partnerships',
+    shortLabel: 'Influencer Reach',
+    category: 'Digital · External Creator Amplification',
+    environment: 'Digital',
+    source: 'External',
+    tagline: 'Trusted voices telling their followers to choose your business.',
+    forWho: 'Businesses that want immediate local recognition and a rapid influx of warm inquiries.',
+    howWeHelp: [
+      {
+        title: 'Matching Respected Voices',
+        description: 'No generic internet entertainers. We partner you with respected local and domain creators whom your audience genuinely trusts.'
+      },
+      {
+        title: 'Authentic Educational Stories',
+        description: 'We script real, educational recommendations and behind-the-scenes walkthroughs—not cheesy scripted advertisements.'
+      },
+      {
+        title: 'Direct Inbound Lead Routing',
+        description: 'Every post or video guides interested viewers directly into your consultation link, registration form, or WhatsApp desk.'
+      }
+    ],
+    revenueImpact: 'Thousands of pre-warmed followers hear about your business from someone they already trust, creating an immediate surge in inquiries.',
+    deliverables: [
+      'Creator Vetting & Partnership Negotiation',
+      'Educational Video Scripting & Storytelling',
+      'Campaign Tracking & Link Attribution',
+      'Direct Consultation Booking Funnels'
+    ]
+  }
+];
+
 export interface IndustryProofBadge {
   label: string;
   iconName: string;

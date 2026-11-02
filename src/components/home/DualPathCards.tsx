@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { BookOpen, Users, CheckCircle2 } from 'lucide-react';
+import { Building2, Handshake, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal } from '../ScrollReveal';
 import './DualPathCards.css';
 
@@ -65,10 +65,10 @@ export const DualPathCards: React.FC = () => {
         <ScrollReveal delay={0}>
           <div className="dual-path-header">
             <h2 className="dual-path-title">
-              How can <span className="title-highlight-gold">S-Bloom</span> help you grow?
+              How can <span className="title-highlight-gold">sBLOOM</span> help you today?
             </h2>
             <p className="dual-path-subtitle">
-              Different goals. Tailored digital strategies.
+              Whether you need more paying clients for your business or want to earn commissions through referrals.
             </p>
           </div>
         </ScrollReveal>
@@ -82,17 +82,17 @@ export const DualPathCards: React.FC = () => {
                 {/* Header: Icon + Title & Tagline */}
                 <div className="dual-path-card-header">
                   <div className="dual-path-icon-box dual-path-icon-business">
-                    <BookOpen size={20} strokeWidth={2} />
+                    <Building2 size={20} strokeWidth={2} />
                   </div>
                   <div className="dual-path-header-text">
-                    <h3 className="dual-path-card-title">sBLOOM for Business</h3>
-                    <p className="dual-path-card-tagline">For organizations & brands</p>
+                    <h3 className="dual-path-card-title">I Need More Revenue</h3>
+                    <p className="dual-path-card-tagline">For clinics, schools & professional firms</p>
                   </div>
                 </div>
 
                 {/* Headline */}
                 <h4 className="dual-path-card-headline">
-                  Grow your business. Build your brand.
+                  Fill your pipeline with paying customers.
                 </h4>
 
                 {/* Divider Line */}
@@ -102,44 +102,44 @@ export const DualPathCards: React.FC = () => {
                 <ul className="dual-path-feature-list">
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-business" />
-                    <span className="dual-path-feature-text">SEO and Google visibility</span>
+                    <span className="dual-path-feature-text">Internal Field Sales (FSM) team training</span>
                   </li>
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-business" />
-                    <span className="dual-path-feature-text">Websites and social media</span>
+                    <span className="dual-path-feature-text">Warm referrals from our Advisor network</span>
                   </li>
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-business" />
-                    <span className="dual-path-feature-text">Digital marketing and ads</span>
+                    <span className="dual-path-feature-text">High-converting website & Google Maps Top 3</span>
                   </li>
                 </ul>
               </div>
 
               {/* Bottom Button */}
               <Link to="/contact" className="dual-path-card-btn">
-                <span>Grow Your Business →</span>
+                <span>Grow My Revenue →</span>
               </Link>
             </div>
           </ScrollReveal>
 
-          {/* Card 2: Creative Workspace */}
+          {/* Card 2: Advisor Network */}
           <ScrollReveal delay={200} className="dual-path-reveal-wrap" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <div className="dual-path-card dual-path-card-creative">
               <div className="dual-path-card-body">
                 {/* Header: Icon + Title & Subtitle */}
                 <div className="dual-path-card-header">
                   <div className="dual-path-icon-box dual-path-icon-creative">
-                    <Users size={20} strokeWidth={2} />
+                    <Handshake size={20} strokeWidth={2} />
                   </div>
                   <div className="dual-path-header-text">
-                    <h3 className="dual-path-card-title">Creative Workspace</h3>
-                    <p className="dual-path-card-tagline">Join our creative network</p>
+                    <h3 className="dual-path-card-title">Become an Advisor</h3>
+                    <p className="dual-path-card-tagline">For doctors, teachers & community connectors</p>
                   </div>
                 </div>
 
                 {/* Main Headline */}
                 <h4 className="dual-path-card-headline">
-                  Create with S-Bloom. Grow with us.
+                  Earn commissions for your introductions.
                 </h4>
 
                 {/* Divider Line */}
@@ -149,22 +149,22 @@ export const DualPathCards: React.FC = () => {
                 <ul className="dual-path-feature-list">
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-creative" />
-                    <span className="dual-path-feature-text">Creative projects and collaboration</span>
+                    <span className="dual-path-feature-text">Generous commissions for verified client leads</span>
                   </li>
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-creative" />
-                    <span className="dual-path-feature-text">Opportunities to work with our team</span>
+                    <span className="dual-path-feature-text">No technical pitching required—just warm intros</span>
                   </li>
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-creative" />
-                    <span className="dual-path-feature-text">Share your skills and portfolio</span>
+                    <span className="dual-path-feature-text">Transparent tracking and automated payouts</span>
                   </li>
                 </ul>
               </div>
 
               {/* Bottom Button */}
               <Link to="/creative-workspace" className="dual-path-card-btn">
-                <span>Explore Opportunities →</span>
+                <span>Join as an Advisor →</span>
               </Link>
             </div>
           </ScrollReveal>

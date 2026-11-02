@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router';
 import {
   User,
   Building2,
@@ -12,6 +13,8 @@ import {
   FileText,
   CheckCircle2,
   AlertCircle,
+  CheckSquare,
+  Square,
 } from 'lucide-react';
 import { FORM_ENDPOINTS, submitToGoogleSheet } from '../config/forms';
 import './ContactPage.css';
@@ -23,9 +26,13 @@ interface FormData {
   phone: string;
   industry: string;
   improve: string;
+  services: string[];
 }
 
 export const ContactPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const preselectedService = searchParams.get('service');
+
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     organization: '',
@@ -33,11 +40,41 @@ export const ContactPage: React.FC = () => {
     phone: '',
     industry: '',
     improve: '',
+    services: [],
   });
+
+  useEffect(() => {
+    if (preselectedService) {
+      const mapping: Record<string, string> = {
+        fsm: 'Field Sales Marketing (FSM)',
+        advisors: 'Advisor & Affiliate Network',
+        digital: 'Core Digital Presence (Website, GBP & Social)',
+        influencers: 'Influencer Partnerships',
+      };
+      if (mapping[preselectedService]) {
+        setFormData((prev) => ({
+          ...prev,
+          services: [mapping[preselectedService]],
+        }));
+      }
+    }
+  }, [preselectedService]);
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const toggleService = (serviceName: string) => {
+    setFormData((prev) => {
+      const exists = prev.services.includes(serviceName);
+      return {
+        ...prev,
+        services: exists
+          ? prev.services.filter((s) => s !== serviceName)
+          : [...prev.services, serviceName],
+      };
+    });
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -60,6 +97,7 @@ export const ContactPage: React.FC = () => {
         email: formData.email,
         phone: formData.phone,
         industry: formData.industry,
+        servicesNeeded: formData.services.length > 0 ? formData.services.join(', ') : 'Not specified',
         improve: formData.improve,
       });
       setSubmitted(true);
@@ -83,6 +121,7 @@ export const ContactPage: React.FC = () => {
       phone: '',
       industry: '',
       improve: '',
+      services: [],
     });
   };
 
@@ -302,13 +341,13 @@ export const ContactPage: React.FC = () => {
             {/* Main Editorial Headline */}
             <h1 className="contact-hero-title">
               Let’s discuss <br />
-              your digital <br />
+              your revenue <br />
               <span className="title-gold-text">growth.</span>
             </h1>
 
             {/* Supporting Paragraph */}
             <p className="contact-hero-desc">
-              Tell us about your organization and what you are trying to achieve. We’ll help you identify the right opportunities and next steps.
+              Tell us about your organization and the services you need. We'll show you exactly how we bring in qualified paying customers.
             </p>
 
             {/* 3 Strategic Process Steps with Connected Journey Line */}
@@ -492,7 +531,51 @@ export const ContactPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Field 6: What would you like to improve? (Optional) */}
+                  {/* Field 6: Services You Need (Modular Choice) */}
+                  <div className="contact-field-group">
+                    <label className="contact-field-label">
+                      Services You Need <span className="contact-opt-tag">(Pick one or multiple)</span>
+                    </label>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '8px', marginTop: '6px' }}>
+                      {[
+                        'Field Sales Marketing (FSM)',
+                        'Advisor & Affiliate Network',
+                        'Core Digital Presence (Website, GBP & Social)',
+                        'Influencer Partnerships',
+                        'Complete Revenue Engine (All 4)',
+                      ].map((srv) => {
+                        const isChecked = formData.services.includes(srv);
+                        return (
+                          <div
+                            key={srv}
+                            onClick={() => toggleService(srv)}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '10px',
+                              padding: '10px 14px',
+                              borderRadius: '8px',
+                              background: isChecked ? 'rgba(217, 165, 46, 0.12)' : 'rgba(36, 33, 42, 0.03)',
+                              border: isChecked ? '1px solid rgba(217, 165, 46, 0.45)' : '1px solid rgba(36, 33, 42, 0.08)',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease',
+                            }}
+                          >
+                            {isChecked ? (
+                              <CheckSquare size={17} color="#BA7C3D" />
+                            ) : (
+                              <Square size={17} color="#8C8894" />
+                            )}
+                            <span style={{ fontSize: '0.88rem', fontWeight: isChecked ? 600 : 500, color: '#24212A' }}>
+                              {srv}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Field 7: What would you like to improve? (Optional) */}
                   <div className="contact-field-group">
                     <label htmlFor="improve" className="contact-field-label">
                       What would you like to improve? <span className="contact-opt-tag">(Optional)</span>

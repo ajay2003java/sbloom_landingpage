@@ -1,1 +1,0 @@
-import{A as e,s as t,t as n}from"./jsx-runtime-BsyjEvTb.js";var r=n(),i=e(function(){return(0,r.jsx)(t,{to:`/creative-workspace#creative-apply`,replace:!0})});export{i as default};

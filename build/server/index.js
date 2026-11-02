@@ -5,9 +5,9 @@ import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { createContext, useCallback, useEffect, useRef, useState } from "react";
-import { AlertCircle, ArrowLeft, ArrowRight, BarChart3, BookOpen, Bookmark, Bot, Briefcase, Building2, Calendar, Camera, Check, CheckCircle2, ChevronDown, ChevronUp, Clock, Code2, Compass, Crown, File, FileText, Film, Gift, Globe, GraduationCap, Heart, Image, LayoutGrid, Leaf, Lightbulb, Link2, Mail, MapPin, Megaphone, Menu, MessageCircle, MessageSquare, Monitor, MonitorSmartphone, Palette, PenTool, Phone, PhoneCall, Play, Rocket, Search, Send, ShieldCheck, Smartphone, Sparkles, Star, Target, TrendingUp, User, UserPlus, Users, Volume2, VolumeX, Wallet, X, Zap } from "lucide-react";
+import { AlertCircle, ArrowLeft, ArrowRight, Award, BarChart3, BookOpen, Bookmark, Bot, Briefcase, Building2, Calendar, Camera, Check, CheckCircle2, CheckSquare, ChevronDown, ChevronUp, Clock, Code2, Coins, Compass, Crown, FileText, Film, Gift, Globe, Globe2, GraduationCap, Handshake, Heart, Image, LayoutGrid, Leaf, Lightbulb, Link2, Mail, MapPin, Megaphone, Menu, MessageCircle, MessageSquare, Monitor, MonitorSmartphone, Palette, PenTool, Phone, PhoneCall, Play, Rocket, Search, Send, ShieldCheck, Smartphone, Sparkles, Square, Star, Target, TrendingUp, User, UserPlus, Users, Users2, Volume2, VolumeX, Wallet, X, Zap } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-//#region \0rolldown/runtime.js
+// \0rolldown/runtime.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -18,8 +18,7 @@ var __exportAll = (all, no_symbols) => {
 	if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
 	return target;
 };
-//#endregion
-//#region node_modules/@react-router/dev/dist/config/defaults/entry.server.node.tsx
+// node_modules/@react-router/dev/dist/config/defaults/entry.server.node.tsx
 var entry_server_node_exports = /* @__PURE__ */ __exportAll({
 	default: () => handleRequest,
 	streamTimeout: () => streamTimeout
@@ -64,8 +63,7 @@ function handleRequest(request, responseStatusCode, responseHeaders, routerConte
 		});
 	});
 }
-//#endregion
-//#region src/components/layout/Navbar.tsx
+// src/components/layout/Navbar.tsx
 var Navbar = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -199,10 +197,11 @@ var Navbar = () => {
 								style: {
 									fontSize: "0.78rem",
 									textTransform: "uppercase",
-									letterSpacing: "0.8px"
+									letterSpacing: "0.8px",
+									color: "#D9A52E"
 								},
 								onClick: handleMobileClick,
-								children: "Creative Workspace"
+								children: "Advisor Network"
 							})
 						}),
 						/* @__PURE__ */ jsx("li", {
@@ -226,8 +225,7 @@ var Navbar = () => {
 		})
 	});
 };
-//#endregion
-//#region src/components/layout/Footer.tsx
+// src/components/layout/Footer.tsx
 var Footer = () => {
 	if (useLocation().pathname === "/contact") return null;
 	return /* @__PURE__ */ jsx(motion.footer, {
@@ -486,8 +484,7 @@ var ContactTile = ({ letter, label, icon, href, external }) => {
 		children: content
 	});
 };
-//#endregion
-//#region src/components/common/BloomTransition.tsx
+// src/components/common/BloomTransition.tsx
 var BloomTransitionContext = createContext({
 	navigateWithBloom: () => {},
 	isTransitioning: false
@@ -856,8 +853,7 @@ var BloomTransition = () => {
 		})
 	});
 };
-//#endregion
-//#region src/root.tsx
+// src/root.tsx
 var root_exports = /* @__PURE__ */ __exportAll({
 	Layout: () => Layout,
 	default: () => root_default
@@ -901,8 +897,7 @@ function Layout({ children }) {
 var root_default = UNSAFE_withComponentProps(function App() {
 	return /* @__PURE__ */ jsx(Outlet, {});
 });
-//#endregion
-//#region \0@oxc-project+runtime@0.150.0/helpers/esm/typeof.js
+// \0@oxc-project+runtime@0.156.0/helpers/esm/typeof.js
 function _typeof(o) {
 	"@babel/helpers - typeof";
 	return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
@@ -911,8 +906,7 @@ function _typeof(o) {
 		return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
 	}, _typeof(o);
 }
-//#endregion
-//#region \0@oxc-project+runtime@0.150.0/helpers/esm/toPrimitive.js
+// \0@oxc-project+runtime@0.156.0/helpers/esm/toPrimitive.js
 function toPrimitive(t, r) {
 	if ("object" != _typeof(t) || !t) return t;
 	var e = t[Symbol.toPrimitive];
@@ -923,14 +917,12 @@ function toPrimitive(t, r) {
 	}
 	return ("string" === r ? String : Number)(t);
 }
-//#endregion
-//#region \0@oxc-project+runtime@0.150.0/helpers/esm/toPropertyKey.js
+// \0@oxc-project+runtime@0.156.0/helpers/esm/toPropertyKey.js
 function toPropertyKey(t) {
 	var i = toPrimitive(t, "string");
 	return "symbol" == _typeof(i) ? i : i + "";
 }
-//#endregion
-//#region \0@oxc-project+runtime@0.150.0/helpers/esm/defineProperty.js
+// \0@oxc-project+runtime@0.156.0/helpers/esm/defineProperty.js
 function _defineProperty(e, r, t) {
 	return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
 		value: t,
@@ -939,8 +931,7 @@ function _defineProperty(e, r, t) {
 		writable: !0
 	}) : e[r] = t, e;
 }
-//#endregion
-//#region \0@oxc-project+runtime@0.150.0/helpers/esm/objectSpread2.js
+// \0@oxc-project+runtime@0.156.0/helpers/esm/objectSpread2.js
 function ownKeys(e, r) {
 	var t = Object.keys(e);
 	if (Object.getOwnPropertySymbols) {
@@ -962,8 +953,7 @@ function _objectSpread2(e) {
 	}
 	return e;
 }
-//#endregion
-//#region src/components/ScrollReveal.tsx
+// src/components/ScrollReveal.tsx
 var ScrollReveal = ({ children, delay = 0, className = "", threshold = .1, style: userStyle = {} }) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const domRef = useRef(null);
@@ -1003,167 +993,7 @@ var ScrollReveal = ({ children, delay = 0, className = "", threshold = .1, style
 		children
 	});
 };
-//#endregion
-//#region src/components/home/DigitalGrowthSystem.tsx
-var DigitalGrowthSystem = () => {
-	const [hoveredStage, setHoveredStage] = useState(null);
-	const [inView, setInView] = useState(false);
-	const sectionRef = useRef(null);
-	useEffect(() => {
-		if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-			setInView(true);
-			return;
-		}
-		const observer = new IntersectionObserver(([entry]) => {
-			if (entry.isIntersecting) {
-				setInView(true);
-				if (sectionRef.current) observer.unobserve(sectionRef.current);
-			}
-		}, {
-			threshold: .15,
-			rootMargin: "0px 0px -40px 0px"
-		});
-		if (sectionRef.current) observer.observe(sectionRef.current);
-		return () => {
-			observer.disconnect();
-		};
-	}, []);
-	const stages = [
-		{
-			id: "build",
-			num: "01",
-			label: "BUILD",
-			headline: "Be easier to find.",
-			icon: Compass,
-			link: "/solutions#build"
-		},
-		{
-			id: "create",
-			num: "02",
-			label: "CREATE",
-			headline: "Be easier to understand.",
-			icon: File,
-			link: "/solutions#create"
-		},
-		{
-			id: "promote",
-			num: "03",
-			label: "PROMOTE",
-			headline: "Be easier to reach the people who matter.",
-			icon: Megaphone,
-			link: "/solutions#promote"
-		},
-		{
-			id: "grow",
-			num: "04",
-			label: "GROW",
-			headline: "Be easier to drive sustainable growth.",
-			icon: BarChart3,
-			link: "/solutions#grow"
-		}
-	];
-	return /* @__PURE__ */ jsx("section", {
-		ref: sectionRef,
-		className: "dgs-section section",
-		children: /* @__PURE__ */ jsxs("div", {
-			className: "container",
-			children: [/* @__PURE__ */ jsx(ScrollReveal, {
-				delay: 0,
-				children: /* @__PURE__ */ jsxs("div", {
-					className: "dgs-intro",
-					children: [/* @__PURE__ */ jsxs("div", {
-						className: "dgs-badge",
-						children: [
-							/* @__PURE__ */ jsx("span", {
-								className: "dgs-badge-line",
-								"aria-hidden": "true"
-							}),
-							/* @__PURE__ */ jsx("span", {
-								className: "dgs-label",
-								children: "WHAT SBLOOM CHANGES"
-							}),
-							/* @__PURE__ */ jsx("span", {
-								className: "dgs-badge-line",
-								"aria-hidden": "true"
-							})
-						]
-					}), /* @__PURE__ */ jsx("h2", {
-						className: "dgs-main-heading",
-						children: "We turn what you do well into something people can see, understand and act on."
-					})]
-				})
-			}), /* @__PURE__ */ jsx("div", {
-				className: `dgs-flow-wrapper ${inView ? "dgs-animated" : ""}`,
-				children: /* @__PURE__ */ jsx("div", {
-					className: "dgs-flow-grid",
-					children: stages.map((stage, idx) => {
-						const isHovered = hoveredStage === stage.id;
-						const IconComponent = stage.icon;
-						return /* @__PURE__ */ jsxs("div", {
-							className: `dgs-stage-col ${isHovered ? "active" : ""}`,
-							onMouseEnter: () => setHoveredStage(stage.id),
-							onMouseLeave: () => setHoveredStage(null),
-							children: [
-								/* @__PURE__ */ jsx("span", {
-									className: "dgs-stage-num",
-									children: stage.num
-								}),
-								/* @__PURE__ */ jsxs("div", {
-									className: "dgs-marker-wrap",
-									children: [/* @__PURE__ */ jsx("div", {
-										className: "dgs-marker-circle",
-										children: /* @__PURE__ */ jsx(IconComponent, {
-											size: 24,
-											strokeWidth: 1.5,
-											className: "dgs-marker-icon"
-										})
-									}), idx < stages.length - 1 && /* @__PURE__ */ jsxs("div", {
-										className: "dgs-connector",
-										"aria-hidden": "true",
-										children: [
-											/* @__PURE__ */ jsx("span", { className: "dgs-connector-base" }),
-											/* @__PURE__ */ jsx("span", { className: "dgs-connector-fill" }),
-											/* @__PURE__ */ jsx("span", { className: "dgs-connector-point" })
-										]
-									})]
-								}),
-								/* @__PURE__ */ jsx("span", {
-									className: "dgs-stage-tick",
-									"aria-hidden": "true"
-								}),
-								/* @__PURE__ */ jsx("span", {
-									className: "dgs-stage-name",
-									children: stage.label
-								}),
-								/* @__PURE__ */ jsx("p", {
-									className: "dgs-stage-desc",
-									children: stage.headline
-								}),
-								/* @__PURE__ */ jsx("div", {
-									className: "dgs-stage-action",
-									children: /* @__PURE__ */ jsxs(Link, {
-										to: stage.link,
-										className: "dgs-explore-btn",
-										"aria-label": `Explore ${stage.label}`,
-										onClick: (e) => {
-											e.stopPropagation();
-										},
-										children: [/* @__PURE__ */ jsxs("span", { children: ["Explore ", stage.label.charAt(0) + stage.label.slice(1).toLowerCase()] }), /* @__PURE__ */ jsx(ArrowRight, {
-											size: 13,
-											className: "dgs-btn-arrow"
-										})]
-									})
-								})
-							]
-						}, stage.id);
-					})
-				})
-			})]
-		})
-	});
-};
-//#endregion
-//#region src/components/home/HeroFloatingIcons.tsx
+// src/components/home/HeroFloatingIcons.tsx
 var HeroFloatingIcons = () => {
 	return /* @__PURE__ */ jsxs("div", {
 		className: "hero-floating-icons-container",
@@ -2289,8 +2119,7 @@ var HeroFloatingIcons = () => {
 		]
 	});
 };
-//#endregion
-//#region src/components/home/HeroSubtleCurves.tsx
+// src/components/home/HeroSubtleCurves.tsx
 var HeroSubtleCurves = () => {
 	const curve1 = "M -40,190 C 240,150 480,320 740,290 C 1000,260 1220,150 1480,180";
 	const curve2 = "M -30,470 C 260,430 540,500 790,420 C 1030,340 1260,490 1480,430";
@@ -2492,8 +2321,640 @@ var HeroSubtleCurves = () => {
 		})
 	});
 };
-//#endregion
-//#region src/components/home/DualPathCards.tsx
+// src/data/contentData.ts
+var MODULAR_SERVICES = [
+	{
+		id: "fsm",
+		num: "01",
+		name: "Field Sales Marketing (FSM)",
+		shortLabel: "Field Sales (FSM)",
+		category: "In-Person · Internal Team Support",
+		environment: "In-Person",
+		source: "Internal",
+		tagline: "We help your internal sales team close more deals on the ground.",
+		forWho: "Businesses that already have sales staff or field representatives, but aren’t getting enough closed deals.",
+		howWeHelp: [
+			{
+				title: "Field Pitching & Objection Handling",
+				description: "We train your internal team with battle-tested pitch decks, clear presentation scripts, and confidence in handling tough client questions."
+			},
+			{
+				title: "Daily Outreach & Target Planning",
+				description: "We build structured daily outreach schedules, target account lists, and clear field execution playbooks for your reps."
+			},
+			{
+				title: "Performance Commission Incentives",
+				description: "We set up transparent commission and incentive models so your staff is self-motivated to go out and close more business."
+			}
+		],
+		revenueImpact: "Your existing sales staff stops waiting for inquiries and actively brings in paying clients every single week.",
+		deliverables: [
+			"Sales Team Field Training & Pitch Coaching",
+			"Daily Outreach Playbooks & Territory Targets",
+			"Objection Handling & Closing Scripts",
+			"Commission & Performance Incentive Structure"
+		]
+	},
+	{
+		id: "advisors",
+		num: "02",
+		name: "Advisor & Affiliate Network",
+		shortLabel: "Advisor Network",
+		category: "In-Person · External Referral System",
+		environment: "In-Person",
+		source: "External",
+		tagline: "Trusted community leaders who send you customers for a commission.",
+		forWho: "Businesses that want high-trust word-of-mouth referrals without hiring a massive full-time sales army.",
+		howWeHelp: [
+			{
+				title: "Recruiting Local Connectors",
+				description: "We connect you with trusted professionals (doctors, teachers, community leaders, executives) who interact with your target audience daily."
+			},
+			{
+				title: "Zero Technical Burden for Advisors",
+				description: "Advisors do not need to memorize technical product details—they simply make warm introductions based on their existing trust."
+			},
+			{
+				title: "Automated Commission Management",
+				description: "We track who brought each lead and handle transparent commission payouts for every paying client they introduce."
+			}
+		],
+		revenueImpact: "You get warm, high-intent clients who are already pre-sold because someone they respect personally recommended you.",
+		deliverables: [
+			"Advisor Recruitment & Onboarding",
+			"Warm Introduction & Referral Workflows",
+			"Lead Attribution & Tracking System",
+			"Commission Payout & Incentive Management"
+		]
+	},
+	{
+		id: "digital",
+		num: "03",
+		name: "Core Digital Presence (Website, Google & Social)",
+		shortLabel: "Website & Google",
+		category: "Digital · Internal Conversion Assets",
+		environment: "Digital",
+		source: "Internal",
+		tagline: "Turn people searching for your services into paying customers.",
+		forWho: "Businesses losing customers because their online presence looks outdated or doesn’t show up when people search for them.",
+		howWeHelp: [
+			{
+				title: "High-Conversion Website",
+				description: "Not a slow, bloated brochure. A clean, rapid website engineered for one goal: getting visitors to call, WhatsApp, or book a consultation immediately."
+			},
+			{
+				title: "Google Business Profile (Map Pack Top 3)",
+				description: "We optimize and manage your Google profile to rank in the Top 3 on Google Maps when locals search for your services."
+			},
+			{
+				title: "Active Social Media Authority",
+				description: "Credible, consistent profiles that showcase patient/student proof, address doubts, and validate your reputation before they call."
+			}
+		],
+		revenueImpact: "Whenever someone searches for what you do, they find you first, trust your reputation, and contact your business right away.",
+		deliverables: [
+			"Conversion-Optimized High-Speed Website",
+			"Google Business Profile (GBP) Local SEO & Reviews",
+			"Social Media Profiles & Trust Nurturing",
+			"Direct WhatsApp & Call Lead Funnels"
+		]
+	},
+	{
+		id: "influencers",
+		num: "04",
+		name: "Influencer Partnerships",
+		shortLabel: "Influencer Reach",
+		category: "Digital · External Creator Amplification",
+		environment: "Digital",
+		source: "External",
+		tagline: "Trusted voices telling their followers to choose your business.",
+		forWho: "Businesses that want immediate local recognition and a rapid influx of warm inquiries.",
+		howWeHelp: [
+			{
+				title: "Matching Respected Voices",
+				description: "No generic internet entertainers. We partner you with respected local and domain creators whom your audience genuinely trusts."
+			},
+			{
+				title: "Authentic Educational Stories",
+				description: "We script real, educational recommendations and behind-the-scenes walkthroughs—not cheesy scripted advertisements."
+			},
+			{
+				title: "Direct Inbound Lead Routing",
+				description: "Every post or video guides interested viewers directly into your consultation link, registration form, or WhatsApp desk."
+			}
+		],
+		revenueImpact: "Thousands of pre-warmed followers hear about your business from someone they already trust, creating an immediate surge in inquiries.",
+		deliverables: [
+			"Creator Vetting & Partnership Negotiation",
+			"Educational Video Scripting & Storytelling",
+			"Campaign Tracking & Link Attribution",
+			"Direct Consultation Booking Funnels"
+		]
+	}
+];
+// src/components/home/ModularServicesExplorer.tsx
+var ModularServicesExplorer = () => {
+	const [activeTab, setActiveTab] = useState("fsm");
+	const activeService = MODULAR_SERVICES.find((s) => s.id === activeTab) || MODULAR_SERVICES[0];
+	const getServiceIcon = (id) => {
+		switch (id) {
+			case "fsm": return /* @__PURE__ */ jsx(Users2, {
+				size: 20,
+				strokeWidth: 2
+			});
+			case "advisors": return /* @__PURE__ */ jsx(Handshake, {
+				size: 20,
+				strokeWidth: 2
+			});
+			case "digital": return /* @__PURE__ */ jsx(Globe2, {
+				size: 20,
+				strokeWidth: 2
+			});
+			case "influencers": return /* @__PURE__ */ jsx(Megaphone, {
+				size: 20,
+				strokeWidth: 2
+			});
+			default: return /* @__PURE__ */ jsx(Compass, {
+				size: 20,
+				strokeWidth: 2
+			});
+		}
+	};
+	return /* @__PURE__ */ jsx("section", {
+		className: "mse-section",
+		id: "services-explorer",
+		"aria-label": "Our 4 Revenue Services",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "container",
+			children: [
+				/* @__PURE__ */ jsx(ScrollReveal, {
+					delay: 0,
+					children: /* @__PURE__ */ jsxs("div", {
+						className: "mse-header",
+						children: [
+							/* @__PURE__ */ jsxs("div", {
+								className: "mse-eyebrow-wrap",
+								children: [
+									/* @__PURE__ */ jsx("span", {
+										className: "mse-eyebrow-line",
+										"aria-hidden": "true"
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "mse-eyebrow",
+										children: "✦ 4 WAYS WE BRING YOU REVENUE"
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "mse-eyebrow-line",
+										"aria-hidden": "true"
+									})
+								]
+							}),
+							/* @__PURE__ */ jsx("h2", {
+								className: "mse-main-title",
+								children: "Choose the exact service your business needs."
+							}),
+							/* @__PURE__ */ jsx("p", {
+								className: "mse-subtitle",
+								children: "Every business has a different bottleneck. Pick any individual service below, or combine them to build your complete in-person and digital revenue engine."
+							})
+						]
+					})
+				}),
+				/* @__PURE__ */ jsx("div", {
+					className: "mse-tabs-container",
+					children: /* @__PURE__ */ jsx("div", {
+						className: "mse-tabs-track",
+						role: "tablist",
+						"aria-label": "Select Revenue Service",
+						children: MODULAR_SERVICES.map((service) => {
+							const isActive = activeTab === service.id;
+							return /* @__PURE__ */ jsxs("button", {
+								role: "tab",
+								"aria-selected": isActive,
+								className: `mse-tab-btn ${isActive ? "active" : ""}`,
+								onClick: () => setActiveTab(service.id),
+								children: [
+									/* @__PURE__ */ jsx("span", {
+										className: "mse-tab-num",
+										children: service.num
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "mse-tab-icon",
+										children: getServiceIcon(service.id)
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "mse-tab-label",
+										children: service.shortLabel
+									}),
+									isActive && /* @__PURE__ */ jsx(motion.div, {
+										layoutId: "activeTabIndicator",
+										className: "mse-tab-active-indicator",
+										transition: {
+											type: "spring",
+											stiffness: 350,
+											damping: 30
+										}
+									})
+								]
+							}, service.id);
+						})
+					})
+				}),
+				/* @__PURE__ */ jsx("div", {
+					className: "mse-card-wrapper",
+					children: /* @__PURE__ */ jsx(AnimatePresence, {
+						mode: "wait",
+						children: /* @__PURE__ */ jsx(motion.div, {
+							initial: {
+								opacity: 0,
+								y: 14
+							},
+							animate: {
+								opacity: 1,
+								y: 0
+							},
+							exit: {
+								opacity: 0,
+								y: -14
+							},
+							transition: { duration: .3 },
+							className: "mse-service-card",
+							children: /* @__PURE__ */ jsxs("div", {
+								className: "mse-card-grid",
+								children: [/* @__PURE__ */ jsxs("div", {
+									className: "mse-card-col-left",
+									children: [
+										/* @__PURE__ */ jsxs("div", {
+											className: "mse-card-meta",
+											children: [/* @__PURE__ */ jsxs("span", {
+												className: "mse-meta-pill",
+												children: [
+													activeService.environment,
+													" · ",
+													activeService.source
+												]
+											}), /* @__PURE__ */ jsx("span", {
+												className: "mse-meta-category",
+												children: activeService.category
+											})]
+										}),
+										/* @__PURE__ */ jsx("h3", {
+											className: "mse-card-title",
+											children: activeService.name
+										}),
+										/* @__PURE__ */ jsx("p", {
+											className: "mse-card-tagline",
+											children: activeService.tagline
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: "mse-forwho-box",
+											children: [/* @__PURE__ */ jsxs("div", {
+												className: "mse-forwho-label",
+												children: [/* @__PURE__ */ jsx(Target, {
+													size: 16,
+													className: "mse-forwho-icon"
+												}), /* @__PURE__ */ jsx("span", { children: "WHO THIS IS FOR:" })]
+											}), /* @__PURE__ */ jsx("p", {
+												className: "mse-forwho-text",
+												children: activeService.forWho
+											})]
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: "mse-revenue-box",
+											children: [/* @__PURE__ */ jsxs("div", {
+												className: "mse-revenue-badge",
+												children: [/* @__PURE__ */ jsx(TrendingUp, { size: 16 }), /* @__PURE__ */ jsx("span", { children: "REVENUE IMPACT" })]
+											}), /* @__PURE__ */ jsx("p", {
+												className: "mse-revenue-text",
+												children: activeService.revenueImpact
+											})]
+										}),
+										/* @__PURE__ */ jsx("div", {
+											className: "mse-card-actions",
+											children: /* @__PURE__ */ jsxs(Link, {
+												to: `/contact?service=${activeService.id}`,
+												className: "btn-final-primary mse-action-btn",
+												children: [/* @__PURE__ */ jsxs("span", { children: ["Inquire for ", activeService.shortLabel] }), /* @__PURE__ */ jsx(ArrowRight, { size: 16 })]
+											})
+										})
+									]
+								}), /* @__PURE__ */ jsxs("div", {
+									className: "mse-card-col-right",
+									children: [
+										/* @__PURE__ */ jsxs("div", {
+											className: "mse-help-header",
+											children: [/* @__PURE__ */ jsx("span", {
+												className: "mse-help-eyebrow",
+												children: "THE SBLOOM ADVANTAGE"
+											}), /* @__PURE__ */ jsx("h4", {
+												className: "mse-help-heading",
+												children: "Exactly How We Help You:"
+											})]
+										}),
+										/* @__PURE__ */ jsx("div", {
+											className: "mse-help-steps",
+											children: activeService.howWeHelp.map((step, idx) => /* @__PURE__ */ jsxs("div", {
+												className: "mse-help-step-item",
+												children: [/* @__PURE__ */ jsxs("div", {
+													className: "mse-step-badge",
+													children: ["0", idx + 1]
+												}), /* @__PURE__ */ jsxs("div", {
+													className: "mse-step-content",
+													children: [/* @__PURE__ */ jsx("h5", {
+														className: "mse-step-title",
+														children: step.title
+													}), /* @__PURE__ */ jsx("p", {
+														className: "mse-step-desc",
+														children: step.description
+													})]
+												})]
+											}, idx))
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: "mse-deliverables-box",
+											children: [/* @__PURE__ */ jsx("span", {
+												className: "mse-deliverables-label",
+												children: "WHAT'S INCLUDED:"
+											}), /* @__PURE__ */ jsx("div", {
+												className: "mse-deliverables-grid",
+												children: activeService.deliverables.map((item, idx) => /* @__PURE__ */ jsxs("div", {
+													className: "mse-deliv-item",
+													children: [/* @__PURE__ */ jsx(CheckCircle2, {
+														size: 16,
+														className: "mse-deliv-icon"
+													}), /* @__PURE__ */ jsx("span", { children: item })]
+												}, idx))
+											})]
+										})
+									]
+								})]
+							})
+						}, activeService.id)
+					})
+				}),
+				/* @__PURE__ */ jsx(ScrollReveal, {
+					delay: 100,
+					children: /* @__PURE__ */ jsxs("div", {
+						className: "mse-freedom-banner",
+						children: [/* @__PURE__ */ jsxs("div", {
+							className: "mse-freedom-content",
+							children: [/* @__PURE__ */ jsx("div", {
+								className: "mse-freedom-icon-wrap",
+								children: /* @__PURE__ */ jsx(Sparkles, {
+									size: 24,
+									className: "mse-freedom-icon"
+								})
+							}), /* @__PURE__ */ jsxs("div", {
+								className: "mse-freedom-text",
+								children: [/* @__PURE__ */ jsx("h4", {
+									className: "mse-freedom-title",
+									children: "Choose 1 Service, or Combine All 4."
+								}), /* @__PURE__ */ jsx("p", {
+									className: "mse-freedom-desc",
+									children: "You don’t have to buy a rigid bundle. Start with what hurts most right now, or let us build a unified in-person and digital acquisition machine tailored to your exact budget and targets."
+								})]
+							})]
+						}), /* @__PURE__ */ jsx("div", {
+							className: "mse-freedom-cta",
+							children: /* @__PURE__ */ jsxs(Link, {
+								to: "/contact",
+								className: "btn-freedom-primary",
+								children: [/* @__PURE__ */ jsx("span", { children: "Talk to sBLOOM About Revenue" }), /* @__PURE__ */ jsx(ArrowRight, { size: 16 })]
+							})
+						})]
+					})
+				})
+			]
+		})
+	});
+};
+// src/components/home/FsmVsAdvisorComparison.tsx
+var FsmVsAdvisorComparison = () => {
+	return /* @__PURE__ */ jsx("section", {
+		className: "fsm-adv-section",
+		"aria-label": "In-Person Lead Generation Comparison",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "container",
+			children: [/* @__PURE__ */ jsx(ScrollReveal, {
+				delay: 0,
+				children: /* @__PURE__ */ jsxs("div", {
+					className: "fsm-adv-header",
+					children: [
+						/* @__PURE__ */ jsxs("div", {
+							className: "fsm-adv-eyebrow-wrap",
+							children: [
+								/* @__PURE__ */ jsx("span", {
+									className: "fsm-adv-eyebrow-line",
+									"aria-hidden": "true"
+								}),
+								/* @__PURE__ */ jsx("span", {
+									className: "fsm-adv-eyebrow",
+									children: "✦ ON-THE-GROUND REVENUE CHANNELS"
+								}),
+								/* @__PURE__ */ jsx("span", {
+									className: "fsm-adv-eyebrow-line",
+									"aria-hidden": "true"
+								})
+							]
+						}),
+						/* @__PURE__ */ jsx("h2", {
+							className: "fsm-adv-title",
+							children: "In-Person Leads: Inside Your Team & Outside in the Community"
+						}),
+						/* @__PURE__ */ jsx("p", {
+							className: "fsm-adv-subtitle",
+							children: "We activate both sides of real-world business growth. Understand how our internal Field Sales support and external Advisor network work together to bring you revenue."
+						})
+					]
+				})
+			}), /* @__PURE__ */ jsxs("div", {
+				className: "fsm-adv-grid",
+				children: [/* @__PURE__ */ jsx(ScrollReveal, {
+					delay: 100,
+					children: /* @__PURE__ */ jsxs("div", {
+						className: "fsm-adv-card card-fsm",
+						children: [
+							/* @__PURE__ */ jsxs("div", {
+								className: "fsm-card-badge-wrap",
+								children: [/* @__PURE__ */ jsx("span", {
+									className: "fsm-badge-pill badge-internal",
+									children: "INTERNAL TEAM SUPPORT"
+								}), /* @__PURE__ */ jsx("span", {
+									className: "fsm-badge-number",
+									children: "01"
+								})]
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "fsm-card-header",
+								children: [/* @__PURE__ */ jsx("div", {
+									className: "fsm-icon-wrap icon-fsm",
+									children: /* @__PURE__ */ jsx(Users2, {
+										size: 26,
+										strokeWidth: 2
+									})
+								}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
+									className: "fsm-card-name",
+									children: "Field Sales Marketing (FSM)"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "fsm-card-sub",
+									children: "Your Internal Staff, Enabled to Close"
+								})] })]
+							}),
+							/* @__PURE__ */ jsx("p", {
+								className: "fsm-card-description",
+								children: "We embed with your existing sales and front-desk team. We equip them with pitch decks, objection scripts, and target outreach routines so they actively generate leads from the field."
+							}),
+							/* @__PURE__ */ jsx("hr", { className: "fsm-card-divider" }),
+							/* @__PURE__ */ jsxs("div", {
+								className: "fsm-points-list",
+								children: [
+									/* @__PURE__ */ jsxs("div", {
+										className: "fsm-point-item",
+										children: [/* @__PURE__ */ jsx("div", {
+											className: "point-icon-box",
+											children: /* @__PURE__ */ jsx(BookOpen, { size: 17 })
+										}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("span", {
+											className: "point-title",
+											children: "Product Knowledge: Deep & Technical"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "point-desc",
+											children: "Your staff is trained extensively on your exact procedures, courses, USPs, and compliance guidelines."
+										})] })]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "fsm-point-item",
+										children: [/* @__PURE__ */ jsx("div", {
+											className: "point-icon-box",
+											children: /* @__PURE__ */ jsx(Award, { size: 17 })
+										}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("span", {
+											className: "point-title",
+											children: "How They Generate Leads: Active Pitching"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "point-desc",
+											children: "Direct institutional visits, clinic liaisoning, local seminar activations, and face-to-face consultation conversion."
+										})] })]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "fsm-point-item",
+										children: [/* @__PURE__ */ jsx("div", {
+											className: "point-icon-box",
+											children: /* @__PURE__ */ jsx(Coins, { size: 17 })
+										}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("span", {
+											className: "point-title",
+											children: "Commission Model: Performance Incentives"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "point-desc",
+											children: "Staff receives structured incentives and commissions for hitting on-ground lead and enrollment targets."
+										})] })]
+									})
+								]
+							}),
+							/* @__PURE__ */ jsx("div", {
+								className: "fsm-card-footer",
+								children: /* @__PURE__ */ jsxs(Link, {
+									to: "/contact?service=fsm",
+									className: "btn-fsm-link",
+									children: [/* @__PURE__ */ jsx("span", { children: "Inquire for FSM Training" }), /* @__PURE__ */ jsx(ArrowRight, { size: 15 })]
+								})
+							})
+						]
+					})
+				}), /* @__PURE__ */ jsx(ScrollReveal, {
+					delay: 200,
+					children: /* @__PURE__ */ jsxs("div", {
+						className: "fsm-adv-card card-advisor",
+						children: [
+							/* @__PURE__ */ jsxs("div", {
+								className: "fsm-card-badge-wrap",
+								children: [/* @__PURE__ */ jsx("span", {
+									className: "fsm-badge-pill badge-external",
+									children: "EXTERNAL REFERRAL NETWORK"
+								}), /* @__PURE__ */ jsx("span", {
+									className: "fsm-badge-number",
+									children: "02"
+								})]
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "fsm-card-header",
+								children: [/* @__PURE__ */ jsx("div", {
+									className: "fsm-icon-wrap icon-advisor",
+									children: /* @__PURE__ */ jsx(Handshake, {
+										size: 26,
+										strokeWidth: 2
+									})
+								}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
+									className: "fsm-card-name",
+									children: "Advisor & Affiliate Network"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "fsm-card-sub",
+									children: "Trusted People Sending You Clients"
+								})] })]
+							}),
+							/* @__PURE__ */ jsx("p", {
+								className: "fsm-card-description",
+								children: "A curated network of respected doctors, educators, executives, and community leaders who refer warm clients from their personal and professional networks for a commission."
+							}),
+							/* @__PURE__ */ jsx("hr", { className: "fsm-card-divider" }),
+							/* @__PURE__ */ jsxs("div", {
+								className: "fsm-points-list",
+								children: [
+									/* @__PURE__ */ jsxs("div", {
+										className: "fsm-point-item",
+										children: [/* @__PURE__ */ jsx("div", {
+											className: "point-icon-box",
+											children: /* @__PURE__ */ jsx(Sparkles, { size: 17 })
+										}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("span", {
+											className: "point-title",
+											children: "Product Knowledge: Trust & Relationship First"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "point-desc",
+											children: "Advisors don’t need technical product mastery—they leverage their personal credibility to make warm introductions."
+										})] })]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "fsm-point-item",
+										children: [/* @__PURE__ */ jsx("div", {
+											className: "point-icon-box",
+											children: /* @__PURE__ */ jsx(Award, { size: 17 })
+										}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("span", {
+											className: "point-title",
+											children: "How They Generate Leads: Warm Referrals"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "point-desc",
+											children: "Recommending your business to peers, family, and colleagues who are already actively seeking your exact expertise."
+										})] })]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "fsm-point-item",
+										children: [/* @__PURE__ */ jsx("div", {
+											className: "point-icon-box",
+											children: /* @__PURE__ */ jsx(Coins, { size: 17 })
+										}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("span", {
+											className: "point-title",
+											children: "Commission Model: Direct Per-Lead Payout"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "point-desc",
+											children: "Advisors earn a clear, rewarding commission for every verified paying customer they introduce."
+										})] })]
+									})
+								]
+							}),
+							/* @__PURE__ */ jsx("div", {
+								className: "fsm-card-footer",
+								children: /* @__PURE__ */ jsxs(Link, {
+									to: "/creative-workspace",
+									className: "btn-fsm-link",
+									children: [/* @__PURE__ */ jsx("span", { children: "Join as an Advisor & Earn Commission" }), /* @__PURE__ */ jsx(ArrowRight, { size: 15 })]
+								})
+							})
+						]
+					})
+				})]
+			})]
+		})
+	});
+};
+// src/components/home/DualPathCards.tsx
 var DualPathCards = () => {
 	return /* @__PURE__ */ jsxs("section", {
 		className: "dual-path-section",
@@ -2608,13 +3069,13 @@ var DualPathCards = () => {
 								"How can ",
 								/* @__PURE__ */ jsx("span", {
 									className: "title-highlight-gold",
-									children: "S-Bloom"
+									children: "sBLOOM"
 								}),
-								" help you grow?"
+								" help you today?"
 							]
 						}), /* @__PURE__ */ jsx("p", {
 							className: "dual-path-subtitle",
-							children: "Different goals. Tailored digital strategies."
+							children: "Whether you need more paying clients for your business or want to earn commissions through referrals."
 						})]
 					})
 				}), /* @__PURE__ */ jsxs("div", {
@@ -2636,7 +3097,7 @@ var DualPathCards = () => {
 										className: "dual-path-card-header",
 										children: [/* @__PURE__ */ jsx("div", {
 											className: "dual-path-icon-box dual-path-icon-business",
-											children: /* @__PURE__ */ jsx(BookOpen, {
+											children: /* @__PURE__ */ jsx(Building2, {
 												size: 20,
 												strokeWidth: 2
 											})
@@ -2644,16 +3105,16 @@ var DualPathCards = () => {
 											className: "dual-path-header-text",
 											children: [/* @__PURE__ */ jsx("h3", {
 												className: "dual-path-card-title",
-												children: "sBLOOM for Business"
+												children: "I Need More Revenue"
 											}), /* @__PURE__ */ jsx("p", {
 												className: "dual-path-card-tagline",
-												children: "For organizations & brands"
+												children: "For clinics, schools & professional firms"
 											})]
 										})]
 									}),
 									/* @__PURE__ */ jsx("h4", {
 										className: "dual-path-card-headline",
-										children: "Grow your business. Build your brand."
+										children: "Fill your pipeline with paying customers."
 									}),
 									/* @__PURE__ */ jsx("hr", { className: "dual-path-card-divider" }),
 									/* @__PURE__ */ jsxs("ul", {
@@ -2667,7 +3128,7 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-business"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "SEO and Google visibility"
+													children: "Internal Field Sales (FSM) team training"
 												})]
 											}),
 											/* @__PURE__ */ jsxs("li", {
@@ -2678,7 +3139,7 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-business"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "Websites and social media"
+													children: "Warm referrals from our Advisor network"
 												})]
 											}),
 											/* @__PURE__ */ jsxs("li", {
@@ -2689,7 +3150,7 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-business"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "Digital marketing and ads"
+													children: "High-converting website & Google Maps Top 3"
 												})]
 											})
 										]
@@ -2698,7 +3159,7 @@ var DualPathCards = () => {
 							}), /* @__PURE__ */ jsx(Link, {
 								to: "/contact",
 								className: "dual-path-card-btn",
-								children: /* @__PURE__ */ jsx("span", { children: "Grow Your Business →" })
+								children: /* @__PURE__ */ jsx("span", { children: "Grow My Revenue →" })
 							})]
 						})
 					}), /* @__PURE__ */ jsx(ScrollReveal, {
@@ -2718,7 +3179,7 @@ var DualPathCards = () => {
 										className: "dual-path-card-header",
 										children: [/* @__PURE__ */ jsx("div", {
 											className: "dual-path-icon-box dual-path-icon-creative",
-											children: /* @__PURE__ */ jsx(Users, {
+											children: /* @__PURE__ */ jsx(Handshake, {
 												size: 20,
 												strokeWidth: 2
 											})
@@ -2726,16 +3187,16 @@ var DualPathCards = () => {
 											className: "dual-path-header-text",
 											children: [/* @__PURE__ */ jsx("h3", {
 												className: "dual-path-card-title",
-												children: "Creative Workspace"
+												children: "Become an Advisor"
 											}), /* @__PURE__ */ jsx("p", {
 												className: "dual-path-card-tagline",
-												children: "Join our creative network"
+												children: "For doctors, teachers & community connectors"
 											})]
 										})]
 									}),
 									/* @__PURE__ */ jsx("h4", {
 										className: "dual-path-card-headline",
-										children: "Create with S-Bloom. Grow with us."
+										children: "Earn commissions for your introductions."
 									}),
 									/* @__PURE__ */ jsx("hr", { className: "dual-path-card-divider" }),
 									/* @__PURE__ */ jsxs("ul", {
@@ -2749,7 +3210,7 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-creative"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "Creative projects and collaboration"
+													children: "Generous commissions for verified client leads"
 												})]
 											}),
 											/* @__PURE__ */ jsxs("li", {
@@ -2760,7 +3221,7 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-creative"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "Opportunities to work with our team"
+													children: "No technical pitching required—just warm intros"
 												})]
 											}),
 											/* @__PURE__ */ jsxs("li", {
@@ -2771,7 +3232,7 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-creative"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "Share your skills and portfolio"
+													children: "Transparent tracking and automated payouts"
 												})]
 											})
 										]
@@ -2780,7 +3241,7 @@ var DualPathCards = () => {
 							}), /* @__PURE__ */ jsx(Link, {
 								to: "/creative-workspace",
 								className: "dual-path-card-btn",
-								children: /* @__PURE__ */ jsx("span", { children: "Explore Opportunities →" })
+								children: /* @__PURE__ */ jsx("span", { children: "Join as an Advisor →" })
 							})]
 						})
 					})]
@@ -2789,8 +3250,7 @@ var DualPathCards = () => {
 		]
 	});
 };
-//#endregion
-//#region src/components/home/HomePricingSection.tsx
+// src/components/home/HomePricingSection.tsx
 var SocialMediaIcon = () => /* @__PURE__ */ jsxs("svg", {
 	width: "23",
 	height: "23",
@@ -3078,8 +3538,7 @@ var HomePricingSection = () => {
 		})
 	});
 };
-//#endregion
-//#region src/data/clientLogos.ts
+// src/data/clientLogos.ts
 /**
 * Master List of Client Logos
 * You can add new client logos here anytime by simply adding a new item to this array!
@@ -3149,8 +3608,7 @@ var CLIENT_LOGOS = [
 		tagline: "Learn • Lead • Succeed"
 	}
 ];
-//#endregion
-//#region src/components/home/ClientLogoMarquee.tsx
+// src/components/home/ClientLogoMarquee.tsx
 var ClientLogoMarquee = ({ logos = CLIENT_LOGOS }) => {
 	const row1Logos = [...logos];
 	const row2Logos = [...logos.slice(3), ...logos.slice(0, 3)];
@@ -3270,8 +3728,7 @@ var ClientLogoMarquee = ({ logos = CLIENT_LOGOS }) => {
 		})
 	});
 };
-//#endregion
-//#region src/components/home/WhyBetter.tsx
+// src/components/home/WhyBetter.tsx
 var WhyBetter = () => {
 	return /* @__PURE__ */ jsx("section", {
 		className: "why-better-section",
@@ -3412,8 +3869,7 @@ var WhyBetter = () => {
 		})
 	});
 };
-//#endregion
-//#region src/components/home/BottomCornerScrollShowcase.tsx
+// src/components/home/BottomCornerScrollShowcase.tsx
 var STAGES$1 = [
 	{
 		id: 0,
@@ -3825,8 +4281,7 @@ var BottomCornerScrollShowcase = () => {
 		]
 	});
 };
-//#endregion
-//#region src/pages/HomePage.tsx
+// src/pages/HomePage.tsx
 var HomePage = () => {
 	return /* @__PURE__ */ jsxs("div", {
 		className: "home-page",
@@ -3955,23 +4410,23 @@ var HomePage = () => {
 									className: "hero-final-eyebrow",
 									children: [/* @__PURE__ */ jsx("span", {
 										className: "eyebrow-text",
-										children: "YOUR AI DIGITAL GROWTH PARTNER"
+										children: "✦ 360° HYBRID LEAD GENERATION"
 									}), /* @__PURE__ */ jsx("span", { className: "eyebrow-line" })]
 								}),
 								/* @__PURE__ */ jsxs("h1", {
 									className: "hero-final-title",
 									children: [
-										"We will help you",
+										"We help you get",
 										/* @__PURE__ */ jsx("br", {}),
 										/* @__PURE__ */ jsx("span", {
 											className: "hero-mocha-gold",
-											children: "bloom socially."
+											children: "more revenue."
 										})
 									]
 								}),
 								/* @__PURE__ */ jsx("p", {
 									className: "hero-final-desc",
-									children: "Build digital authority, trust, and growth for a growing community of expertise-led businesses."
+									children: "Not with vanity likes or meaningless views. We bring real, paying customers to your business—in person and online."
 								}),
 								/* @__PURE__ */ jsxs("div", {
 									className: "hero-final-buttons",
@@ -3990,10 +4445,10 @@ var HomePage = () => {
 											strokeLinejoin: "round",
 											children: /* @__PURE__ */ jsx("path", { d: "M5 12h14M12 5l7 7-7 7" })
 										})]
-									}), /* @__PURE__ */ jsx(Link, {
-										to: "/solutions",
+									}), /* @__PURE__ */ jsx("a", {
+										href: "#services-explorer",
 										className: "btn-final-secondary",
-										children: "See How We Help"
+										children: "Explore 4 Services"
 									})]
 								})
 							]
@@ -4007,7 +4462,8 @@ var HomePage = () => {
 			/* @__PURE__ */ jsxs("div", {
 				className: "home-lower-silk-wrapper",
 				children: [
-					/* @__PURE__ */ jsx(DigitalGrowthSystem, {}),
+					/* @__PURE__ */ jsx(ModularServicesExplorer, {}),
+					/* @__PURE__ */ jsx(FsmVsAdvisorComparison, {}),
 					/* @__PURE__ */ jsx(DualPathCards, {}),
 					/* @__PURE__ */ jsx(WhyBetter, {}),
 					/* @__PURE__ */ jsx(HomePricingSection, {}),
@@ -4020,13 +4476,13 @@ var HomePage = () => {
 								delay: 0,
 								children: [/* @__PURE__ */ jsx("h2", {
 									className: "home-final-cta-title",
-									children: "Your business has potential. Let’s help the right people see it."
+									children: "Your business deserves more revenue. Let’s build your pipeline."
 								}), /* @__PURE__ */ jsx("div", {
 									className: "home-final-cta-btn-wrap",
 									children: /* @__PURE__ */ jsxs(Link, {
 										to: "/contact",
 										className: "home-final-cta-btn",
-										children: [/* @__PURE__ */ jsx("span", { children: "Talk to sBLOOM" }), /* @__PURE__ */ jsx("span", {
+										children: [/* @__PURE__ */ jsx("span", { children: "Talk to sBLOOM About Revenue" }), /* @__PURE__ */ jsx("span", {
 											className: "cta-arrow",
 											children: "→"
 										})]
@@ -4041,34 +4497,32 @@ var HomePage = () => {
 		]
 	});
 };
-//#endregion
-//#region src/routes/home.tsx
+// src/routes/home.tsx
 var home_exports = /* @__PURE__ */ __exportAll({
 	default: () => home_default,
 	meta: () => meta$12
 });
 var meta$12 = () => {
 	return [
-		{ title: "sBLOOM | AI Digital Growth Partner" },
+		{ title: "sBLOOM | We Help You Get More Revenue" },
 		{
 			name: "description",
-			content: "S-Bloom is a specialized AI digital growth partner for expertise-led organizations."
+			content: "sBLOOM delivers qualified paying customers in person and online through Field Sales Marketing (FSM), trusted Advisors, conversion websites, and influencers."
 		},
 		{
 			property: "og:title",
-			content: "sBLOOM | AI Digital Growth Partner"
+			content: "sBLOOM | We Help You Get More Revenue"
 		},
 		{
 			property: "og:description",
-			content: "S-Bloom is a specialized AI digital growth partner for expertise-led organizations."
+			content: "sBLOOM delivers qualified paying customers in person and online through Field Sales Marketing (FSM), trusted Advisors, conversion websites, and influencers."
 		}
 	];
 };
 var home_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(HomePage, {});
 });
-//#endregion
-//#region src/pages/industries/EducationPage.tsx
+// src/pages/industries/EducationPage.tsx
 var EDUCATION_SERVICES = [
 	{
 		id: "web-dev",
@@ -4223,8 +4677,7 @@ var EducationPage = () => {
 		})]
 	});
 };
-//#endregion
-//#region src/routes/education.tsx
+// src/routes/education.tsx
 var education_exports = /* @__PURE__ */ __exportAll({
 	default: () => education_default,
 	meta: () => meta$11
@@ -4249,8 +4702,7 @@ var meta$11 = () => {
 var education_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(EducationPage, {});
 });
-//#endregion
-//#region src/pages/industries/HealthcarePage.tsx
+// src/pages/industries/HealthcarePage.tsx
 var HEALTHCARE_SERVICES = [
 	{
 		id: "web-dev",
@@ -4372,8 +4824,7 @@ var HealthcarePage = () => {
 		})]
 	});
 };
-//#endregion
-//#region src/routes/healthcare.tsx
+// src/routes/healthcare.tsx
 var healthcare_exports = /* @__PURE__ */ __exportAll({
 	default: () => healthcare_default,
 	meta: () => meta$10
@@ -4398,8 +4849,7 @@ var meta$10 = () => {
 var healthcare_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(HealthcarePage, {});
 });
-//#endregion
-//#region src/pages/industries/ProfessionalServicesPage.tsx
+// src/pages/industries/ProfessionalServicesPage.tsx
 var SECTOR_PILLARS = [
 	{
 		id: "it-companies",
@@ -4733,8 +5183,7 @@ var ConsultingProfessionalServicesPage = () => {
 		})]
 	});
 };
-//#endregion
-//#region src/routes/professional-services.tsx
+// src/routes/professional-services.tsx
 var professional_services_exports = /* @__PURE__ */ __exportAll({
 	default: () => professional_services_default,
 	meta: () => meta$9
@@ -4759,8 +5208,7 @@ var meta$9 = () => {
 var professional_services_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(ConsultingProfessionalServicesPage, {});
 });
-//#endregion
-//#region src/pages/solutions/SolutionsOverviewPage.tsx
+// src/pages/solutions/SolutionsOverviewPage.tsx
 var STAGES = [
 	{
 		id: "build",
@@ -5812,8 +6260,7 @@ var SolutionsOverviewPage = ({ initialSection }) => {
 		]
 	});
 };
-//#endregion
-//#region src/routes/solutions.tsx
+// src/routes/solutions.tsx
 var solutions_exports = /* @__PURE__ */ __exportAll({
 	default: () => solutions_default,
 	meta: () => meta$8
@@ -5838,8 +6285,7 @@ var meta$8 = () => {
 var solutions_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(SolutionsOverviewPage, {});
 });
-//#endregion
-//#region src/routes/build.tsx
+// src/routes/build.tsx
 var build_exports = /* @__PURE__ */ __exportAll({
 	default: () => build_default,
 	meta: () => meta$7
@@ -5864,8 +6310,7 @@ var meta$7 = () => {
 var build_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(SolutionsOverviewPage, { initialSection: "build" });
 });
-//#endregion
-//#region src/routes/create.tsx
+// src/routes/create.tsx
 var create_exports = /* @__PURE__ */ __exportAll({
 	default: () => create_default,
 	meta: () => meta$6
@@ -5890,8 +6335,7 @@ var meta$6 = () => {
 var create_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(SolutionsOverviewPage, { initialSection: "create" });
 });
-//#endregion
-//#region src/routes/promote.tsx
+// src/routes/promote.tsx
 var promote_exports = /* @__PURE__ */ __exportAll({
 	default: () => promote_default,
 	meta: () => meta$5
@@ -5916,8 +6360,7 @@ var meta$5 = () => {
 var promote_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(SolutionsOverviewPage, { initialSection: "promote" });
 });
-//#endregion
-//#region src/pages/AboutPage.tsx
+// src/pages/AboutPage.tsx
 var AboutPage = () => {
 	return /* @__PURE__ */ jsxs("div", {
 		className: "about-page",
@@ -6163,8 +6606,7 @@ var AboutPage = () => {
 		]
 	});
 };
-//#endregion
-//#region src/routes/about.tsx
+// src/routes/about.tsx
 var about_exports = /* @__PURE__ */ __exportAll({
 	default: () => about_default,
 	meta: () => meta$4
@@ -6189,8 +6631,7 @@ var meta$4 = () => {
 var about_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(AboutPage, {});
 });
-//#endregion
-//#region src/pages/HowItWorksPage.tsx
+// src/pages/HowItWorksPage.tsx
 var STEPS = [
 	{
 		id: "understand",
@@ -6570,8 +7011,7 @@ var HowItWorksPage = () => {
 		})]
 	});
 };
-//#endregion
-//#region src/routes/how-it-works.tsx
+// src/routes/how-it-works.tsx
 var how_it_works_exports = /* @__PURE__ */ __exportAll({
 	default: () => how_it_works_default,
 	meta: () => meta$3
@@ -6596,8 +7036,7 @@ var meta$3 = () => {
 var how_it_works_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(HowItWorksPage, {});
 });
-//#endregion
-//#region src/components/CreativeOrbit.tsx
+// src/components/CreativeOrbit.tsx
 var CreativeOrbit = () => {
 	return /* @__PURE__ */ jsxs("div", {
 		className: "co-wrapper",
@@ -6674,8 +7113,7 @@ var CreativeOrbit = () => {
 		]
 	});
 };
-//#endregion
-//#region \0@oxc-project+runtime@0.150.0/helpers/esm/asyncToGenerator.js
+// \0@oxc-project+runtime@0.156.0/helpers/esm/asyncToGenerator.js
 function asyncGeneratorStep(n, t, e, r, o, a, c) {
 	try {
 		var i = n[a](c), u = i.value;
@@ -6700,8 +7138,7 @@ function _asyncToGenerator(n) {
 		});
 	};
 }
-//#endregion
-//#region src/config/forms.ts
+// src/config/forms.ts
 var FORM_ENDPOINTS = {
 	CREATIVE_WORKSPACE: "https://script.google.com/macros/s/AKfycbw5_mDENuthcse6rvt1jyXbyIC8xxejJLk0WDPIemxzqRktW-wo4jdhXejR5riHCW61/exec",
 	CONTACT_LEADS: "https://script.google.com/macros/s/AKfycbyG_jBidpk5Qw25vlqU0P3Cz_64KwXRRECCQ5T-zVWLkiHfmM_M4RCUptaPNUv4AB7rKw/exec"
@@ -6725,8 +7162,7 @@ function _submitToGoogleSheet() {
 	});
 	return _submitToGoogleSheet.apply(this, arguments);
 }
-//#endregion
-//#region src/pages/CreativeWorkspacePage.tsx
+// src/pages/CreativeWorkspacePage.tsx
 var VideoEditorIcon = () => /* @__PURE__ */ jsxs("svg", {
 	width: "22",
 	height: "22",
@@ -7457,8 +7893,7 @@ var CreativeWorkspacePage = () => {
 		]
 	});
 };
-//#endregion
-//#region src/routes/creative-workspace.tsx
+// src/routes/creative-workspace.tsx
 var creative_workspace_exports = /* @__PURE__ */ __exportAll({
 	default: () => creative_workspace_default,
 	meta: () => meta$2
@@ -7483,8 +7918,7 @@ var meta$2 = () => {
 var creative_workspace_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(CreativeWorkspacePage, {});
 });
-//#endregion
-//#region src/routes/apply.tsx
+// src/routes/apply.tsx
 var apply_exports = /* @__PURE__ */ __exportAll({ default: () => apply_default });
 var apply_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(Navigate, {
@@ -7492,20 +7926,39 @@ var apply_default = UNSAFE_withComponentProps(function Route() {
 		replace: true
 	});
 });
-//#endregion
-//#region src/pages/ContactPage.tsx
+// src/pages/ContactPage.tsx
 var ContactPage = () => {
+	const [searchParams] = useSearchParams();
+	const preselectedService = searchParams.get("service");
 	const [formData, setFormData] = useState({
 		fullName: "",
 		organization: "",
 		email: "",
 		phone: "",
 		industry: "",
-		improve: ""
+		improve: "",
+		services: []
 	});
+	useEffect(() => {
+		if (preselectedService) {
+			const mapping = {
+				fsm: "Field Sales Marketing (FSM)",
+				advisors: "Advisor & Affiliate Network",
+				digital: "Core Digital Presence (Website, GBP & Social)",
+				influencers: "Influencer Partnerships"
+			};
+			if (mapping[preselectedService]) setFormData((prev) => _objectSpread2(_objectSpread2({}, prev), {}, { services: [mapping[preselectedService]] }));
+		}
+	}, [preselectedService]);
 	const [submitted, setSubmitted] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [errorMessage, setErrorMessage] = useState(null);
+	const toggleService = (serviceName) => {
+		setFormData((prev) => {
+			const exists = prev.services.includes(serviceName);
+			return _objectSpread2(_objectSpread2({}, prev), {}, { services: exists ? prev.services.filter((s) => s !== serviceName) : [...prev.services, serviceName] });
+		});
+	};
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormData((prev) => _objectSpread2(_objectSpread2({}, prev), {}, { [name]: value }));
@@ -7522,6 +7975,7 @@ var ContactPage = () => {
 					email: formData.email,
 					phone: formData.phone,
 					industry: formData.industry,
+					servicesNeeded: formData.services.length > 0 ? formData.services.join(", ") : "Not specified",
 					improve: formData.improve
 				});
 				setSubmitted(true);
@@ -7545,7 +7999,8 @@ var ContactPage = () => {
 			email: "",
 			phone: "",
 			industry: "",
-			improve: ""
+			improve: "",
+			services: []
 		});
 	};
 	return /* @__PURE__ */ jsxs("div", {
@@ -7934,7 +8389,7 @@ var ContactPage = () => {
 							children: [
 								"Let’s discuss ",
 								/* @__PURE__ */ jsx("br", {}),
-								"your digital ",
+								"your revenue ",
 								/* @__PURE__ */ jsx("br", {}),
 								/* @__PURE__ */ jsx("span", {
 									className: "title-gold-text",
@@ -7944,7 +8399,7 @@ var ContactPage = () => {
 						}),
 						/* @__PURE__ */ jsx("p", {
 							className: "contact-hero-desc",
-							children: "Tell us about your organization and what you are trying to achieve. We’ll help you identify the right opportunities and next steps."
+							children: "Tell us about your organization and the services you need. We'll show you exactly how we bring in qualified paying customers."
 						}),
 						/* @__PURE__ */ jsxs("div", {
 							className: "contact-process-list",
@@ -8232,6 +8687,60 @@ var ContactPage = () => {
 									/* @__PURE__ */ jsxs("div", {
 										className: "contact-field-group",
 										children: [/* @__PURE__ */ jsxs("label", {
+											className: "contact-field-label",
+											children: ["Services You Need ", /* @__PURE__ */ jsx("span", {
+												className: "contact-opt-tag",
+												children: "(Pick one or multiple)"
+											})]
+										}), /* @__PURE__ */ jsx("div", {
+											style: {
+												display: "grid",
+												gridTemplateColumns: "1fr",
+												gap: "8px",
+												marginTop: "6px"
+											},
+											children: [
+												"Field Sales Marketing (FSM)",
+												"Advisor & Affiliate Network",
+												"Core Digital Presence (Website, GBP & Social)",
+												"Influencer Partnerships",
+												"Complete Revenue Engine (All 4)"
+											].map((srv) => {
+												const isChecked = formData.services.includes(srv);
+												return /* @__PURE__ */ jsxs("div", {
+													onClick: () => toggleService(srv),
+													style: {
+														display: "flex",
+														alignItems: "center",
+														gap: "10px",
+														padding: "10px 14px",
+														borderRadius: "8px",
+														background: isChecked ? "rgba(217, 165, 46, 0.12)" : "rgba(36, 33, 42, 0.03)",
+														border: isChecked ? "1px solid rgba(217, 165, 46, 0.45)" : "1px solid rgba(36, 33, 42, 0.08)",
+														cursor: "pointer",
+														transition: "all 0.2s ease"
+													},
+													children: [isChecked ? /* @__PURE__ */ jsx(CheckSquare, {
+														size: 17,
+														color: "#BA7C3D"
+													}) : /* @__PURE__ */ jsx(Square, {
+														size: 17,
+														color: "#8C8894"
+													}), /* @__PURE__ */ jsx("span", {
+														style: {
+															fontSize: "0.88rem",
+															fontWeight: isChecked ? 600 : 500,
+															color: "#24212A"
+														},
+														children: srv
+													})]
+												}, srv);
+											})
+										})]
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: "contact-field-group",
+										children: [/* @__PURE__ */ jsxs("label", {
 											htmlFor: "improve",
 											className: "contact-field-label",
 											children: ["What would you like to improve? ", /* @__PURE__ */ jsx("span", {
@@ -8279,8 +8788,7 @@ var ContactPage = () => {
 		})]
 	});
 };
-//#endregion
-//#region src/routes/contact.tsx
+// src/routes/contact.tsx
 var contact_exports = /* @__PURE__ */ __exportAll({
 	default: () => contact_default,
 	meta: () => meta$1
@@ -8305,8 +8813,7 @@ var meta$1 = () => {
 var contact_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(ContactPage, {});
 });
-//#endregion
-//#region src/pages/ProofOfWorkPage.tsx
+// src/pages/ProofOfWorkPage.tsx
 var POW_CASES = {
 	gbp: {
 		id: "gbp",
@@ -8798,8 +9305,7 @@ var ProofOfWorkPage = () => {
 		})]
 	});
 };
-//#endregion
-//#region src/routes/proof-of-work.tsx
+// src/routes/proof-of-work.tsx
 var proof_of_work_exports = /* @__PURE__ */ __exportAll({
 	default: () => proof_of_work_default,
 	meta: () => meta
@@ -8824,12 +9330,11 @@ var meta = () => {
 var proof_of_work_default = UNSAFE_withComponentProps(function Route() {
 	return /* @__PURE__ */ jsx(ProofOfWorkPage, {});
 });
-//#endregion
-//#region \0virtual:react-router/server-manifest
+// \0virtual:react-router/server-manifest
 var server_manifest_default = {
 	"entry": {
-		"module": "/assets/entry.client-55VPP4AO.js",
-		"imports": ["/assets/jsx-runtime-BsyjEvTb.js"],
+		"module": "/assets/entry.client-BS6cNrMq.js",
+		"imports": ["/assets/jsx-runtime-AKzw2d0s.js"],
 		"css": []
 	},
 	"routes": {
@@ -8846,19 +9351,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/root-C32BTJnQ.js",
+			"module": "/assets/root-BDX3QaJa.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/briefcase-C-mYWWl7.js",
-				"/assets/camera-BhaOD3b7.js",
-				"/assets/globe--SxRTJ5b.js",
-				"/assets/phone-BVAH-4Jp.js",
-				"/assets/message-circle-DbQdYZKU.js",
-				"/assets/x-oUmXnxgy.js",
-				"/assets/proxy-FSJxybC7.js",
-				"/assets/AnimatePresence-C9vUs0fx.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/x-B0xctCwF.js",
+				"/assets/globe-BYQVoJRH.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/AnimatePresence-Bra90JGw.js",
+				"/assets/camera-CZGxJK2j.js",
+				"/assets/message-circle-DFhYphLF.js",
+				"/assets/briefcase-Bsna7ip3.js",
+				"/assets/phone-tnRz6jd5.js",
+				"/assets/arrow-right-DFZRfGxl.js"
 			],
 			"css": ["/assets/root-CPiTtpRq.css"],
 			"clientActionModule": void 0,
@@ -8879,30 +9384,30 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/home-BwDf12h-.js",
+			"module": "/assets/home-mYPDJ9fJ.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/camera-BhaOD3b7.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/globe--SxRTJ5b.js",
-				"/assets/circle-check-CH-gujLG.js",
-				"/assets/compass-DXamaL9V.js",
-				"/assets/file-text-Burlk_f5.js",
-				"/assets/film-UP_0_Rum.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/monitor-DYPScnuF.js",
-				"/assets/volume-x-D1yjPhwW.js",
-				"/assets/shield-check-DMuVmhW2.js",
-				"/assets/target-ZJMD494F.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/x-oUmXnxgy.js",
-				"/assets/proxy-FSJxybC7.js",
-				"/assets/AnimatePresence-C9vUs0fx.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/ScrollReveal-DvrOvUdv.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/AnimatePresence-Bra90JGw.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/circle-check-C_tL81HO.js",
+				"/assets/trending-up-DUgTnVFS.js",
+				"/assets/sparkles-B7J6p_Gr.js",
+				"/assets/target-DdHKP3cF.js",
+				"/assets/building-complex-BIXhDNFu.js",
+				"/assets/monitor-fcsEOsWe.js",
+				"/assets/shield-check-B5V8dSj1.js",
+				"/assets/camera-CZGxJK2j.js",
+				"/assets/film-SbULOAKU.js",
+				"/assets/file-text-C2acN3UQ.js",
+				"/assets/globe-BYQVoJRH.js",
+				"/assets/volume-x-C3rbH2Ha.js",
+				"/assets/x-B0xctCwF.js"
 			],
-			"css": ["/assets/home-DUIWnZL2.css"],
+			"css": ["/assets/home-gxVwJkC3.css"],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
 			"clientMiddlewareModule": void 0,
@@ -8921,17 +9426,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/education-BcLeNXlH.js",
+			"module": "/assets/education-HgnTu3il.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/map-pin-BIDWhrwv.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/monitor-DYPScnuF.js",
-				"/assets/trending-up-P5GqPifz.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/ScrollReveal-CXAisqc7.js",
-				"/assets/createLucideIcon-CwdIbnKb.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/ScrollReveal-DvrOvUdv.js",
+				"/assets/monitor-fcsEOsWe.js",
+				"/assets/map-pin-CYvoSCbf.js",
+				"/assets/trending-up-DUgTnVFS.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/createLucideIcon-BE_H3c3R.js"
 			],
 			"css": ["/assets/IndustryPage-DaNxJRA9.css"],
 			"clientActionModule": void 0,
@@ -8952,17 +9457,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/healthcare-BxsbbO1A.js",
+			"module": "/assets/healthcare-ChdiQ09w.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/map-pin-BIDWhrwv.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/monitor-DYPScnuF.js",
-				"/assets/trending-up-P5GqPifz.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/ScrollReveal-CXAisqc7.js",
-				"/assets/createLucideIcon-CwdIbnKb.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/ScrollReveal-DvrOvUdv.js",
+				"/assets/monitor-fcsEOsWe.js",
+				"/assets/map-pin-CYvoSCbf.js",
+				"/assets/trending-up-DUgTnVFS.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/createLucideIcon-BE_H3c3R.js"
 			],
 			"css": ["/assets/IndustryPage-DaNxJRA9.css"],
 			"clientActionModule": void 0,
@@ -8983,17 +9488,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/professional-services-Dg2Iw_MP.js",
+			"module": "/assets/professional-services-BsM35qIW.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/building-complex-CLCqMRLP.js",
-				"/assets/circle-check-CH-gujLG.js",
-				"/assets/compass-DXamaL9V.js",
-				"/assets/graduation-cap-rFlmePL7.js",
-				"/assets/shield-check-DMuVmhW2.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/ScrollReveal-DvrOvUdv.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/graduation-cap-s-cgdGLx.js",
+				"/assets/building-complex-BIXhDNFu.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/circle-check-C_tL81HO.js",
+				"/assets/shield-check-B5V8dSj1.js",
+				"/assets/sparkles-B7J6p_Gr.js"
 			],
 			"css": ["/assets/professional-services-Dp8oGgwr.css", "/assets/IndustryPage-DaNxJRA9.css"],
 			"clientActionModule": void 0,
@@ -9014,30 +9519,30 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/solutions-C_EcNiYT.js",
+			"module": "/assets/solutions-BdxsYnsH.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/SolutionsOverviewPage-6tU915vr.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-left-4APnbDld.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/image-NZ-E0ZXK.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/globe--SxRTJ5b.js",
-				"/assets/film-UP_0_Rum.js",
-				"/assets/heart-BKxYrWhg.js",
-				"/assets/map-pin-BIDWhrwv.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/message-circle-DbQdYZKU.js",
-				"/assets/palette-DcTihtN5.js",
-				"/assets/volume-x-D1yjPhwW.js",
-				"/assets/search-D5LEcq4c.js",
-				"/assets/shield-check-DMuVmhW2.js",
-				"/assets/target-ZJMD494F.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/proxy-FSJxybC7.js",
-				"/assets/AnimatePresence-C9vUs0fx.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/SolutionsOverviewPage-BvnweVHi.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/AnimatePresence-Bra90JGw.js",
+				"/assets/globe-BYQVoJRH.js",
+				"/assets/map-pin-CYvoSCbf.js",
+				"/assets/search-CxU6Fp7T.js",
+				"/assets/shield-check-B5V8dSj1.js",
+				"/assets/image-DLeEGosV.js",
+				"/assets/film-SbULOAKU.js",
+				"/assets/palette-BsrrOKF6.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/target-DdHKP3cF.js",
+				"/assets/chart-column-DCvkJaqP.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/arrow-left-CRjtIiys.js",
+				"/assets/volume-x-C3rbH2Ha.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/heart-BiB4zfQF.js",
+				"/assets/message-circle-DFhYphLF.js",
+				"/assets/ScrollReveal-DvrOvUdv.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-DagsXBOh.css"],
 			"clientActionModule": void 0,
@@ -9058,30 +9563,30 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/build-DXrBB1UG.js",
+			"module": "/assets/build-DWbmy4r4.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/SolutionsOverviewPage-6tU915vr.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-left-4APnbDld.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/image-NZ-E0ZXK.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/globe--SxRTJ5b.js",
-				"/assets/film-UP_0_Rum.js",
-				"/assets/heart-BKxYrWhg.js",
-				"/assets/map-pin-BIDWhrwv.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/message-circle-DbQdYZKU.js",
-				"/assets/palette-DcTihtN5.js",
-				"/assets/volume-x-D1yjPhwW.js",
-				"/assets/search-D5LEcq4c.js",
-				"/assets/shield-check-DMuVmhW2.js",
-				"/assets/target-ZJMD494F.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/proxy-FSJxybC7.js",
-				"/assets/AnimatePresence-C9vUs0fx.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/SolutionsOverviewPage-BvnweVHi.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/AnimatePresence-Bra90JGw.js",
+				"/assets/globe-BYQVoJRH.js",
+				"/assets/map-pin-CYvoSCbf.js",
+				"/assets/search-CxU6Fp7T.js",
+				"/assets/shield-check-B5V8dSj1.js",
+				"/assets/image-DLeEGosV.js",
+				"/assets/film-SbULOAKU.js",
+				"/assets/palette-BsrrOKF6.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/target-DdHKP3cF.js",
+				"/assets/chart-column-DCvkJaqP.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/arrow-left-CRjtIiys.js",
+				"/assets/volume-x-C3rbH2Ha.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/heart-BiB4zfQF.js",
+				"/assets/message-circle-DFhYphLF.js",
+				"/assets/ScrollReveal-DvrOvUdv.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-DagsXBOh.css"],
 			"clientActionModule": void 0,
@@ -9102,30 +9607,30 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/create-CipIZtaW.js",
+			"module": "/assets/create-CKEq-NHd.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/SolutionsOverviewPage-6tU915vr.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-left-4APnbDld.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/image-NZ-E0ZXK.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/globe--SxRTJ5b.js",
-				"/assets/film-UP_0_Rum.js",
-				"/assets/heart-BKxYrWhg.js",
-				"/assets/map-pin-BIDWhrwv.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/message-circle-DbQdYZKU.js",
-				"/assets/palette-DcTihtN5.js",
-				"/assets/volume-x-D1yjPhwW.js",
-				"/assets/search-D5LEcq4c.js",
-				"/assets/shield-check-DMuVmhW2.js",
-				"/assets/target-ZJMD494F.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/proxy-FSJxybC7.js",
-				"/assets/AnimatePresence-C9vUs0fx.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/SolutionsOverviewPage-BvnweVHi.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/AnimatePresence-Bra90JGw.js",
+				"/assets/globe-BYQVoJRH.js",
+				"/assets/map-pin-CYvoSCbf.js",
+				"/assets/search-CxU6Fp7T.js",
+				"/assets/shield-check-B5V8dSj1.js",
+				"/assets/image-DLeEGosV.js",
+				"/assets/film-SbULOAKU.js",
+				"/assets/palette-BsrrOKF6.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/target-DdHKP3cF.js",
+				"/assets/chart-column-DCvkJaqP.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/arrow-left-CRjtIiys.js",
+				"/assets/volume-x-C3rbH2Ha.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/heart-BiB4zfQF.js",
+				"/assets/message-circle-DFhYphLF.js",
+				"/assets/ScrollReveal-DvrOvUdv.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-DagsXBOh.css"],
 			"clientActionModule": void 0,
@@ -9146,30 +9651,30 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/promote-CRan_kQL.js",
+			"module": "/assets/promote-DYLL7nsv.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/SolutionsOverviewPage-6tU915vr.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-left-4APnbDld.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/image-NZ-E0ZXK.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/globe--SxRTJ5b.js",
-				"/assets/film-UP_0_Rum.js",
-				"/assets/heart-BKxYrWhg.js",
-				"/assets/map-pin-BIDWhrwv.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/message-circle-DbQdYZKU.js",
-				"/assets/palette-DcTihtN5.js",
-				"/assets/volume-x-D1yjPhwW.js",
-				"/assets/search-D5LEcq4c.js",
-				"/assets/shield-check-DMuVmhW2.js",
-				"/assets/target-ZJMD494F.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/proxy-FSJxybC7.js",
-				"/assets/AnimatePresence-C9vUs0fx.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/SolutionsOverviewPage-BvnweVHi.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/AnimatePresence-Bra90JGw.js",
+				"/assets/globe-BYQVoJRH.js",
+				"/assets/map-pin-CYvoSCbf.js",
+				"/assets/search-CxU6Fp7T.js",
+				"/assets/shield-check-B5V8dSj1.js",
+				"/assets/image-DLeEGosV.js",
+				"/assets/film-SbULOAKU.js",
+				"/assets/palette-BsrrOKF6.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/target-DdHKP3cF.js",
+				"/assets/chart-column-DCvkJaqP.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/arrow-left-CRjtIiys.js",
+				"/assets/volume-x-C3rbH2Ha.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/heart-BiB4zfQF.js",
+				"/assets/message-circle-DFhYphLF.js",
+				"/assets/ScrollReveal-DvrOvUdv.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-DagsXBOh.css"],
 			"clientActionModule": void 0,
@@ -9190,17 +9695,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/about-CWKcl1ML.js",
+			"module": "/assets/about-C0Lfy9b3.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/briefcase-C-mYWWl7.js",
-				"/assets/graduation-cap-rFlmePL7.js",
-				"/assets/heart-BKxYrWhg.js",
-				"/assets/target-ZJMD494F.js",
-				"/assets/trending-up-P5GqPifz.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/ScrollReveal-CXAisqc7.js",
-				"/assets/createLucideIcon-CwdIbnKb.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/ScrollReveal-DvrOvUdv.js",
+				"/assets/target-DdHKP3cF.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/heart-BiB4zfQF.js",
+				"/assets/graduation-cap-s-cgdGLx.js",
+				"/assets/briefcase-Bsna7ip3.js",
+				"/assets/trending-up-DUgTnVFS.js",
+				"/assets/createLucideIcon-BE_H3c3R.js"
 			],
 			"css": ["/assets/about-5IYE-Zsv.css"],
 			"clientActionModule": void 0,
@@ -9221,17 +9726,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/how-it-works-Cdi_pshQ.js",
+			"module": "/assets/how-it-works-BVccVbZv.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-left-4APnbDld.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/lightbulb-CPfvZZEL.js",
-				"/assets/search-D5LEcq4c.js",
-				"/assets/trending-up-P5GqPifz.js",
-				"/assets/proxy-FSJxybC7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/arrow-left-CRjtIiys.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/search-CxU6Fp7T.js",
+				"/assets/chart-column-DCvkJaqP.js",
+				"/assets/lightbulb-DY_jZ774.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/trending-up-DUgTnVFS.js"
 			],
 			"css": ["/assets/how-it-works-BuG3iXEo.css"],
 			"clientActionModule": void 0,
@@ -9252,21 +9757,21 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/creative-workspace-BCunGaUy.js",
+			"module": "/assets/creative-workspace-Byr2IRFr.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/briefcase-C-mYWWl7.js",
-				"/assets/forms-B3Rd3lDs.js",
-				"/assets/circle-check-CH-gujLG.js",
-				"/assets/file-text-Burlk_f5.js",
-				"/assets/film-UP_0_Rum.js",
-				"/assets/phone-BVAH-4Jp.js",
-				"/assets/megaphone-CuRaGHmu.js",
-				"/assets/palette-DcTihtN5.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/ScrollReveal-DvrOvUdv.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/circle-check-C_tL81HO.js",
+				"/assets/forms-xn3B5Gv_.js",
+				"/assets/phone-tnRz6jd5.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/briefcase-Bsna7ip3.js",
+				"/assets/megaphone-BLv4WFr5.js",
+				"/assets/palette-BsrrOKF6.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/film-SbULOAKU.js",
+				"/assets/file-text-C2acN3UQ.js"
 			],
 			"css": ["/assets/creative-workspace-DgzZnt3a.css"],
 			"clientActionModule": void 0,
@@ -9287,8 +9792,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/apply-BtdK-Xzp.js",
-			"imports": ["/assets/jsx-runtime-BsyjEvTb.js"],
+			"module": "/assets/apply-B-oIkRYq.js",
+			"imports": ["/assets/jsx-runtime-AKzw2d0s.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -9308,18 +9813,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/contact-BwRd8uxJ.js",
+			"module": "/assets/contact-TEiAqGYO.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/building-complex-CLCqMRLP.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/forms-B3Rd3lDs.js",
-				"/assets/circle-check-CH-gujLG.js",
-				"/assets/file-text-Burlk_f5.js",
-				"/assets/lightbulb-CPfvZZEL.js",
-				"/assets/phone-BVAH-4Jp.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/forms-xn3B5Gv_.js",
+				"/assets/building-complex-BIXhDNFu.js",
+				"/assets/phone-tnRz6jd5.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/lightbulb-DY_jZ774.js",
+				"/assets/chart-column-DCvkJaqP.js",
+				"/assets/file-text-C2acN3UQ.js",
+				"/assets/circle-check-C_tL81HO.js"
 			],
 			"css": ["/assets/contact-t5E5GrSm.css"],
 			"clientActionModule": void 0,
@@ -9340,27 +9845,27 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/proof-of-work-DKFcEMnO.js",
+			"module": "/assets/proof-of-work-BHris_Nf.js",
 			"imports": [
-				"/assets/jsx-runtime-BsyjEvTb.js",
-				"/assets/createLucideIcon-CwdIbnKb.js",
-				"/assets/arrow-right-15U-iPYb.js",
-				"/assets/image-NZ-E0ZXK.js",
-				"/assets/camera-BhaOD3b7.js",
-				"/assets/chart-column-CkOwwm5a.js",
-				"/assets/circle-check-CH-gujLG.js",
-				"/assets/file-text-Burlk_f5.js",
-				"/assets/film-UP_0_Rum.js",
-				"/assets/heart-BKxYrWhg.js",
-				"/assets/map-pin-BIDWhrwv.js",
-				"/assets/monitor-DYPScnuF.js",
-				"/assets/search-D5LEcq4c.js",
-				"/assets/target-ZJMD494F.js",
-				"/assets/trending-up-P5GqPifz.js",
-				"/assets/users-C2my3pE2.js",
-				"/assets/proxy-FSJxybC7.js",
-				"/assets/AnimatePresence-C9vUs0fx.js",
-				"/assets/ScrollReveal-CXAisqc7.js"
+				"/assets/jsx-runtime-AKzw2d0s.js",
+				"/assets/arrow-right-DFZRfGxl.js",
+				"/assets/trending-up-DUgTnVFS.js",
+				"/assets/users-CzeG8PJL.js",
+				"/assets/createLucideIcon-BE_H3c3R.js",
+				"/assets/camera-CZGxJK2j.js",
+				"/assets/file-text-C2acN3UQ.js",
+				"/assets/map-pin-CYvoSCbf.js",
+				"/assets/monitor-fcsEOsWe.js",
+				"/assets/search-CxU6Fp7T.js",
+				"/assets/circle-check-C_tL81HO.js",
+				"/assets/image-DLeEGosV.js",
+				"/assets/film-SbULOAKU.js",
+				"/assets/heart-BiB4zfQF.js",
+				"/assets/target-DdHKP3cF.js",
+				"/assets/chart-column-DCvkJaqP.js",
+				"/assets/proxy-CS7o4FWY.js",
+				"/assets/AnimatePresence-Bra90JGw.js",
+				"/assets/ScrollReveal-DvrOvUdv.js"
 			],
 			"css": ["/assets/proof-of-work-CCyIXzzI.css"],
 			"clientActionModule": void 0,
@@ -9369,12 +9874,11 @@ var server_manifest_default = {
 			"hydrateFallbackModule": void 0
 		}
 	},
-	"url": "/assets/manifest-631bb4c8.js",
-	"version": "631bb4c8",
+	"url": "/assets/manifest-601e0c9c.js",
+	"version": "601e0c9c",
 	"sri": void 0
 };
-//#endregion
-//#region \0virtual:react-router/server-build
+// \0virtual:react-router/server-build
 var assetsBuildDirectory = "build\\client";
 var basename = "/";
 var future = {
@@ -9531,5 +10035,4 @@ var routes = {
 	}
 };
 var allowedActionOrigins = false;
-//#endregion
 export { allowedActionOrigins, server_manifest_default as assets, assetsBuildDirectory, basename, entry, future, isSpaMode, prerender, publicPath, routeDiscovery, routes, ssr };

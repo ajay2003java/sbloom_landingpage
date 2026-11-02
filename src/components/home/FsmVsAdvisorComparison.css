@@ -1,0 +1,251 @@
+/* ==========================================================================
+   FSM VS ADVISOR COMPARISON STYLES
+   ========================================================================== */
+
+.fsm-adv-section {
+  padding: 60px 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.fsm-adv-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 40px;
+}
+
+.fsm-adv-eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fsm-adv-eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold-primary, #D9A52E);
+  opacity: 0.6;
+}
+
+.fsm-adv-eyebrow {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold-primary, #D9A52E);
+  text-transform: uppercase;
+}
+
+.fsm-adv-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text-primary, #24212A);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.fsm-adv-subtitle {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #5a5763);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.fsm-adv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fsm-adv-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 38px 34px;
+  box-shadow: 0 14px 36px rgba(36, 33, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.fsm-adv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(36, 33, 42, 0.09);
+}
+
+.card-fsm {
+  border: 1px solid rgba(217, 165, 46, 0.28);
+}
+
+.card-advisor {
+  border: 1px solid rgba(36, 33, 42, 0.12);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFEFC 100%);
+}
+
+.fsm-card-badge-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.fsm-badge-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.badge-internal {
+  background: rgba(36, 33, 42, 0.06);
+  color: #24212A;
+  border: 1px solid rgba(36, 33, 42, 0.12);
+}
+
+.badge-external {
+  background: rgba(217, 165, 46, 0.14);
+  color: #BA7C3D;
+  border: 1px solid rgba(217, 165, 46, 0.3);
+}
+
+.fsm-badge-number {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(36, 33, 42, 0.25);
+}
+
+.fsm-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.fsm-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-fsm {
+  background: #FFF7E8;
+  color: #BA7C3D;
+  border: 1px solid rgba(217, 165, 46, 0.35);
+}
+
+.icon-advisor {
+  background: #24212A;
+  color: var(--gold-primary, #D9A52E);
+}
+
+.fsm-card-name {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary, #24212A);
+  line-height: 1.25;
+}
+
+.fsm-card-sub {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #5a5763);
+  font-weight: 500;
+}
+
+.fsm-card-description {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #5a5763);
+  margin-bottom: 22px;
+}
+
+.fsm-card-divider {
+  border: none;
+  height: 1px;
+  background: rgba(36, 33, 42, 0.08);
+  margin-bottom: 22px;
+}
+
+/* Points list */
+.fsm-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.fsm-point-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.point-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(36, 33, 42, 0.04);
+  color: var(--text-primary, #24212A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.point-title {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary, #24212A);
+  margin-bottom: 2px;
+}
+
+.point-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #5a5763);
+  line-height: 1.48;
+}
+
+.fsm-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.btn-fsm-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #BA7C3D;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.btn-fsm-link:hover {
+  gap: 12px;
+  color: #935F2D;
+}
+
+@media (max-width: 860px) {
+  .fsm-adv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

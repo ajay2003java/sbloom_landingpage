@@ -2,12 +2,18 @@
 
 ## 1. Project Overview
 
-sBLOOM is an industry-focused marketing and growth partner, acting as a gateway rather than a generic agency directory. The platform is designed with a premium, editorial visual direction that maintains two extremely clear user journeys: Client Growth and Creative Workspace.
+sBLOOM is an industry-focused **Revenue & Lead Generation Partner** for expertise-led businesses in Healthcare, Education, and Consulting / Professional Services. Unlike generic digital agencies selling vanity metrics (likes, impressions, basic posts), sBLOOM's core value proposition is:
+> **"We help you get more revenue."**
 
-### Core Service Framework (BUILD · CREATE · PROMOTE)
-- **BUILD:** SEO, Google Business Profile, Website, Social Media.
-- **CREATE:** Content Strategy, Social Media Content, Video Production, Ad Creative.
-- **PROMOTE:** Paid Ads, Promotions, Creator Collaborations, Audience Growth.
+The platform operates on a **Dual-Engine Model (In-Person + Digital)** delivering real paying customers through 4 modular services:
+
+### Core 4 Modular Revenue Services:
+1. **Field Sales Marketing (FSM)** *(In-Person · Internal Team Support)*: Training, pitch coaching, objection handling, and performance commission structures to empower the client's internal sales/field reps.
+2. **Advisor & Affiliate Network** *(In-Person · External Referral System)*: Curated network of trusted doctors, teachers, executives, and community leaders who refer warm clients for a commission without needing technical product knowledge.
+3. **Core Digital Presence** *(Digital · Internal Conversion Assets)*: High-converting website, Google Business Profile (GBP) Top 3 local maps dominance, and active social media proof.
+4. **Influencer Partnerships** *(Digital · External Creator Amplification)*: Vetted local and domain creators sharing authentic recommendations to drive targeted inbound inquiries.
+
+*Clients have full modular freedom: they can choose any single service or combine all four into a unified revenue engine.*
 
 ---
 
@@ -15,20 +21,18 @@ sBLOOM is an industry-focused marketing and growth partner, acting as a gateway 
 
 The platform routes users through two primary funnels starting from the Homepage:
 
-### Journey A: The Client Route
-Targeting individual Experts and Institutions/Organizations in Healthcare, Education, and Consulting.
+### Journey A: The Client Route (Revenue Growth)
+Targeting clinics, hospitals, schools, academies, and consulting firms looking to generate qualified paying clients.
+1. **Home / Hero:** Clear value proposition: *"We help you get more revenue."*
+2. **Modular Services Explorer:** Interactive 4-service switcher explaining how sBLOOM is helpful in each service with revenue impact.
+3. **FSM vs. Advisor Comparison:** Visual breakdown of on-ground internal sales enablement vs. external community referrals.
+4. **Custom Inquiry:** Direct selection of needed services into the lead capture form (`/contact?service=[id]`).
 
-1. **Home / Gateway:** User selects "I’m an Expert / Institution looking to grow" and chooses their industry.
-2. **Industry Landing (`/industries/:industry`):** Contextual page for the chosen industry.
-3. **Entity Selection (`/industries/:industry/select`):** User selects either "I’m an Expert" or "We’re an Institution".
-4. **Tailored Strategy (`/industries/:industry/:entity`):** Displays a highly contextualized strategy with capabilities, proof, and a final CTA (Consultation Modal) to start a conversation.
-
-### Journey B: The Partner Route
-Targeting technical and creative freelancers (editors, videographers, designers, content writers).
-
-1. **Home / Gateway:** User selects "Join our Creative Workspace"
-2. **Creative Workspace (`/creative-workspace`):** Details the workflow (sBLOOM secures client -> Partner executes -> sBLOOM deploys).
-3. **Partner Apply (`/creative-workspace/apply`):** Application form to join the partner network.
+### Journey B: The Partner / Advisor Route (Commission Network)
+Targeting trusted professionals, educators, and community connectors who want to monetize their network through warm introductions.
+1. **Home / Gateway:** User selects *"Become an Advisor"* or *"Join as an Advisor & Earn Commission"*.
+2. **Advisor Network Portal (`/creative-workspace`):** Transparent explanation of the commission model, zero technical selling burden, and lead submission workflow.
+3. **Registration:** Direct onboarding form for referral partners.
 
 ---
 
