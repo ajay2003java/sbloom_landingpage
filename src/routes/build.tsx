@@ -3,13 +3,13 @@ import { SolutionsOverviewPage } from "../pages/solutions/SolutionsOverviewPage"
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "BUILD — Help People Find Your Business | sBLOOM Solutions" },
-    { name: "description", content: "Website design, Google Business Profile, and SEO solutions." },
-    { property: "og:title", content: "BUILD — Help People Find Your Business | sBLOOM Solutions" },
-    { property: "og:description", content: "Website design, Google Business Profile, and SEO solutions." },
+    { title: "Website & Google Maps Top 3 | sBLOOM Revenue Services" },
+    { name: "description", content: "Capture high-intent local searchers with a conversion-engineered website and Google Business Profile Top 3 ranking." },
+    { property: "og:title", content: "Website & Google Maps Top 3 | sBLOOM Revenue Services" },
+    { property: "og:description", content: "Capture high-intent local searchers with a conversion-engineered website and Google Business Profile Top 3 ranking." },
   ];
 };
 
 export default function Route() {
-  return <SolutionsOverviewPage initialSection="build" />;
+  return <SolutionsOverviewPage initialSection="digital" />;
 }

@@ -3,10 +3,10 @@ import { SolutionsOverviewPage } from "../pages/solutions/SolutionsOverviewPage"
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Our Solutions | sBLOOM" },
-    { name: "description", content: "Discover how we help organizations build, create, and promote." },
-    { property: "og:title", content: "Our Solutions | sBLOOM" },
-    { property: "og:description", content: "Discover how we help organizations build, create, and promote." },
+    { title: "Revenue & 360° Lead Generation Services | sBLOOM" },
+    { name: "description", content: "We help you get more revenue. Field sales marketing, advisor referral network, high-conversion website & Google Maps Top 3, and authentic influencer partnerships." },
+    { property: "og:title", content: "Revenue & 360° Lead Generation Services | sBLOOM" },
+    { property: "og:description", content: "We help you get more revenue. Field sales marketing, advisor referral network, high-conversion website & Google Maps Top 3, and authentic influencer partnerships." },
   ];
 };
 

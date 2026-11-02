@@ -6,39 +6,38 @@ import {
   MapPin, 
   Search, 
   ShieldCheck, 
-  Image as ImageIcon, 
   Film, 
-  Palette, 
-  Calendar, 
   Megaphone, 
   Target, 
   BarChart3,
   Users, 
   ArrowRight,
   ArrowLeft,
-  Play,
-  Clock,
-  Leaf,
   Heart,
-  MessageCircle,
+  PhoneCall,
+  Award,
   Send,
-  Bookmark,
-  ChevronDown,
   Volume2,
   VolumeX,
+  UserCheck,
   type LucideIcon
 } from 'lucide-react';
 import { ScrollReveal } from '../../components/ScrollReveal';
 import './SolutionsPage.css';
 
 interface SolutionsPageProps {
-  initialSection?: 'build' | 'create' | 'promote' | 'grow';
+  initialSection?: string;
 }
 
+export type StageId = 'fsm' | 'advisors' | 'digital' | 'influencers';
+
 interface StageData {
-  id: 'build' | 'create' | 'promote' | 'grow';
+  id: StageId;
   num: string;
   label: string;
+  shortLabel: string;
+  category: string;
+  tagline: string;
   titlePrimary: string;
   titleAccent: string;
   lead: string;
@@ -51,132 +50,162 @@ interface StageData {
   }>;
 }
 
+const ALIAS_MAP: Record<string, number> = {
+  fsm: 0,
+  field: 0,
+  'field-sales': 0,
+  advisors: 1,
+  advisor: 1,
+  affiliate: 1,
+  digital: 2,
+  build: 2,
+  website: 2,
+  gbp: 2,
+  influencers: 3,
+  influencer: 3,
+  create: 3,
+  promote: 3,
+  grow: 0,
+};
+
 const STAGES: StageData[] = [
   {
-    id: 'build',
+    id: 'fsm',
     num: '01',
-    label: 'BUILD',
-    titlePrimary: 'Help people find',
-    titleAccent: 'your business.',
-    lead: 'Build a strong online presence so the right people can discover you and your services.',
-    ctaText: 'Build Your Foundation',
-    ctaLink: '/contact?interest=build',
+    label: 'FIELD SALES (FSM)',
+    shortLabel: 'Field Sales',
+    category: 'In-Person · Internal Team Support',
+    tagline: 'Internal Feet-on-the-Street',
+    titlePrimary: 'Train and equip your team to',
+    titleAccent: 'close more on-ground deals.',
+    lead: 'We embed with your internal sales and field staff, giving them pitch coaching, objection-handling scripts, and structured outreach routines to bring in paying clients.',
+    ctaText: 'Inquire for Field Sales Support',
+    ctaLink: '/contact?service=fsm',
     services: [
       {
-        title: 'Website Development',
-        desc: 'Clean, fast and professional website.',
-        icon: Globe,
-      },
-      {
-        title: 'Google Business Profile',
-        desc: 'Get found on Google Search & Maps.',
-        icon: MapPin,
-      },
-      {
-        title: 'SEO & Search Visibility',
-        desc: 'Improve your search rankings.',
-        icon: Search,
-      },
-      {
-        title: 'Brand Presence',
-        desc: 'Keep your information consistent.',
-        icon: ShieldCheck,
-      },
-    ],
-  },
-  {
-    id: 'create',
-    num: '02',
-    label: 'CREATE',
-    titlePrimary: 'Communicate your expertise with',
-    titleAccent: 'engaging content.',
-    lead: 'Create content that showcases your expertise and helps you connect with your audience.',
-    ctaText: 'Create Your Content',
-    ctaLink: '/contact?interest=create',
-    services: [
-      {
-        title: 'Social Media Content',
-        desc: 'Plan and create relevant content.',
-        icon: ImageIcon,
-      },
-      {
-        title: 'Reels and Videos',
-        desc: 'Short, engaging videos.',
-        icon: Film,
-      },
-      {
-        title: 'Graphics & Creative Design',
-        desc: 'On-brand visuals.',
-        icon: Palette,
-      },
-      {
-        title: 'Content Strategy',
-        desc: 'Plan and schedule your content.',
-        icon: Calendar,
-      },
-    ],
-  },
-  {
-    id: 'promote',
-    num: '03',
-    label: 'PROMOTE',
-    titlePrimary: 'Reach the people',
-    titleAccent: 'who matter.',
-    lead: 'Run targeted campaigns to reach the right audience and generate quality leads.',
-    ctaText: 'Promote Your Business',
-    ctaLink: '/contact?interest=promote',
-    services: [
-      {
-        title: 'Meta Ads',
-        desc: 'Reach the right audience.',
-        icon: Megaphone,
-      },
-      {
-        title: 'Google Ads',
-        desc: 'Show up when people search.',
-        icon: Search,
-      },
-      {
-        title: 'Campaign Strategy',
-        desc: 'Plan and manage campaigns.',
-        icon: Target,
-      },
-      {
-        title: 'Ad Performance',
-        desc: 'Track results and improve over time.',
-        icon: BarChart3,
-      },
-    ],
-  },
-  {
-    id: 'grow',
-    num: '04',
-    label: 'GROW',
-    titlePrimary: 'Drive sustainable',
-    titleAccent: 'growth.',
-    lead: 'Track performance, get insights, and keep improving your digital presence.',
-    ctaText: 'Talk to sBLOOM About Growth',
-    ctaLink: '/contact',
-    services: [
-      {
-        title: 'Performance Tracking',
-        desc: 'Monitor key metrics.',
-        icon: BarChart3,
-      },
-      {
-        title: 'Insights & Reporting',
-        desc: "Understand what's working.",
-        icon: Clock,
-      },
-      {
-        title: 'Strategy & Improvements',
-        desc: 'Find new opportunities.',
+        title: 'Sales Team Field Coaching',
+        desc: 'Battle-tested pitch decks, live objection drills, and on-ground presentation coaching.',
         icon: Users,
       },
       {
-        title: 'Ongoing Support',
-        desc: 'Continuous guidance.',
-        icon: Leaf,
+        title: 'Outreach & Territory Playbooks',
+        desc: 'Daily target mapping, structured visit schedules, and geographic follow-up routines.',
+        icon: Target,
+      },
+      {
+        title: 'Objection-Handling Scripts',
+        desc: 'Proven answers to tough buyer doubts, pricing questions, and trust hurdles.',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'Commission Incentive Structures',
+        desc: 'Clear performance tier rewards designed to motivate your staff to close aggressively.',
+        icon: BarChart3,
+      },
+    ],
+  },
+  {
+    id: 'advisors',
+    num: '02',
+    label: 'ADVISOR NETWORK',
+    shortLabel: 'Advisor Network',
+    category: 'In-Person · External Referral System',
+    tagline: 'External Warm Connectors',
+    titlePrimary: 'Trusted community leaders sending you',
+    titleAccent: 'warm paying clients.',
+    lead: 'A curated network of respected doctors, educators, executives, and community connectors who introduce warm referrals from their network for a commission.',
+    ctaText: 'Inquire for Advisor Network',
+    ctaLink: '/contact?service=advisors',
+    services: [
+      {
+        title: 'Local Connector Recruitment',
+        desc: 'Identify and onboard respected local authorities, doctors, professors, and professionals.',
+        icon: UserCheck,
+      },
+      {
+        title: 'Zero Technical Selling Burden',
+        desc: 'Advisors introduce warm leads based on personal trust; your team handles the closing.',
+        icon: Heart,
+      },
+      {
+        title: 'Automated Lead Attribution',
+        desc: 'Transparent tracking of who introduced each customer with real-time payout visibility.',
+        icon: Search,
+      },
+      {
+        title: 'Commission Payout Management',
+        desc: 'Seamless, structured revenue-share disbursements that keep your referral partners loyal.',
+        icon: Award,
+      },
+    ],
+  },
+  {
+    id: 'digital',
+    num: '03',
+    label: 'WEBSITE & GOOGLE',
+    shortLabel: 'Website & Google',
+    category: 'Digital · Internal Conversion Assets',
+    tagline: 'Inbound Local Dominance',
+    titlePrimary: 'Turn people searching for you into',
+    titleAccent: 'paying customers.',
+    lead: 'A conversion-engineered website, Top 3 ranking on Google Maps (GBP), and active social media proof designed to capture every local search inquiry.',
+    ctaText: 'Inquire for Website & Google Dominance',
+    ctaLink: '/contact?service=digital',
+    services: [
+      {
+        title: 'High-Conversion Website',
+        desc: 'Fast, mobile-first design built specifically to drive phone calls and consultation bookings.',
+        icon: Globe,
+      },
+      {
+        title: 'Google Business Profile (Map Pack Top 3)',
+        desc: 'Rank #1–3 on Google Maps when high-intent local buyers search for your services.',
+        icon: MapPin,
+      },
+      {
+        title: 'Active Social Media Authority',
+        desc: 'Consistent proof, patient/student case studies, and answers to common buying doubts.',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'Direct WhatsApp & Call Funnels',
+        desc: 'Frictionless routing from search result directly to your intake desk or sales line.',
+        icon: PhoneCall,
+      },
+    ],
+  },
+  {
+    id: 'influencers',
+    num: '04',
+    label: 'INFLUENCER REACH',
+    shortLabel: 'Influencer Reach',
+    category: 'Digital · External Creator Amplification',
+    tagline: 'Targeted Niche Creators',
+    titlePrimary: 'Trusted domain voices telling their audience to',
+    titleAccent: 'choose your business.',
+    lead: 'Targeted domain and local creators sharing authentic recommendations and walkthroughs that direct pre-warmed followers straight to your consultation desk.',
+    ctaText: 'Inquire for Influencer Partnerships',
+    ctaLink: '/contact?service=influencers',
+    services: [
+      {
+        title: 'Matching Respected Voices',
+        desc: 'Curated niche domain creators whose audience matches your exact target customer profile.',
+        icon: Megaphone,
+      },
+      {
+        title: 'Authentic Educational Storytelling',
+        desc: 'Real walkthroughs and experience reviews instead of scripted, unconvincing ad reads.',
+        icon: Film,
+      },
+      {
+        title: 'Campaign Tracking & Attribution',
+        desc: 'Dedicated landing links, promo codes, and real-time inquiry attribution tracking.',
+        icon: Target,
+      },
+      {
+        title: 'Direct Consultation Booking Funnels',
+        desc: 'Channel followers straight from video view to your booking or inquiry desk.',
+        icon: Send,
       },
     ],
   },
@@ -189,7 +218,7 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
 
   const activeStage = STAGES[activeIdx];
 
-  // State & Ref for Promote Section Video (IMG_3694.mp4)
+  // Video State & Ref for Influencer Section (IMG_3694.mp4)
   const [isPromoteMuted, setIsPromoteMuted] = useState(true);
   const [isPromotePlaying, setIsPromotePlaying] = useState(true);
   const promoteVideoRef = useRef<HTMLVideoElement>(null);
@@ -230,10 +259,14 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
 
   // Sync with URL hash or initialSection prop
   useEffect(() => {
-    const hash = (initialSection || location.hash.replace('#', '')).toLowerCase();
-    const foundIdx = STAGES.findIndex((s) => s.id === hash);
-    if (foundIdx !== -1) {
-      goToStage(foundIdx);
+    const raw = (initialSection || location.hash.replace('#', '')).toLowerCase();
+    if (ALIAS_MAP[raw] !== undefined) {
+      goToStage(ALIAS_MAP[raw]);
+    } else {
+      const foundIdx = STAGES.findIndex((s) => s.id === raw);
+      if (foundIdx !== -1) {
+        goToStage(foundIdx);
+      }
     }
   }, [initialSection, location.hash]);
 
@@ -270,22 +303,22 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
       <div className="sol-bg-mesh" aria-hidden="true" />
 
       {/* =================================================================
-         1. HERO INTRO
+         1. HERO INTRO — REVENUE FIRST
          ================================================================= */}
       <section className="sol-hero-intro">
         <div className="sol-container">
           <ScrollReveal delay={0}>
             <div className="sol-eyebrow-wrap">
               <span className="sol-eyebrow-line" />
-              <span className="sol-eyebrow">OUR SOLUTIONS</span>
+              <span className="sol-eyebrow">360° HYBRID REVENUE MODEL</span>
               <span className="sol-eyebrow-line" />
             </div>
             <h1 className="sol-hero-title">
-              From Foundational Setup to{' '}
-              <span className="sol-title-accent">Sustainable Growth.</span>
+              Four distinct services built to{' '}
+              <span className="sol-title-accent">generate more revenue.</span>
             </h1>
             <p className="sol-hero-desc">
-              We help good businesses become discoverable, trusted, and chosen through a structured, four-phase digital process.
+              Not vanity likes or meaningless views. We bring real, paying customers to your business—in person and online. Choose any single service or combine all four.
             </p>
           </ScrollReveal>
         </div>
@@ -298,13 +331,12 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
         <div className="sol-viewport">
           <div className="sol-container">
             {/* =============================================================
-               3. PILL SWITCHER NAV (BUILD, CREATE, PROMOTE, GROW) — MATCHING IMAGE 1
+               3. PILL SWITCHER NAV (FIELD SALES, ADVISORS, WEBSITE, INFLUENCERS)
                ============================================================= */}
             <div className="sol-pill-nav-wrap">
-              <div className="sol-pill-nav" role="tablist" aria-label="Solutions Stages">
+              <div className="sol-pill-nav" role="tablist" aria-label="Revenue Services">
                 {STAGES.map((stg, idx) => {
                   const isActive = activeIdx === idx;
-                  const displayLabel = stg.label.charAt(0) + stg.label.slice(1).toLowerCase();
 
                   return (
                     <button
@@ -333,7 +365,7 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                           </svg>
                         </div>
                       )}
-                      <span>{displayLabel}</span>
+                      <span>{stg.shortLabel}</span>
                     </button>
                   );
                 })}
@@ -341,7 +373,7 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
             </div>
 
             {/* =============================================================
-               4. THE PRESENTATION CARD (COMPACT HEIGHT & ZERO ARROWS)
+               4. THE PRESENTATION CARD
                ============================================================= */}
             <div className="sol-page-card-wrapper">
               <AnimatePresence mode="wait" custom={direction}>
@@ -363,6 +395,7 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                         <div className="sol-card-step-num">{activeStage.num}</div>
                         <span className="sol-card-tag">{activeStage.label}</span>
                         <span className="sol-badge-dash" />
+                        <span className="sol-category-text">{activeStage.category}</span>
                       </div>
                       
                       <h2 className="sol-card-headline">
@@ -388,18 +421,152 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                         })}
                       </div>
 
-                      {activeStage.id !== 'grow' && (
-                        <Link to={activeStage.ctaLink} className="sol-card-cta-btn">
-                          <span>{activeStage.ctaText}</span>
-                          <ArrowRight size={16} strokeWidth={2.4} />
-                        </Link>
-                      )}
+                      <Link to={activeStage.ctaLink} className="sol-card-cta-btn">
+                        <span>{activeStage.ctaText}</span>
+                        <ArrowRight size={16} strokeWidth={2.4} />
+                      </Link>
                     </div>
 
-                    {/* Right Column: Tailored Pure CSS Visual Panels (Zero Images) */}
+                    {/* Right Column: Tailored Pure CSS Visual Panels */}
                     <div className="sol-card-visual-wrap">
-                      {/* SECTION 01 — BUILD: Website preview + GBP card + Local visibility */}
-                      {activeStage.id === 'build' && (
+                      {/* SERVICE 01 — FIELD SALES (FSM) */}
+                      {activeStage.id === 'fsm' && (
+                        <div className="sol-mock-fsm">
+                          <div className="sol-fsm-card">
+                            <div className="sol-fsm-header">
+                              <div className="sol-fsm-header-left">
+                                <div className="sol-fsm-icon-badge">
+                                  <Users size={16} />
+                                </div>
+                                <div>
+                                  <div className="sol-fsm-title">Field Sales Pipeline</div>
+                                  <div className="sol-fsm-subtitle">In-Person Ground Execution</div>
+                                </div>
+                              </div>
+                              <span className="sol-fsm-status-tag">Daily Routine Active</span>
+                            </div>
+
+                            <div className="sol-fsm-kpi-row">
+                              <div className="sol-fsm-kpi">
+                                <span className="sol-kpi-val">48</span>
+                                <span className="sol-kpi-lbl">Target Accounts</span>
+                              </div>
+                              <div className="sol-fsm-kpi">
+                                <span className="sol-kpi-val">24</span>
+                                <span className="sol-kpi-lbl">On-Site Pitches</span>
+                              </div>
+                              <div className="sol-fsm-kpi highlight">
+                                <span className="sol-kpi-val">11</span>
+                                <span className="sol-kpi-lbl">Deals Closed</span>
+                                <span className="sol-kpi-trend">↑ 38%</span>
+                              </div>
+                            </div>
+
+                            <div className="sol-fsm-playbook-box">
+                              <div className="sol-fsm-playbook-head">
+                                <ShieldCheck size={14} className="sol-fsm-gold-icon" />
+                                <span>Equipped Sales Playbook</span>
+                              </div>
+                              <div className="sol-fsm-playbook-item">
+                                <span className="sol-dot-bullet" />
+                                <span>Objection: "Why switch from existing setup?" → Handled with ROI card</span>
+                              </div>
+                              <div className="sol-fsm-playbook-item">
+                                <span className="sol-dot-bullet" />
+                                <span>Territory map: 6 high-density visits per rep/day with instant logging</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Floating Field-Ready Badge */}
+                          <motion.div 
+                            className="sol-float-rep-badge"
+                            animate={{ y: [0, -4, 0] }}
+                            transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
+                          >
+                            <div className="sol-rep-avatar-icon">
+                              <Target size={15} />
+                            </div>
+                            <div>
+                              <div className="sol-rep-name">Internal Team Coaching</div>
+                              <div className="sol-rep-sub">Scripts · Objections · Performance Tiers</div>
+                            </div>
+                          </motion.div>
+                        </div>
+                      )}
+
+                      {/* SERVICE 02 — ADVISOR NETWORK */}
+                      {activeStage.id === 'advisors' && (
+                        <div className="sol-mock-advisors">
+                          <div className="sol-adv-card">
+                            <div className="sol-adv-header">
+                              <div className="sol-adv-header-left">
+                                <div className="sol-adv-icon-badge">
+                                  <UserCheck size={16} />
+                                </div>
+                                <div>
+                                  <div className="sol-adv-title">Warm Referral Attribution</div>
+                                  <div className="sol-adv-subtitle">Community Connectors Desk</div>
+                                </div>
+                              </div>
+                              <span className="sol-adv-status-tag">100% Warm Referrals</span>
+                            </div>
+
+                            <div className="sol-adv-referrals-list">
+                              <div className="sol-adv-row">
+                                <div className="sol-adv-avatar">DR</div>
+                                <div className="sol-adv-info">
+                                  <div className="sol-adv-name">Dr. R. Sharma <span className="sol-adv-role">(Senior Physician)</span></div>
+                                  <div className="sol-adv-meta">4 Warm Patient Referrals</div>
+                                </div>
+                                <div className="sol-adv-status success">Attributed</div>
+                              </div>
+
+                              <div className="sol-adv-row">
+                                <div className="sol-adv-avatar edu">ED</div>
+                                <div className="sol-adv-info">
+                                  <div className="sol-adv-name">Prof. Priya K. <span className="sol-adv-role">(Dean / Academic)</span></div>
+                                  <div className="sol-adv-meta">8 Qualified Enrollments</div>
+                                </div>
+                                <div className="sol-adv-status success">Attributed</div>
+                              </div>
+
+                              <div className="sol-adv-row">
+                                <div className="sol-adv-avatar biz">EX</div>
+                                <div className="sol-adv-info">
+                                  <div className="sol-adv-name">A. Sengupta <span className="sol-adv-role">(Industry Executive)</span></div>
+                                  <div className="sol-adv-meta">2 Enterprise Introductions</div>
+                                </div>
+                                <div className="sol-adv-status pending">In Progress</div>
+                              </div>
+                            </div>
+
+                            <div className="sol-adv-footer-bar">
+                              <div className="sol-adv-metric">
+                                <span className="sol-adv-m-lbl">Commission Model:</span>
+                                <span className="sol-adv-m-val">Strictly on Closed Revenue</span>
+                              </div>
+                              <span className="sol-adv-zero-cold">Zero Cold Calling</span>
+                            </div>
+                          </div>
+
+                          {/* Floating Trust Metric Badge */}
+                          <motion.div 
+                            className="sol-float-trust-badge"
+                            animate={{ y: [0, 4, 0] }}
+                            transition={{ duration: 4.6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                          >
+                            <div className="sol-trust-star">★</div>
+                            <div>
+                              <div className="sol-trust-title">High-Trust Introductions</div>
+                              <div className="sol-trust-desc">Connectors recommend · You close</div>
+                            </div>
+                          </motion.div>
+                        </div>
+                      )}
+
+                      {/* SERVICE 03 — WEBSITE & GOOGLE */}
+                      {activeStage.id === 'digital' && (
                         <div className="sol-mock-build">
                           {/* Browser Window Card */}
                           <div className="sol-browser-card">
@@ -411,22 +578,20 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                               </div>
                               <div className="sol-browser-nav">
                                 <span className="nav-item active">Home</span>
-                                <span className="nav-item">About</span>
                                 <span className="nav-item">Services</span>
-                                <span className="nav-item">Contact</span>
+                                <span className="nav-item">Proof</span>
+                                <span className="nav-item">Book Direct</span>
                               </div>
                             </div>
                             <div className="sol-browser-body">
                               <div className="sol-browser-left">
-                                <h4 className="sol-browser-heading">Your Services, Clearly</h4>
+                                <h4 className="sol-browser-heading">Conversion-Ready Web</h4>
                                 <div className="sol-wire-line w-85" />
                                 <div className="sol-wire-line w-65" />
                                 <div className="sol-wire-line w-45" />
                                 <div className="sol-browser-btn-pill" />
                               </div>
-                              <div className="sol-browser-right">
-                                <div className="sol-browser-preview-box" />
-                              </div>
+                              <div className="sol-browser-preview-box" />
                             </div>
                           </div>
 
@@ -446,11 +611,11 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                                 </svg>
                               </div>
                               <div>
-                                <div className="sol-gbp-title">Your Business</div>
+                                <div className="sol-gbp-title">Google Maps Top 3</div>
                                 <div className="sol-gbp-rating">
                                   <span className="sol-gbp-num">4.9</span>
                                   <span className="sol-gbp-stars">★★★★★</span>
-                                  <span className="sol-gbp-reviews">(120+)</span>
+                                  <span className="sol-gbp-reviews">(140+ reviews)</span>
                                 </div>
                               </div>
                             </div>
@@ -474,104 +639,15 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                               <BarChart3 size={18} strokeWidth={2.4} />
                             </div>
                             <div>
-                              <div className="sol-vis-label">Local Visibility</div>
-                              <span className="sol-vis-arrow">↗</span>
+                              <div className="sol-vis-label">Local Search Inquiries</div>
+                              <span className="sol-vis-arrow">↗ +145%</span>
                             </div>
                           </motion.div>
                         </div>
                       )}
 
-                      {/* SECTION 02 — CREATE: Content Calendar + Social Post + Platform Badges */}
-                      {activeStage.id === 'create' && (
-                        <div className="sol-mock-create">
-                          {/* Content Calendar Top Card */}
-                          <div className="sol-calendar-card">
-                            <div className="sol-calendar-header">
-                              <Calendar size={15} className="sol-cal-head-icon" />
-                              <span>Content Calendar</span>
-                            </div>
-                            <div className="sol-calendar-days">
-                              <div className="sol-cal-day-col">
-                                <span className="sol-cal-day-label">Mon</span>
-                                <div className="sol-cal-tile tile-photo">
-                                  <ImageIcon size={15} />
-                                </div>
-                              </div>
-                              <div className="sol-cal-day-col">
-                                <span className="sol-cal-day-label">Tue</span>
-                                <div className="sol-cal-tile tile-video active">
-                                  <Play size={14} fill="currentColor" strokeWidth={0} />
-                                </div>
-                              </div>
-                              <div className="sol-cal-day-col">
-                                <span className="sol-cal-day-label">Wed</span>
-                                <div className="sol-cal-tile tile-carousel">
-                                  <div className="sol-caro-bar" />
-                                  <div className="sol-caro-bar" />
-                                  <div className="sol-caro-bar" />
-                                </div>
-                              </div>
-                              <div className="sol-cal-day-col">
-                                <span className="sol-cal-day-label">Thu</span>
-                                <div className="sol-cal-tile tile-photo">
-                                  <ImageIcon size={15} />
-                                </div>
-                              </div>
-                              <div className="sol-cal-day-col">
-                                <span className="sol-cal-day-label">Fri</span>
-                                <div className="sol-cal-tile tile-more">
-                                  <span>•••</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Floating Social Media Post Card */}
-                          <motion.div 
-                            className="sol-float-post"
-                            animate={{ y: [0, -4, 0] }}
-                            transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
-                          >
-                            <div className="sol-post-header">
-                              <div className="sol-post-avatar" />
-                              <div className="sol-post-user-info">
-                                <div className="sol-wire-line w-45" />
-                                <div className="sol-wire-line w-30" />
-                              </div>
-                            </div>
-                            <div className="sol-post-frame">
-                              <div className="sol-post-frame-inner" />
-                            </div>
-                            <div className="sol-post-actions">
-                              <div className="sol-post-actions-left">
-                                <Heart size={15} className="sol-action-icon active-heart" />
-                                <MessageCircle size={15} className="sol-action-icon" />
-                                <Send size={15} className="sol-action-icon" />
-                              </div>
-                              <Bookmark size={15} className="sol-action-icon" />
-                            </div>
-                          </motion.div>
-
-                          {/* Floating Platform Pills Stack on Right */}
-                          <div className="sol-platform-stack">
-                            <div className="sol-plat-btn plat-ig" title="Instagram">
-                              <div className="sol-ig-glyph" />
-                            </div>
-                            <div className="sol-plat-btn plat-yt" title="YouTube">
-                              <Play size={11} fill="#fff" strokeWidth={0} />
-                            </div>
-                            <div className="sol-plat-btn plat-li" title="LinkedIn">
-                              <span>in</span>
-                            </div>
-                            <div className="sol-plat-btn plat-fb" title="Facebook">
-                              <span>f</span>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* SECTION 03 — PROMOTE: Only the Video Displayed (IMG_3694.mp4) */}
-                      {activeStage.id === 'promote' && (
+                      {/* SERVICE 04 — INFLUENCER REACH */}
+                      {activeStage.id === 'influencers' && (
                         <div className="sol-mock-promote sol-video-only-view">
                           <div 
                             className="sol-promote-video-box"
@@ -589,142 +665,33 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                               className="sol-promote-video-element"
                             />
 
-                            {/* Floating Sound Toggle Button */}
-                            <button
-                              type="button"
-                              onClick={togglePromoteMute}
-                              className="sol-video-sound-floating-btn"
-                              aria-label={isPromoteMuted ? "Unmute audio" : "Mute audio"}
-                              title={isPromoteMuted ? "Unmute" : "Mute"}
-                            >
-                              {isPromoteMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
-                            </button>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* SECTION 04 — GROW: Performance Card + Channels + Growth Trend */}
-                      {activeStage.id === 'grow' && (
-                        <div className="sol-mock-grow">
-                          {/* Top: Website Performance Card */}
-                          <div className="sol-perf-card">
-                            <div className="sol-perf-header">
-                              <span className="sol-perf-title">Website Performance</span>
-                              <div className="sol-dropdown-badge">
-                                <span>Last 30 Days</span>
-                                <ChevronDown size={12} />
+                            <div className="sol-video-top-overlay">
+                              <div className="sol-video-live-badge">
+                                <span className="sol-video-rec-dot" />
+                                <span>CREATOR AMPLIFICATION</span>
+                              </div>
+                              <div className="sol-video-controls-group">
+                                <button
+                                  type="button"
+                                  onClick={togglePromoteMute}
+                                  className="sol-video-mini-btn"
+                                  aria-label={isPromoteMuted ? "Unmute audio" : "Mute audio"}
+                                  title={isPromoteMuted ? "Unmute" : "Mute"}
+                                >
+                                  {isPromoteMuted ? <VolumeX size={13} /> : <Volume2 size={13} />}
+                                </button>
                               </div>
                             </div>
 
-                            <div className="sol-stats-row">
-                              <div className="sol-stat-cell">
-                                <div className="sol-stat-val">12.4K</div>
-                                <div className="sol-stat-lbl">Visitors</div>
-                                <div className="sol-stat-delta">↑ 28%</div>
+                            <div className="sol-video-metrics-bar">
+                              <div className="sol-video-stat">
+                                <span className="sol-v-label">Target Audience</span>
+                                <span className="sol-v-val">100% Niche Match</span>
                               </div>
-                              <div className="sol-stat-cell">
-                                <div className="sol-stat-val">3.1K</div>
-                                <div className="sol-stat-lbl">Page Views</div>
-                                <div className="sol-stat-delta">↑ 32%</div>
-                              </div>
-                              <div className="sol-stat-cell">
-                                <div className="sol-stat-val">284</div>
-                                <div className="sol-stat-lbl">Leads</div>
-                                <div className="sol-stat-delta">↑ 45%</div>
-                              </div>
-                            </div>
-
-                            {/* Smooth SVG Line Chart */}
-                            <div className="sol-chart-area">
-                              <svg viewBox="0 0 320 80" className="sol-smooth-chart" fill="none">
-                                <defs>
-                                  <linearGradient id="chartGradGrow" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#C9952E" stopOpacity="0.35" />
-                                    <stop offset="100%" stopColor="#C9952E" stopOpacity="0.0" />
-                                  </linearGradient>
-                                </defs>
-                                <path
-                                  d="M 10,65 Q 50,60 95,52 T 180,42 T 250,22 T 310,10 L 310,80 L 10,80 Z"
-                                  fill="url(#chartGradGrow)"
-                                />
-                                <path
-                                  d="M 10,65 Q 50,60 95,52 T 180,42 T 250,22 T 310,10"
-                                  stroke="#C9952E"
-                                  strokeWidth="2.5"
-                                  strokeLinecap="round"
-                                />
-                                <circle cx="10" cy="65" r="3.5" fill="#C9952E" />
-                                <circle cx="95" cy="52" r="3.5" fill="#C9952E" />
-                                <circle cx="180" cy="42" r="3.5" fill="#C9952E" />
-                                <circle cx="250" cy="22" r="3.5" fill="#C9952E" />
-                                <circle cx="310" cy="10" r="4.5" fill="#C9952E" stroke="#FFFCF7" strokeWidth="2" />
-                              </svg>
-                            </div>
-                          </div>
-
-                          {/* Bottom Row: Top Channels + Growth Trend */}
-                          <div className="sol-grow-split-row">
-                            {/* Left: Top Channels */}
-                            <div className="sol-channels-card">
-                              <div className="sol-chan-title">Top Channels</div>
-                              <div className="sol-chan-list">
-                                <div className="sol-chan-item">
-                                  <div className="sol-chan-name">
-                                    <Search size={12} className="sol-chan-icon icon-search" />
-                                    <span>Organic Search</span>
-                                  </div>
-                                  <div className="sol-chan-bar-track">
-                                    <div className="sol-chan-bar-fill" style={{ width: '45%' }} />
-                                  </div>
-                                  <span className="sol-chan-pct">45%</span>
-                                </div>
-
-                                <div className="sol-chan-item">
-                                  <div className="sol-chan-name">
-                                    <div className="sol-gads-mini-icon">▲</div>
-                                    <span>Google Ads</span>
-                                  </div>
-                                  <div className="sol-chan-bar-track">
-                                    <div className="sol-chan-bar-fill" style={{ width: '28%' }} />
-                                  </div>
-                                  <span className="sol-chan-pct">28%</span>
-                                </div>
-
-                                <div className="sol-chan-item">
-                                  <div className="sol-chan-name">
-                                    <div className="sol-ig-mini-icon" />
-                                    <span>Social Media</span>
-                                  </div>
-                                  <div className="sol-chan-bar-track">
-                                    <div className="sol-chan-bar-fill" style={{ width: '20%' }} />
-                                  </div>
-                                  <span className="sol-chan-pct">20%</span>
-                                </div>
-
-                                <div className="sol-chan-item">
-                                  <div className="sol-chan-name">
-                                    <Globe size={12} className="sol-chan-icon icon-direct" />
-                                    <span>Direct</span>
-                                  </div>
-                                  <div className="sol-chan-bar-track">
-                                    <div className="sol-chan-bar-fill" style={{ width: '7%' }} />
-                                  </div>
-                                  <span className="sol-chan-pct">7%</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Right: Growth Trend ascending bars */}
-                            <div className="sol-trend-card">
-                              <div className="sol-trend-title">Growth Trend</div>
-                              <div className="sol-trend-bars">
-                                <div className="sol-trend-bar" style={{ height: '28%' }} />
-                                <div className="sol-trend-bar" style={{ height: '38%' }} />
-                                <div className="sol-trend-bar" style={{ height: '48%' }} />
-                                <div className="sol-trend-bar" style={{ height: '56%' }} />
-                                <div className="sol-trend-bar" style={{ height: '68%' }} />
-                                <div className="sol-trend-bar" style={{ height: '80%' }} />
-                                <div className="sol-trend-bar active" style={{ height: '100%' }} />
+                              <div className="sol-v-divider" />
+                              <div className="sol-video-stat">
+                                <span className="sol-v-label">Inquiry Funnel</span>
+                                <span className="sol-v-val">Direct Consultation</span>
                               </div>
                             </div>
                           </div>
@@ -741,8 +708,8 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                ============================================================= */}
             <div className="sol-page-controls-bar">
               <div className="sol-page-indicator">
-                <span>Phase <strong>{activeIdx + 1}</strong> of <strong>4</strong>:</span>
-                <span className="sol-indicator-label">{activeStage.label}</span>
+                <span>Service <strong>{activeIdx + 1}</strong> of <strong>4</strong>:</span>
+                <span className="sol-indicator-label">{activeStage.shortLabel}</span>
               </div>
 
               <div className="sol-page-arrows">
@@ -751,7 +718,7 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                   className="sol-page-arrow-btn"
                   onClick={() => goToStage(activeIdx - 1)}
                   disabled={activeIdx === 0}
-                  aria-label="Previous Phase"
+                  aria-label="Previous Service"
                 >
                   <ArrowLeft size={15} />
                   <span>Previous</span>
@@ -762,7 +729,7 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                   className="sol-page-arrow-btn"
                   onClick={() => goToStage(activeIdx + 1)}
                   disabled={activeIdx === STAGES.length - 1}
-                  aria-label="Next Phase"
+                  aria-label="Next Service"
                 >
                   <span>Next</span>
                   <ArrowRight size={15} />
@@ -772,6 +739,84 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
           </div>
         </div>
       </div>
+
+      {/* =================================================================
+         6. MODULAR FREEDOM SECTION — CHOOSE ANY 1 OR COMBINE ALL 4
+         ================================================================= */}
+      <section className="sol-modular-freedom-sec">
+        <div className="sol-container">
+          <ScrollReveal delay={0}>
+            <div className="sol-modular-card">
+              <div className="sol-modular-header">
+                <div className="sol-eyebrow-wrap">
+                  <span className="sol-eyebrow-line" />
+                  <span className="sol-eyebrow">MODULAR FREEDOM</span>
+                  <span className="sol-eyebrow-line" />
+                </div>
+                <h2 className="sol-modular-title">
+                  Choose Any Single Service. <span className="sol-title-accent">Or Combine All 4.</span>
+                </h2>
+                <p className="sol-modular-desc">
+                  You are never locked into an expensive, bloated marketing package. Take the exact channel your business needs today, and expand only when revenue justifies it.
+                </p>
+              </div>
+
+              <div className="sol-modular-grid">
+                <div className="sol-mod-box">
+                  <div className="sol-mod-box-num">01</div>
+                  <h3 className="sol-mod-box-title">Field Sales (FSM)</h3>
+                  <span className="sol-mod-pill in-person">In-Person · Internal</span>
+                  <p className="sol-mod-box-p">For businesses needing feet on the ground to pitch, overcome doubts, and sign customers directly.</p>
+                  <Link to="/contact?service=fsm" className="sol-mod-link">
+                    Inquire for FSM →
+                  </Link>
+                </div>
+
+                <div className="sol-mod-box">
+                  <div className="sol-mod-box-num">02</div>
+                  <h3 className="sol-mod-box-title">Advisor Network</h3>
+                  <span className="sol-mod-pill in-person">In-Person · External</span>
+                  <p className="sol-mod-box-p">For organizations where credibility, prestige, and doctor/educator referrals drive high-ticket choices.</p>
+                  <Link to="/contact?service=advisors" className="sol-mod-link">
+                    Inquire Advisors →
+                  </Link>
+                </div>
+
+                <div className="sol-mod-box">
+                  <div className="sol-mod-box-num">03</div>
+                  <h3 className="sol-mod-box-title">Website & Google</h3>
+                  <span className="sol-mod-pill digital">Digital · Internal</span>
+                  <p className="sol-mod-box-p">For capturing active, high-intent local searchers looking for your services on Google Maps right now.</p>
+                  <Link to="/contact?service=digital" className="sol-mod-link">
+                    Inquire Website & GBP →
+                  </Link>
+                </div>
+
+                <div className="sol-mod-box">
+                  <div className="sol-mod-box-num">04</div>
+                  <h3 className="sol-mod-box-title">Influencer Reach</h3>
+                  <span className="sol-mod-pill digital">Digital · External</span>
+                  <p className="sol-mod-box-p">For fast audience trust through credible domain creators who recommend your business to their followers.</p>
+                  <Link to="/contact?service=influencers" className="sol-mod-link">
+                    Inquire Influencers →
+                  </Link>
+                </div>
+              </div>
+
+              <div className="sol-modular-cta-bar">
+                <div className="sol-mod-cta-text">
+                  <div className="sol-mod-cta-headline">Ready to solve your revenue bottlenecks?</div>
+                  <div className="sol-mod-cta-sub">Let's find the exact combination that brings paying clients to your door.</div>
+                </div>
+                <Link to="/contact" className="sol-mod-cta-btn">
+                  <span>Talk to sBLOOM</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </div>
   );
 };

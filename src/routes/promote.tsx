@@ -3,13 +3,13 @@ import { SolutionsOverviewPage } from "../pages/solutions/SolutionsOverviewPage"
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "PROMOTE — Reach The Right Audience | sBLOOM Solutions" },
-    { name: "description", content: "Targeted advertising and marketing campaigns." },
-    { property: "og:title", content: "PROMOTE — Reach The Right Audience | sBLOOM Solutions" },
-    { property: "og:description", content: "Targeted advertising and marketing campaigns." },
+    { title: "Influencer Reach & Creator Partnerships | sBLOOM Revenue Services" },
+    { name: "description", content: "Trusted domain voices sharing authentic recommendations that channel followers straight to your consultation desk." },
+    { property: "og:title", content: "Influencer Reach & Creator Partnerships | sBLOOM Revenue Services" },
+    { property: "og:description", content: "Trusted domain voices sharing authentic recommendations that channel followers straight to your consultation desk." },
   ];
 };
 
 export default function Route() {
-  return <SolutionsOverviewPage initialSection="promote" />;
+  return <SolutionsOverviewPage initialSection="influencers" />;
 }
