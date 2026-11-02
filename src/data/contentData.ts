@@ -59,32 +59,32 @@ export const MODULAR_SERVICES: ModularServiceItem[] = [
   {
     id: 'advisors',
     num: '02',
-    name: 'Advisor & Affiliate Network',
-    shortLabel: 'Advisor Network',
-    category: 'In-Person · External Referral System',
-    environment: 'In-Person',
+    name: 'Affiliate Marketing',
+    shortLabel: 'Affiliate Marketing',
+    category: 'Referral & Commission System',
+    environment: 'In-Person & Digital',
     source: 'External',
-    tagline: 'Trusted community leaders who send you customers for a commission.',
+    tagline: 'Trusted community partners and affiliates who send you customers for a commission.',
     forWho: 'Businesses that want high-trust word-of-mouth referrals without hiring a massive full-time sales army.',
     howWeHelp: [
       {
-        title: 'Recruiting Local Connectors',
+        title: 'Recruiting Local Connectors & Affiliates',
         description: 'We connect you with trusted professionals (doctors, teachers, community leaders, executives) who interact with your target audience daily.'
       },
       {
-        title: 'Zero Technical Burden for Advisors',
-        description: 'Advisors do not need to memorize technical product details—they simply make warm introductions based on their existing trust.'
+        title: 'Zero Technical Burden for Affiliates',
+        description: 'Affiliates do not need to memorize technical product details—they simply make warm introductions based on their existing trust.'
       },
       {
-        title: 'Automated Commission Management',
-        description: 'We track who brought each lead and handle transparent commission payouts for every paying client they introduce.'
+        title: 'Automated Commission & Portal Tracking',
+        description: 'We track who brought each lead and handle transparent commission payouts via sbloom.ottobon.in/provider for every paying client introduced.'
       }
     ],
     revenueImpact: 'You get warm, high-intent clients who are already pre-sold because someone they respect personally recommended you.',
     deliverables: [
-      'Advisor Recruitment & Onboarding',
+      'Affiliate Partner Recruitment & Onboarding',
       'Warm Introduction & Referral Workflows',
-      'Lead Attribution & Tracking System',
+      'Provider Portal & Attribution (sbloom.ottobon.in/provider)',
       'Commission Payout & Incentive Management'
     ]
   },

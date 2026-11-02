@@ -86,7 +86,16 @@ export const Navbar: React.FC = () => {
               <Link to="/proof-of-work" className={`nav-link ${location.pathname === '/proof-of-work' ? 'active' : ''}`} aria-current={location.pathname === '/proof-of-work' ? 'page' : undefined} onClick={handleMobileClick}>Proof of Work</Link>
             </li>
             <li className="nav-workspace-item" style={{ marginLeft: '10px', borderLeft: '1px solid rgba(229, 169, 60, 0.25)', paddingLeft: '16px' }}>
-              <Link to="/creative-workspace" className={`nav-link ${location.pathname === '/creative-workspace' ? 'active' : ''}`} style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.8px', color: '#D9A52E' }} onClick={handleMobileClick}>Advisor Network</Link>
+              <a 
+                href="https://sbloom.ottobon.in/provider" 
+                className="nav-link" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.8px', color: '#D9A52E' }} 
+                onClick={handleMobileClick}
+              >
+                Affiliate Marketing
+              </a>
             </li>
             <li className="nav-cta-item">
               <Link to="/contact" className="btn btn-primary btn-nav" onClick={handleMobileClick}>Talk to sBLOOM</Link>

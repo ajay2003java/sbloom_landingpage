@@ -130,13 +130,25 @@ export const ModularServicesExplorer: React.FC = () => {
                   </div>
 
                   <div className="mse-card-actions">
-                    <Link
-                      to={`/contact?service=${activeService.id}`}
-                      className="btn-final-primary mse-action-btn"
-                    >
-                      <span>Inquire for {activeService.shortLabel}</span>
-                      <ArrowRight size={16} />
-                    </Link>
+                    {activeService.id === 'advisors' ? (
+                      <a
+                        href="https://sbloom.ottobon.in/provider"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-final-primary mse-action-btn"
+                      >
+                        <span>Go to Affiliate Provider Portal</span>
+                        <ArrowRight size={16} />
+                      </a>
+                    ) : (
+                      <Link
+                        to={`/contact?service=${activeService.id}`}
+                        className="btn-final-primary mse-action-btn"
+                      >
+                        <span>Inquire for {activeService.shortLabel}</span>
+                        <ArrowRight size={16} />
+                      </Link>
+                    )}
                   </div>
                 </div>
 

@@ -30,7 +30,7 @@ export const FsmVsAdvisorComparison: React.FC = () => {
               In-Person Leads: Inside Your Team & Outside in the Community
             </h2>
             <p className="fsm-adv-subtitle">
-              We activate both sides of real-world business growth. Understand how our internal Field Sales support and external Advisor network work together to bring you revenue.
+              We activate both sides of real-world business growth. Understand how our internal Field Sales support and external Affiliate Marketing network work together to bring you revenue.
             </p>
           </div>
         </ScrollReveal>
@@ -115,13 +115,13 @@ export const FsmVsAdvisorComparison: React.FC = () => {
                   <Handshake size={26} strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="fsm-card-name">Advisor & Affiliate Network</h3>
-                  <p className="fsm-card-sub">Trusted People Sending You Clients</p>
+                  <h3 className="fsm-card-name">Affiliate Marketing</h3>
+                  <p className="fsm-card-sub">Trusted People & Partners Sending You Clients</p>
                 </div>
               </div>
 
               <p className="fsm-card-description">
-                A curated network of respected doctors, educators, executives, and community leaders who refer warm clients from their personal and professional networks for a commission.
+                A curated affiliate network of respected doctors, educators, executives, and community leaders who refer warm clients from their personal and professional networks for a commission.
               </p>
 
               <hr className="fsm-card-divider" />
@@ -133,7 +133,7 @@ export const FsmVsAdvisorComparison: React.FC = () => {
                   </div>
                   <div>
                     <span className="point-title">Product Knowledge: Trust & Relationship First</span>
-                    <p className="point-desc">Advisors don’t need technical product mastery—they leverage their personal credibility to make warm introductions.</p>
+                    <p className="point-desc">Affiliates don’t need technical product mastery—they leverage their personal credibility to make warm introductions.</p>
                   </div>
                 </div>
 
@@ -153,16 +153,21 @@ export const FsmVsAdvisorComparison: React.FC = () => {
                   </div>
                   <div>
                     <span className="point-title">Commission Model: Direct Per-Lead Payout</span>
-                    <p className="point-desc">Advisors earn a clear, rewarding commission for every verified paying customer they introduce.</p>
+                    <p className="point-desc">Affiliates earn a clear, rewarding commission for every verified paying customer they introduce via our Provider Portal.</p>
                   </div>
                 </div>
               </div>
 
               <div className="fsm-card-footer">
-                <Link to="/creative-workspace" className="btn-fsm-link">
-                  <span>Join as an Advisor & Earn Commission</span>
+                <a 
+                  href="https://sbloom.ottobon.in/provider" 
+                  className="btn-fsm-link"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <span>Join Affiliate Program & Earn Commission</span>
                   <ArrowRight size={15} />
-                </Link>
+                </a>
               </div>
             </div>
           </ScrollReveal>

@@ -47,7 +47,8 @@ export const ContactPage: React.FC = () => {
     if (preselectedService) {
       const mapping: Record<string, string> = {
         fsm: 'Field Sales Marketing (FSM)',
-        advisors: 'Advisor & Affiliate Network',
+        advisors: 'Affiliate Marketing',
+        affiliate: 'Affiliate Marketing',
         digital: 'Core Digital Presence (Website, GBP & Social)',
         influencers: 'Influencer Partnerships',
       };
@@ -539,7 +540,7 @@ export const ContactPage: React.FC = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '8px', marginTop: '6px' }}>
                       {[
                         'Field Sales Marketing (FSM)',
-                        'Advisor & Affiliate Network',
+                        'Affiliate Marketing',
                         'Core Digital Presence (Website, GBP & Social)',
                         'Influencer Partnerships',
                         'Complete Revenue Engine (All 4)',
@@ -573,6 +574,17 @@ export const ContactPage: React.FC = () => {
                         );
                       })}
                     </div>
+                    <p style={{ margin: '10px 0 0 0', fontSize: '0.8rem', color: '#785A46', lineHeight: 1.4 }}>
+                      Want to join as an affiliate partner and earn referral commissions? Register directly at{' '}
+                      <a 
+                        href="https://sbloom.ottobon.in/provider" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{ color: '#BA7C3D', fontWeight: 700, textDecoration: 'underline' }}
+                      >
+                        sbloom.ottobon.in/provider
+                      </a>.
+                    </p>
                   </div>
 
                   {/* Field 7: What would you like to improve? (Optional) */}

@@ -1,6 +1,6 @@
 import { PassThrough } from "node:stream";
 import { createReadableStreamFromReadable } from "@react-router/node";
-import { Link, Links, Meta, Navigate, Outlet, Scripts, ServerRouter, UNSAFE_withComponentProps, useLocation, useNavigate, useSearchParams } from "react-router";
+import { Link, Links, Meta, Outlet, Scripts, ServerRouter, UNSAFE_withComponentProps, useLocation, useNavigate, useSearchParams } from "react-router";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
@@ -191,9 +191,11 @@ var Navbar = () => {
 								borderLeft: "1px solid rgba(229, 169, 60, 0.25)",
 								paddingLeft: "16px"
 							},
-							children: /* @__PURE__ */ jsx(Link, {
-								to: "/creative-workspace",
-								className: `nav-link ${location.pathname === "/creative-workspace" ? "active" : ""}`,
+							children: /* @__PURE__ */ jsx("a", {
+								href: "https://sbloom.ottobon.in/provider",
+								className: "nav-link",
+								target: "_blank",
+								rel: "noopener noreferrer",
 								style: {
 									fontSize: "0.78rem",
 									textTransform: "uppercase",
@@ -201,7 +203,7 @@ var Navbar = () => {
 									color: "#D9A52E"
 								},
 								onClick: handleMobileClick,
-								children: "Advisor Network"
+								children: "Affiliate Marketing"
 							})
 						}),
 						/* @__PURE__ */ jsx("li", {
@@ -2358,32 +2360,32 @@ var MODULAR_SERVICES = [
 	{
 		id: "advisors",
 		num: "02",
-		name: "Advisor & Affiliate Network",
-		shortLabel: "Advisor Network",
-		category: "In-Person · External Referral System",
-		environment: "In-Person",
+		name: "Affiliate Marketing",
+		shortLabel: "Affiliate Marketing",
+		category: "Referral & Commission System",
+		environment: "In-Person & Digital",
 		source: "External",
-		tagline: "Trusted community leaders who send you customers for a commission.",
+		tagline: "Trusted community partners and affiliates who send you customers for a commission.",
 		forWho: "Businesses that want high-trust word-of-mouth referrals without hiring a massive full-time sales army.",
 		howWeHelp: [
 			{
-				title: "Recruiting Local Connectors",
+				title: "Recruiting Local Connectors & Affiliates",
 				description: "We connect you with trusted professionals (doctors, teachers, community leaders, executives) who interact with your target audience daily."
 			},
 			{
-				title: "Zero Technical Burden for Advisors",
-				description: "Advisors do not need to memorize technical product details—they simply make warm introductions based on their existing trust."
+				title: "Zero Technical Burden for Affiliates",
+				description: "Affiliates do not need to memorize technical product details—they simply make warm introductions based on their existing trust."
 			},
 			{
-				title: "Automated Commission Management",
-				description: "We track who brought each lead and handle transparent commission payouts for every paying client they introduce."
+				title: "Automated Commission & Portal Tracking",
+				description: "We track who brought each lead and handle transparent commission payouts via sbloom.ottobon.in/provider for every paying client introduced."
 			}
 		],
 		revenueImpact: "You get warm, high-intent clients who are already pre-sold because someone they respect personally recommended you.",
 		deliverables: [
-			"Advisor Recruitment & Onboarding",
+			"Affiliate Partner Recruitment & Onboarding",
 			"Warm Introduction & Referral Workflows",
-			"Lead Attribution & Tracking System",
+			"Provider Portal & Attribution (sbloom.ottobon.in/provider)",
 			"Commission Payout & Incentive Management"
 		]
 	},
@@ -2631,7 +2633,13 @@ var ModularServicesExplorer = () => {
 										}),
 										/* @__PURE__ */ jsx("div", {
 											className: "mse-card-actions",
-											children: /* @__PURE__ */ jsxs(Link, {
+											children: activeService.id === "advisors" ? /* @__PURE__ */ jsxs("a", {
+												href: "https://sbloom.ottobon.in/provider",
+												target: "_blank",
+												rel: "noopener noreferrer",
+												className: "btn-final-primary mse-action-btn",
+												children: [/* @__PURE__ */ jsx("span", { children: "Go to Affiliate Provider Portal" }), /* @__PURE__ */ jsx(ArrowRight, { size: 16 })]
+											}) : /* @__PURE__ */ jsxs(Link, {
 												to: `/contact?service=${activeService.id}`,
 												className: "btn-final-primary mse-action-btn",
 												children: [/* @__PURE__ */ jsxs("span", { children: ["Inquire for ", activeService.shortLabel] }), /* @__PURE__ */ jsx(ArrowRight, { size: 16 })]
@@ -2763,7 +2771,7 @@ var FsmVsAdvisorComparison = () => {
 						}),
 						/* @__PURE__ */ jsx("p", {
 							className: "fsm-adv-subtitle",
-							children: "We activate both sides of real-world business growth. Understand how our internal Field Sales support and external Advisor network work together to bring you revenue."
+							children: "We activate both sides of real-world business growth. Understand how our internal Field Sales support and external Affiliate Marketing network work together to bring you revenue."
 						})
 					]
 				})
@@ -2884,15 +2892,15 @@ var FsmVsAdvisorComparison = () => {
 									})
 								}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
 									className: "fsm-card-name",
-									children: "Advisor & Affiliate Network"
+									children: "Affiliate Marketing"
 								}), /* @__PURE__ */ jsx("p", {
 									className: "fsm-card-sub",
-									children: "Trusted People Sending You Clients"
+									children: "Trusted People & Partners Sending You Clients"
 								})] })]
 							}),
 							/* @__PURE__ */ jsx("p", {
 								className: "fsm-card-description",
-								children: "A curated network of respected doctors, educators, executives, and community leaders who refer warm clients from their personal and professional networks for a commission."
+								children: "A curated affiliate network of respected doctors, educators, executives, and community leaders who refer warm clients from their personal and professional networks for a commission."
 							}),
 							/* @__PURE__ */ jsx("hr", { className: "fsm-card-divider" }),
 							/* @__PURE__ */ jsxs("div", {
@@ -2908,7 +2916,7 @@ var FsmVsAdvisorComparison = () => {
 											children: "Product Knowledge: Trust & Relationship First"
 										}), /* @__PURE__ */ jsx("p", {
 											className: "point-desc",
-											children: "Advisors don’t need technical product mastery—they leverage their personal credibility to make warm introductions."
+											children: "Affiliates don’t need technical product mastery—they leverage their personal credibility to make warm introductions."
 										})] })]
 									}),
 									/* @__PURE__ */ jsxs("div", {
@@ -2934,17 +2942,19 @@ var FsmVsAdvisorComparison = () => {
 											children: "Commission Model: Direct Per-Lead Payout"
 										}), /* @__PURE__ */ jsx("p", {
 											className: "point-desc",
-											children: "Advisors earn a clear, rewarding commission for every verified paying customer they introduce."
+											children: "Affiliates earn a clear, rewarding commission for every verified paying customer they introduce via our Provider Portal."
 										})] })]
 									})
 								]
 							}),
 							/* @__PURE__ */ jsx("div", {
 								className: "fsm-card-footer",
-								children: /* @__PURE__ */ jsxs(Link, {
-									to: "/creative-workspace",
+								children: /* @__PURE__ */ jsxs("a", {
+									href: "https://sbloom.ottobon.in/provider",
 									className: "btn-fsm-link",
-									children: [/* @__PURE__ */ jsx("span", { children: "Join as an Advisor & Earn Commission" }), /* @__PURE__ */ jsx(ArrowRight, { size: 15 })]
+									target: "_blank",
+									rel: "noopener noreferrer",
+									children: [/* @__PURE__ */ jsx("span", { children: "Join Affiliate Program & Earn Commission" }), /* @__PURE__ */ jsx(ArrowRight, { size: 15 })]
 								})
 							})
 						]
@@ -3139,7 +3149,7 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-business"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "Warm referrals from our Advisor network"
+													children: "Warm referrals from our Affiliate network"
 												})]
 											}),
 											/* @__PURE__ */ jsxs("li", {
@@ -3187,10 +3197,10 @@ var DualPathCards = () => {
 											className: "dual-path-header-text",
 											children: [/* @__PURE__ */ jsx("h3", {
 												className: "dual-path-card-title",
-												children: "Become an Advisor"
+												children: "Affiliate Marketing"
 											}), /* @__PURE__ */ jsx("p", {
 												className: "dual-path-card-tagline",
-												children: "For doctors, teachers & community connectors"
+												children: "For doctors, educators & community connectors"
 											})]
 										})]
 									}),
@@ -3232,16 +3242,18 @@ var DualPathCards = () => {
 													className: "dual-path-check-icon-creative"
 												}), /* @__PURE__ */ jsx("span", {
 													className: "dual-path-feature-text",
-													children: "Transparent tracking and automated payouts"
+													children: "Dedicated Provider Portal & automated tracking"
 												})]
 											})
 										]
 									})
 								]
-							}), /* @__PURE__ */ jsx(Link, {
-								to: "/creative-workspace",
+							}), /* @__PURE__ */ jsx("a", {
+								href: "https://sbloom.ottobon.in/provider",
 								className: "dual-path-card-btn",
-								children: /* @__PURE__ */ jsx("span", { children: "Join as an Advisor →" })
+								target: "_blank",
+								rel: "noopener noreferrer",
+								children: /* @__PURE__ */ jsx("span", { children: "Join Affiliate Program →" })
 							})]
 						})
 					})]
@@ -4507,7 +4519,7 @@ var meta$12 = () => {
 		{ title: "sBLOOM | We Help You Get More Revenue" },
 		{
 			name: "description",
-			content: "sBLOOM delivers qualified paying customers in person and online through Field Sales Marketing (FSM), trusted Advisors, conversion websites, and influencers."
+			content: "sBLOOM delivers qualified paying customers in person and online through Field Sales Marketing (FSM), Affiliate Marketing, conversion websites, and influencers."
 		},
 		{
 			property: "og:title",
@@ -4515,7 +4527,7 @@ var meta$12 = () => {
 		},
 		{
 			property: "og:description",
-			content: "sBLOOM delivers qualified paying customers in person and online through Field Sales Marketing (FSM), trusted Advisors, conversion websites, and influencers."
+			content: "sBLOOM delivers qualified paying customers in person and online through Field Sales Marketing (FSM), Affiliate Marketing, conversion websites, and influencers."
 		}
 	];
 };
@@ -5216,6 +5228,8 @@ var ALIAS_MAP = {
 	advisors: 1,
 	advisor: 1,
 	affiliate: 1,
+	affiliates: 1,
+	"affiliate-marketing": 1,
 	digital: 2,
 	build: 2,
 	website: 2,
@@ -5265,34 +5279,34 @@ var STAGES = [
 	{
 		id: "advisors",
 		num: "02",
-		label: "ADVISOR NETWORK",
-		shortLabel: "Advisor Network",
-		category: "In-Person · External Referral System",
-		tagline: "External Warm Connectors",
+		label: "AFFILIATE MARKETING",
+		shortLabel: "Affiliate Marketing",
+		category: "Referral & Commission System",
+		tagline: "External Warm Connectors & Affiliates",
 		titlePrimary: "Trusted community leaders sending you",
 		titleAccent: "warm paying clients.",
 		lead: "A curated network of respected doctors, educators, executives, and community connectors who introduce warm referrals from their network for a commission.",
-		ctaText: "Inquire for Advisor Network",
-		ctaLink: "/contact?service=advisors",
+		ctaText: "Go to Affiliate Provider Portal",
+		ctaLink: "https://sbloom.ottobon.in/provider",
 		services: [
 			{
-				title: "Local Connector Recruitment",
+				title: "Local Affiliate Recruitment",
 				desc: "Identify and onboard respected local authorities, doctors, professors, and professionals.",
 				icon: UserCheck
 			},
 			{
 				title: "Zero Technical Selling Burden",
-				desc: "Advisors introduce warm leads based on personal trust; your team handles the closing.",
+				desc: "Affiliates introduce warm leads based on personal trust; your team handles the closing.",
 				icon: Heart
 			},
 			{
 				title: "Automated Lead Attribution",
-				desc: "Transparent tracking of who introduced each customer with real-time payout visibility.",
+				desc: "Transparent tracking via sbloom.ottobon.in/provider with real-time payout visibility.",
 				icon: Search
 			},
 			{
 				title: "Commission Payout Management",
-				desc: "Seamless, structured revenue-share disbursements that keep your referral partners loyal.",
+				desc: "Seamless, structured revenue-share disbursements that keep your affiliate partners loyal.",
 				icon: Award
 			}
 		]
@@ -5614,7 +5628,16 @@ var SolutionsOverviewPage = ({ initialSection }) => {
 															}, i);
 														})
 													}),
-													/* @__PURE__ */ jsxs(Link, {
+													activeStage.ctaLink.startsWith("http") ? /* @__PURE__ */ jsxs("a", {
+														href: activeStage.ctaLink,
+														className: "sol-card-cta-btn",
+														target: "_blank",
+														rel: "noopener noreferrer",
+														children: [/* @__PURE__ */ jsx("span", { children: activeStage.ctaText }), /* @__PURE__ */ jsx(ArrowRight, {
+															size: 16,
+															strokeWidth: 2.4
+														})]
+													}) : /* @__PURE__ */ jsxs(Link, {
 														to: activeStage.ctaLink,
 														className: "sol-card-cta-btn",
 														children: [/* @__PURE__ */ jsx("span", { children: activeStage.ctaText }), /* @__PURE__ */ jsx(ArrowRight, {
@@ -6224,20 +6247,22 @@ var SolutionsOverviewPage = ({ initialSection }) => {
 												}),
 												/* @__PURE__ */ jsx("h3", {
 													className: "sol-mod-box-title",
-													children: "Advisor Network"
+													children: "Affiliate Marketing"
 												}),
 												/* @__PURE__ */ jsx("span", {
 													className: "sol-mod-pill in-person",
-													children: "In-Person · External"
+													children: "Referral & Commission"
 												}),
 												/* @__PURE__ */ jsx("p", {
 													className: "sol-mod-box-p",
 													children: "For organizations where credibility, prestige, and doctor/educator referrals drive high-ticket choices."
 												}),
-												/* @__PURE__ */ jsx(Link, {
-													to: "/contact?service=advisors",
+												/* @__PURE__ */ jsx("a", {
+													href: "https://sbloom.ottobon.in/provider",
 													className: "sol-mod-link",
-													children: "Inquire Advisors →"
+													target: "_blank",
+													rel: "noopener noreferrer",
+													children: "Affiliate Provider Portal →"
 												})
 											]
 										}),
@@ -6330,7 +6355,7 @@ var meta$8 = () => {
 		{ title: "Revenue & 360° Lead Generation Services | sBLOOM" },
 		{
 			name: "description",
-			content: "We help you get more revenue. Field sales marketing, advisor referral network, high-conversion website & Google Maps Top 3, and authentic influencer partnerships."
+			content: "We help you get more revenue. Field sales marketing, affiliate marketing, high-conversion website & Google Maps Top 3, and authentic influencer partnerships."
 		},
 		{
 			property: "og:title",
@@ -6338,7 +6363,7 @@ var meta$8 = () => {
 		},
 		{
 			property: "og:description",
-			content: "We help you get more revenue. Field sales marketing, advisor referral network, high-conversion website & Google Maps Top 3, and authentic influencer partnerships."
+			content: "We help you get more revenue. Field sales marketing, affiliate marketing, high-conversion website & Google Maps Top 3, and authentic influencer partnerships."
 		}
 	];
 };
@@ -6377,14 +6402,14 @@ var create_exports = /* @__PURE__ */ __exportAll({
 });
 var meta$6 = () => {
 	return [
-		{ title: "Advisor Network & Warm Referrals | sBLOOM Revenue Services" },
+		{ title: "Affiliate Marketing & Warm Referrals | sBLOOM Revenue Services" },
 		{
 			name: "description",
 			content: "Curated community connectors, respected doctors, and executives sending warm paying referrals."
 		},
 		{
 			property: "og:title",
-			content: "Advisor Network & Warm Referrals | sBLOOM Revenue Services"
+			content: "Affiliate Marketing & Warm Referrals | sBLOOM Revenue Services"
 		},
 		{
 			property: "og:description",
@@ -7981,9 +8006,32 @@ var creative_workspace_default = UNSAFE_withComponentProps(function Route() {
 // src/routes/apply.tsx
 var apply_exports = /* @__PURE__ */ __exportAll({ default: () => apply_default });
 var apply_default = UNSAFE_withComponentProps(function Route() {
-	return /* @__PURE__ */ jsx(Navigate, {
-		to: "/creative-workspace#creative-apply",
-		replace: true
+	useEffect(() => {
+		window.location.replace("https://sbloom.ottobon.in/provider");
+	}, []);
+	return /* @__PURE__ */ jsx("div", {
+		style: {
+			minHeight: "60vh",
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center",
+			padding: "40px"
+		},
+		children: /* @__PURE__ */ jsxs("p", {
+			style: { color: "#785A46" },
+			children: [
+				"Redirecting to Affiliate Provider Portal...",
+				" ",
+				/* @__PURE__ */ jsx("a", {
+					href: "https://sbloom.ottobon.in/provider",
+					style: {
+						color: "#C9952E",
+						fontWeight: 700
+					},
+					children: "Click here if not redirected."
+				})
+			]
+		})
 	});
 });
 // src/pages/ContactPage.tsx
@@ -8003,7 +8051,8 @@ var ContactPage = () => {
 		if (preselectedService) {
 			const mapping = {
 				fsm: "Field Sales Marketing (FSM)",
-				advisors: "Advisor & Affiliate Network",
+				advisors: "Affiliate Marketing",
+				affiliate: "Affiliate Marketing",
 				digital: "Core Digital Presence (Website, GBP & Social)",
 				influencers: "Influencer Partnerships"
 			};
@@ -8746,57 +8795,84 @@ var ContactPage = () => {
 									}),
 									/* @__PURE__ */ jsxs("div", {
 										className: "contact-field-group",
-										children: [/* @__PURE__ */ jsxs("label", {
-											className: "contact-field-label",
-											children: ["Services You Need ", /* @__PURE__ */ jsx("span", {
-												className: "contact-opt-tag",
-												children: "(Pick one or multiple)"
-											})]
-										}), /* @__PURE__ */ jsx("div", {
-											style: {
-												display: "grid",
-												gridTemplateColumns: "1fr",
-												gap: "8px",
-												marginTop: "6px"
-											},
-											children: [
-												"Field Sales Marketing (FSM)",
-												"Advisor & Affiliate Network",
-												"Core Digital Presence (Website, GBP & Social)",
-												"Influencer Partnerships",
-												"Complete Revenue Engine (All 4)"
-											].map((srv) => {
-												const isChecked = formData.services.includes(srv);
-												return /* @__PURE__ */ jsxs("div", {
-													onClick: () => toggleService(srv),
-													style: {
-														display: "flex",
-														alignItems: "center",
-														gap: "10px",
-														padding: "10px 14px",
-														borderRadius: "8px",
-														background: isChecked ? "rgba(217, 165, 46, 0.12)" : "rgba(36, 33, 42, 0.03)",
-														border: isChecked ? "1px solid rgba(217, 165, 46, 0.45)" : "1px solid rgba(36, 33, 42, 0.08)",
-														cursor: "pointer",
-														transition: "all 0.2s ease"
-													},
-													children: [isChecked ? /* @__PURE__ */ jsx(CheckSquare, {
-														size: 17,
-														color: "#BA7C3D"
-													}) : /* @__PURE__ */ jsx(Square, {
-														size: 17,
-														color: "#8C8894"
-													}), /* @__PURE__ */ jsx("span", {
+										children: [
+											/* @__PURE__ */ jsxs("label", {
+												className: "contact-field-label",
+												children: ["Services You Need ", /* @__PURE__ */ jsx("span", {
+													className: "contact-opt-tag",
+													children: "(Pick one or multiple)"
+												})]
+											}),
+											/* @__PURE__ */ jsx("div", {
+												style: {
+													display: "grid",
+													gridTemplateColumns: "1fr",
+													gap: "8px",
+													marginTop: "6px"
+												},
+												children: [
+													"Field Sales Marketing (FSM)",
+													"Affiliate Marketing",
+													"Core Digital Presence (Website, GBP & Social)",
+													"Influencer Partnerships",
+													"Complete Revenue Engine (All 4)"
+												].map((srv) => {
+													const isChecked = formData.services.includes(srv);
+													return /* @__PURE__ */ jsxs("div", {
+														onClick: () => toggleService(srv),
 														style: {
-															fontSize: "0.88rem",
-															fontWeight: isChecked ? 600 : 500,
-															color: "#24212A"
+															display: "flex",
+															alignItems: "center",
+															gap: "10px",
+															padding: "10px 14px",
+															borderRadius: "8px",
+															background: isChecked ? "rgba(217, 165, 46, 0.12)" : "rgba(36, 33, 42, 0.03)",
+															border: isChecked ? "1px solid rgba(217, 165, 46, 0.45)" : "1px solid rgba(36, 33, 42, 0.08)",
+															cursor: "pointer",
+															transition: "all 0.2s ease"
 														},
-														children: srv
-													})]
-												}, srv);
+														children: [isChecked ? /* @__PURE__ */ jsx(CheckSquare, {
+															size: 17,
+															color: "#BA7C3D"
+														}) : /* @__PURE__ */ jsx(Square, {
+															size: 17,
+															color: "#8C8894"
+														}), /* @__PURE__ */ jsx("span", {
+															style: {
+																fontSize: "0.88rem",
+																fontWeight: isChecked ? 600 : 500,
+																color: "#24212A"
+															},
+															children: srv
+														})]
+													}, srv);
+												})
+											}),
+											/* @__PURE__ */ jsxs("p", {
+												style: {
+													margin: "10px 0 0 0",
+													fontSize: "0.8rem",
+													color: "#785A46",
+													lineHeight: 1.4
+												},
+												children: [
+													"Want to join as an affiliate partner and earn referral commissions? Register directly at",
+													" ",
+													/* @__PURE__ */ jsx("a", {
+														href: "https://sbloom.ottobon.in/provider",
+														target: "_blank",
+														rel: "noopener noreferrer",
+														style: {
+															color: "#BA7C3D",
+															fontWeight: 700,
+															textDecoration: "underline"
+														},
+														children: "sbloom.ottobon.in/provider"
+													}),
+													"."
+												]
 											})
-										})]
+										]
 									}),
 									/* @__PURE__ */ jsxs("div", {
 										className: "contact-field-group",
@@ -9393,8 +9469,8 @@ var proof_of_work_default = UNSAFE_withComponentProps(function Route() {
 // \0virtual:react-router/server-manifest
 var server_manifest_default = {
 	"entry": {
-		"module": "/assets/entry.client-BS6cNrMq.js",
-		"imports": ["/assets/jsx-runtime-AKzw2d0s.js"],
+		"module": "/assets/entry.client-UqVPdRyz.js",
+		"imports": ["/assets/jsx-runtime-BZFlhNN9.js"],
 		"css": []
 	},
 	"routes": {
@@ -9411,18 +9487,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/root-B4pKRY6i.js",
+			"module": "/assets/root-DgBG7ixK.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/x-BWTWdwFD.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/AnimatePresence-Bra90JGw.js",
-				"/assets/camera-CZGxJK2j.js",
-				"/assets/briefcase-Bsna7ip3.js",
-				"/assets/phone-tnRz6jd5.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/globe-ca2zAILS.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/x-D9b8l9Jv.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/AnimatePresence-DjRHQz1_.js",
+				"/assets/camera-BgMS1sGX.js",
+				"/assets/briefcase-1G1S6wsE.js",
+				"/assets/phone-DAHHXIul.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/globe-txhNG0Bi.js"
 			],
 			"css": ["/assets/root-BljkDv6d.css"],
 			"clientActionModule": void 0,
@@ -9443,28 +9519,28 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/home-BeE0s06y.js",
+			"module": "/assets/home-Bb-r8WVr.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/ScrollReveal-DvrOvUdv.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/AnimatePresence-Bra90JGw.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/circle-check-C_tL81HO.js",
-				"/assets/trending-up-DUgTnVFS.js",
-				"/assets/sparkles-B7J6p_Gr.js",
-				"/assets/target-DdHKP3cF.js",
-				"/assets/volume-x-Cjsc0gF3.js",
-				"/assets/building-complex-BIXhDNFu.js",
-				"/assets/monitor-fcsEOsWe.js",
-				"/assets/shield-check-B5V8dSj1.js",
-				"/assets/camera-CZGxJK2j.js",
-				"/assets/film-SbULOAKU.js",
-				"/assets/file-text-C2acN3UQ.js",
-				"/assets/globe-ca2zAILS.js",
-				"/assets/x-BWTWdwFD.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/AnimatePresence-DjRHQz1_.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/circle-check-CYhHGz0j.js",
+				"/assets/trending-up-64ekS1ep.js",
+				"/assets/sparkles-6_G4ry2S.js",
+				"/assets/target-KmnvxZFv.js",
+				"/assets/volume-x-Bb8zO00q.js",
+				"/assets/building-complex-DzDecIgU.js",
+				"/assets/monitor-pUfR_kSf.js",
+				"/assets/shield-check-6pjTqh8l.js",
+				"/assets/camera-BgMS1sGX.js",
+				"/assets/film-DpaZWU5H.js",
+				"/assets/file-text-Bj5uJ28h.js",
+				"/assets/globe-txhNG0Bi.js",
+				"/assets/x-D9b8l9Jv.js"
 			],
 			"css": ["/assets/home-7rmIQFlG.css"],
 			"clientActionModule": void 0,
@@ -9485,17 +9561,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/education-HgnTu3il.js",
+			"module": "/assets/education-DT2xtMJY.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/ScrollReveal-DvrOvUdv.js",
-				"/assets/monitor-fcsEOsWe.js",
-				"/assets/map-pin-CYvoSCbf.js",
-				"/assets/trending-up-DUgTnVFS.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/createLucideIcon-BE_H3c3R.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js",
+				"/assets/monitor-pUfR_kSf.js",
+				"/assets/map-pin-CUeHt76c.js",
+				"/assets/trending-up-64ekS1ep.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/createLucideIcon-P2EIkAA3.js"
 			],
 			"css": ["/assets/IndustryPage-DaNxJRA9.css"],
 			"clientActionModule": void 0,
@@ -9516,17 +9592,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/healthcare-ChdiQ09w.js",
+			"module": "/assets/healthcare-CBn0QPz7.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/ScrollReveal-DvrOvUdv.js",
-				"/assets/monitor-fcsEOsWe.js",
-				"/assets/map-pin-CYvoSCbf.js",
-				"/assets/trending-up-DUgTnVFS.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/createLucideIcon-BE_H3c3R.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js",
+				"/assets/monitor-pUfR_kSf.js",
+				"/assets/map-pin-CUeHt76c.js",
+				"/assets/trending-up-64ekS1ep.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/createLucideIcon-P2EIkAA3.js"
 			],
 			"css": ["/assets/IndustryPage-DaNxJRA9.css"],
 			"clientActionModule": void 0,
@@ -9547,17 +9623,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/professional-services-BsM35qIW.js",
+			"module": "/assets/professional-services-Dd7LdSuR.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/ScrollReveal-DvrOvUdv.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/graduation-cap-s-cgdGLx.js",
-				"/assets/building-complex-BIXhDNFu.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/circle-check-C_tL81HO.js",
-				"/assets/shield-check-B5V8dSj1.js",
-				"/assets/sparkles-B7J6p_Gr.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/graduation-cap-Bjp-jd46.js",
+				"/assets/building-complex-DzDecIgU.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/circle-check-CYhHGz0j.js",
+				"/assets/shield-check-6pjTqh8l.js",
+				"/assets/sparkles-6_G4ry2S.js"
 			],
 			"css": ["/assets/professional-services-Dp8oGgwr.css", "/assets/IndustryPage-DaNxJRA9.css"],
 			"clientActionModule": void 0,
@@ -9578,28 +9654,28 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/solutions-BapQcZop.js",
+			"module": "/assets/solutions-RibTxKFP.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/SolutionsOverviewPage-D1dq-EpB.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/AnimatePresence-Bra90JGw.js",
-				"/assets/globe-ca2zAILS.js",
-				"/assets/map-pin-CYvoSCbf.js",
-				"/assets/search-CxU6Fp7T.js",
-				"/assets/shield-check-B5V8dSj1.js",
-				"/assets/film-SbULOAKU.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/target-DdHKP3cF.js",
-				"/assets/chart-column-DCvkJaqP.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/arrow-left-CRjtIiys.js",
-				"/assets/heart-BiB4zfQF.js",
-				"/assets/phone-call-DcE0wYKB.js",
-				"/assets/volume-x-Cjsc0gF3.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/ScrollReveal-DvrOvUdv.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/SolutionsOverviewPage-DFet5sZS.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/AnimatePresence-DjRHQz1_.js",
+				"/assets/globe-txhNG0Bi.js",
+				"/assets/map-pin-CUeHt76c.js",
+				"/assets/search-u_YLnStI.js",
+				"/assets/shield-check-6pjTqh8l.js",
+				"/assets/film-DpaZWU5H.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/target-KmnvxZFv.js",
+				"/assets/chart-column-B1_kgjRj.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/arrow-left-BMECI4P1.js",
+				"/assets/heart-e7iAjvly.js",
+				"/assets/phone-call-1Q7KoSlY.js",
+				"/assets/volume-x-Bb8zO00q.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-D2bMYNVo.css"],
 			"clientActionModule": void 0,
@@ -9620,28 +9696,28 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/build-CrbJ-Y56.js",
+			"module": "/assets/build-CQcINtMs.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/SolutionsOverviewPage-D1dq-EpB.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/AnimatePresence-Bra90JGw.js",
-				"/assets/globe-ca2zAILS.js",
-				"/assets/map-pin-CYvoSCbf.js",
-				"/assets/search-CxU6Fp7T.js",
-				"/assets/shield-check-B5V8dSj1.js",
-				"/assets/film-SbULOAKU.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/target-DdHKP3cF.js",
-				"/assets/chart-column-DCvkJaqP.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/arrow-left-CRjtIiys.js",
-				"/assets/heart-BiB4zfQF.js",
-				"/assets/phone-call-DcE0wYKB.js",
-				"/assets/volume-x-Cjsc0gF3.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/ScrollReveal-DvrOvUdv.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/SolutionsOverviewPage-DFet5sZS.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/AnimatePresence-DjRHQz1_.js",
+				"/assets/globe-txhNG0Bi.js",
+				"/assets/map-pin-CUeHt76c.js",
+				"/assets/search-u_YLnStI.js",
+				"/assets/shield-check-6pjTqh8l.js",
+				"/assets/film-DpaZWU5H.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/target-KmnvxZFv.js",
+				"/assets/chart-column-B1_kgjRj.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/arrow-left-BMECI4P1.js",
+				"/assets/heart-e7iAjvly.js",
+				"/assets/phone-call-1Q7KoSlY.js",
+				"/assets/volume-x-Bb8zO00q.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-D2bMYNVo.css"],
 			"clientActionModule": void 0,
@@ -9662,28 +9738,28 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/create-DFMwtd-c.js",
+			"module": "/assets/create-ByhIW6WA.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/SolutionsOverviewPage-D1dq-EpB.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/AnimatePresence-Bra90JGw.js",
-				"/assets/globe-ca2zAILS.js",
-				"/assets/map-pin-CYvoSCbf.js",
-				"/assets/search-CxU6Fp7T.js",
-				"/assets/shield-check-B5V8dSj1.js",
-				"/assets/film-SbULOAKU.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/target-DdHKP3cF.js",
-				"/assets/chart-column-DCvkJaqP.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/arrow-left-CRjtIiys.js",
-				"/assets/heart-BiB4zfQF.js",
-				"/assets/phone-call-DcE0wYKB.js",
-				"/assets/volume-x-Cjsc0gF3.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/ScrollReveal-DvrOvUdv.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/SolutionsOverviewPage-DFet5sZS.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/AnimatePresence-DjRHQz1_.js",
+				"/assets/globe-txhNG0Bi.js",
+				"/assets/map-pin-CUeHt76c.js",
+				"/assets/search-u_YLnStI.js",
+				"/assets/shield-check-6pjTqh8l.js",
+				"/assets/film-DpaZWU5H.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/target-KmnvxZFv.js",
+				"/assets/chart-column-B1_kgjRj.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/arrow-left-BMECI4P1.js",
+				"/assets/heart-e7iAjvly.js",
+				"/assets/phone-call-1Q7KoSlY.js",
+				"/assets/volume-x-Bb8zO00q.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-D2bMYNVo.css"],
 			"clientActionModule": void 0,
@@ -9704,28 +9780,28 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/promote-D-QuHMdS.js",
+			"module": "/assets/promote-DGTjOCGm.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/SolutionsOverviewPage-D1dq-EpB.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/AnimatePresence-Bra90JGw.js",
-				"/assets/globe-ca2zAILS.js",
-				"/assets/map-pin-CYvoSCbf.js",
-				"/assets/search-CxU6Fp7T.js",
-				"/assets/shield-check-B5V8dSj1.js",
-				"/assets/film-SbULOAKU.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/target-DdHKP3cF.js",
-				"/assets/chart-column-DCvkJaqP.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/arrow-left-CRjtIiys.js",
-				"/assets/heart-BiB4zfQF.js",
-				"/assets/phone-call-DcE0wYKB.js",
-				"/assets/volume-x-Cjsc0gF3.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/ScrollReveal-DvrOvUdv.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/SolutionsOverviewPage-DFet5sZS.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/AnimatePresence-DjRHQz1_.js",
+				"/assets/globe-txhNG0Bi.js",
+				"/assets/map-pin-CUeHt76c.js",
+				"/assets/search-u_YLnStI.js",
+				"/assets/shield-check-6pjTqh8l.js",
+				"/assets/film-DpaZWU5H.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/target-KmnvxZFv.js",
+				"/assets/chart-column-B1_kgjRj.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/arrow-left-BMECI4P1.js",
+				"/assets/heart-e7iAjvly.js",
+				"/assets/phone-call-1Q7KoSlY.js",
+				"/assets/volume-x-Bb8zO00q.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js"
 			],
 			"css": ["/assets/SolutionsOverviewPage-D2bMYNVo.css"],
 			"clientActionModule": void 0,
@@ -9746,17 +9822,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/about-C0Lfy9b3.js",
+			"module": "/assets/about-D-J7yp_9.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/ScrollReveal-DvrOvUdv.js",
-				"/assets/target-DdHKP3cF.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/heart-BiB4zfQF.js",
-				"/assets/graduation-cap-s-cgdGLx.js",
-				"/assets/briefcase-Bsna7ip3.js",
-				"/assets/trending-up-DUgTnVFS.js",
-				"/assets/createLucideIcon-BE_H3c3R.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js",
+				"/assets/target-KmnvxZFv.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/heart-e7iAjvly.js",
+				"/assets/graduation-cap-Bjp-jd46.js",
+				"/assets/briefcase-1G1S6wsE.js",
+				"/assets/trending-up-64ekS1ep.js",
+				"/assets/createLucideIcon-P2EIkAA3.js"
 			],
 			"css": ["/assets/about-5IYE-Zsv.css"],
 			"clientActionModule": void 0,
@@ -9777,17 +9853,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/how-it-works-BVccVbZv.js",
+			"module": "/assets/how-it-works-BZK-Ipq0.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/arrow-left-CRjtIiys.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/search-CxU6Fp7T.js",
-				"/assets/chart-column-DCvkJaqP.js",
-				"/assets/lightbulb-DY_jZ774.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/trending-up-DUgTnVFS.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/arrow-left-BMECI4P1.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/search-u_YLnStI.js",
+				"/assets/chart-column-B1_kgjRj.js",
+				"/assets/lightbulb-DTB_Me-r.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/trending-up-64ekS1ep.js"
 			],
 			"css": ["/assets/how-it-works-BuG3iXEo.css"],
 			"clientActionModule": void 0,
@@ -9808,20 +9884,20 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/creative-workspace-Ce23qC5X.js",
+			"module": "/assets/creative-workspace-Bv37Og-n.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/ScrollReveal-DvrOvUdv.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/circle-check-C_tL81HO.js",
-				"/assets/forms-xn3B5Gv_.js",
-				"/assets/phone-tnRz6jd5.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/briefcase-Bsna7ip3.js",
-				"/assets/megaphone-BLv4WFr5.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/film-SbULOAKU.js",
-				"/assets/file-text-C2acN3UQ.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/circle-check-CYhHGz0j.js",
+				"/assets/forms-CKcwkARW.js",
+				"/assets/phone-DAHHXIul.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/briefcase-1G1S6wsE.js",
+				"/assets/megaphone-CU2GvR3-.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/film-DpaZWU5H.js",
+				"/assets/file-text-Bj5uJ28h.js"
 			],
 			"css": ["/assets/creative-workspace-DgzZnt3a.css"],
 			"clientActionModule": void 0,
@@ -9842,8 +9918,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/apply-B-oIkRYq.js",
-			"imports": ["/assets/jsx-runtime-AKzw2d0s.js"],
+			"module": "/assets/apply-qKKLFVkP.js",
+			"imports": ["/assets/jsx-runtime-BZFlhNN9.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -9863,18 +9939,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/contact-TEiAqGYO.js",
+			"module": "/assets/contact-BzW2fCNj.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/forms-xn3B5Gv_.js",
-				"/assets/building-complex-BIXhDNFu.js",
-				"/assets/phone-tnRz6jd5.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/lightbulb-DY_jZ774.js",
-				"/assets/chart-column-DCvkJaqP.js",
-				"/assets/file-text-C2acN3UQ.js",
-				"/assets/circle-check-C_tL81HO.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/forms-CKcwkARW.js",
+				"/assets/building-complex-DzDecIgU.js",
+				"/assets/phone-DAHHXIul.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/lightbulb-DTB_Me-r.js",
+				"/assets/chart-column-B1_kgjRj.js",
+				"/assets/file-text-Bj5uJ28h.js",
+				"/assets/circle-check-CYhHGz0j.js"
 			],
 			"css": ["/assets/contact-t5E5GrSm.css"],
 			"clientActionModule": void 0,
@@ -9895,27 +9971,27 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/proof-of-work-CaOHqh-r.js",
+			"module": "/assets/proof-of-work-Ck6yDGE5.js",
 			"imports": [
-				"/assets/jsx-runtime-AKzw2d0s.js",
-				"/assets/arrow-right-DFZRfGxl.js",
-				"/assets/trending-up-DUgTnVFS.js",
-				"/assets/users-CzeG8PJL.js",
-				"/assets/createLucideIcon-BE_H3c3R.js",
-				"/assets/camera-CZGxJK2j.js",
-				"/assets/file-text-C2acN3UQ.js",
-				"/assets/map-pin-CYvoSCbf.js",
-				"/assets/monitor-fcsEOsWe.js",
-				"/assets/search-CxU6Fp7T.js",
-				"/assets/circle-check-C_tL81HO.js",
-				"/assets/film-SbULOAKU.js",
-				"/assets/heart-BiB4zfQF.js",
-				"/assets/target-DdHKP3cF.js",
-				"/assets/chart-column-DCvkJaqP.js",
-				"/assets/phone-call-DcE0wYKB.js",
-				"/assets/proxy-CS7o4FWY.js",
-				"/assets/AnimatePresence-Bra90JGw.js",
-				"/assets/ScrollReveal-DvrOvUdv.js"
+				"/assets/jsx-runtime-BZFlhNN9.js",
+				"/assets/arrow-right-Cl5AYK_d.js",
+				"/assets/trending-up-64ekS1ep.js",
+				"/assets/users-B26spZE3.js",
+				"/assets/createLucideIcon-P2EIkAA3.js",
+				"/assets/camera-BgMS1sGX.js",
+				"/assets/file-text-Bj5uJ28h.js",
+				"/assets/map-pin-CUeHt76c.js",
+				"/assets/monitor-pUfR_kSf.js",
+				"/assets/search-u_YLnStI.js",
+				"/assets/circle-check-CYhHGz0j.js",
+				"/assets/film-DpaZWU5H.js",
+				"/assets/heart-e7iAjvly.js",
+				"/assets/target-KmnvxZFv.js",
+				"/assets/chart-column-B1_kgjRj.js",
+				"/assets/phone-call-1Q7KoSlY.js",
+				"/assets/proxy-uf-nINbG.js",
+				"/assets/AnimatePresence-DjRHQz1_.js",
+				"/assets/ScrollReveal-Dr9ZMo9Z.js"
 			],
 			"css": ["/assets/proof-of-work-CCyIXzzI.css"],
 			"clientActionModule": void 0,
@@ -9924,8 +10000,8 @@ var server_manifest_default = {
 			"hydrateFallbackModule": void 0
 		}
 	},
-	"url": "/assets/manifest-7cf21a54.js",
-	"version": "7cf21a54",
+	"url": "/assets/manifest-3d63af49.js",
+	"version": "3d63af49",
 	"sri": void 0
 };
 // \0virtual:react-router/server-build

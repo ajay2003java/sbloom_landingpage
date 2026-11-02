@@ -57,6 +57,8 @@ const ALIAS_MAP: Record<string, number> = {
   advisors: 1,
   advisor: 1,
   affiliate: 1,
+  affiliates: 1,
+  'affiliate-marketing': 1,
   digital: 2,
   build: 2,
   website: 2,
@@ -107,34 +109,34 @@ const STAGES: StageData[] = [
   {
     id: 'advisors',
     num: '02',
-    label: 'ADVISOR NETWORK',
-    shortLabel: 'Advisor Network',
-    category: 'In-Person · External Referral System',
-    tagline: 'External Warm Connectors',
+    label: 'AFFILIATE MARKETING',
+    shortLabel: 'Affiliate Marketing',
+    category: 'Referral & Commission System',
+    tagline: 'External Warm Connectors & Affiliates',
     titlePrimary: 'Trusted community leaders sending you',
     titleAccent: 'warm paying clients.',
     lead: 'A curated network of respected doctors, educators, executives, and community connectors who introduce warm referrals from their network for a commission.',
-    ctaText: 'Inquire for Advisor Network',
-    ctaLink: '/contact?service=advisors',
+    ctaText: 'Go to Affiliate Provider Portal',
+    ctaLink: 'https://sbloom.ottobon.in/provider',
     services: [
       {
-        title: 'Local Connector Recruitment',
+        title: 'Local Affiliate Recruitment',
         desc: 'Identify and onboard respected local authorities, doctors, professors, and professionals.',
         icon: UserCheck,
       },
       {
         title: 'Zero Technical Selling Burden',
-        desc: 'Advisors introduce warm leads based on personal trust; your team handles the closing.',
+        desc: 'Affiliates introduce warm leads based on personal trust; your team handles the closing.',
         icon: Heart,
       },
       {
         title: 'Automated Lead Attribution',
-        desc: 'Transparent tracking of who introduced each customer with real-time payout visibility.',
+        desc: 'Transparent tracking via sbloom.ottobon.in/provider with real-time payout visibility.',
         icon: Search,
       },
       {
         title: 'Commission Payout Management',
-        desc: 'Seamless, structured revenue-share disbursements that keep your referral partners loyal.',
+        desc: 'Seamless, structured revenue-share disbursements that keep your affiliate partners loyal.',
         icon: Award,
       },
     ],
@@ -421,10 +423,22 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
                         })}
                       </div>
 
-                      <Link to={activeStage.ctaLink} className="sol-card-cta-btn">
-                        <span>{activeStage.ctaText}</span>
-                        <ArrowRight size={16} strokeWidth={2.4} />
-                      </Link>
+                      {activeStage.ctaLink.startsWith('http') ? (
+                        <a
+                          href={activeStage.ctaLink}
+                          className="sol-card-cta-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span>{activeStage.ctaText}</span>
+                          <ArrowRight size={16} strokeWidth={2.4} />
+                        </a>
+                      ) : (
+                        <Link to={activeStage.ctaLink} className="sol-card-cta-btn">
+                          <span>{activeStage.ctaText}</span>
+                          <ArrowRight size={16} strokeWidth={2.4} />
+                        </Link>
+                      )}
                     </div>
 
                     {/* Right Column: Tailored Pure CSS Visual Panels */}
@@ -774,12 +788,17 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
 
                 <div className="sol-mod-box">
                   <div className="sol-mod-box-num">02</div>
-                  <h3 className="sol-mod-box-title">Advisor Network</h3>
-                  <span className="sol-mod-pill in-person">In-Person · External</span>
+                  <h3 className="sol-mod-box-title">Affiliate Marketing</h3>
+                  <span className="sol-mod-pill in-person">Referral & Commission</span>
                   <p className="sol-mod-box-p">For organizations where credibility, prestige, and doctor/educator referrals drive high-ticket choices.</p>
-                  <Link to="/contact?service=advisors" className="sol-mod-link">
-                    Inquire Advisors →
-                  </Link>
+                  <a 
+                    href="https://sbloom.ottobon.in/provider" 
+                    className="sol-mod-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Affiliate Provider Portal →
+                  </a>
                 </div>
 
                 <div className="sol-mod-box">

@@ -106,7 +106,7 @@ export const DualPathCards: React.FC = () => {
                   </li>
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-business" />
-                    <span className="dual-path-feature-text">Warm referrals from our Advisor network</span>
+                    <span className="dual-path-feature-text">Warm referrals from our Affiliate network</span>
                   </li>
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-business" />
@@ -122,7 +122,7 @@ export const DualPathCards: React.FC = () => {
             </div>
           </ScrollReveal>
 
-          {/* Card 2: Advisor Network */}
+          {/* Card 2: Affiliate Marketing */}
           <ScrollReveal delay={200} className="dual-path-reveal-wrap" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <div className="dual-path-card dual-path-card-creative">
               <div className="dual-path-card-body">
@@ -132,8 +132,8 @@ export const DualPathCards: React.FC = () => {
                     <Handshake size={20} strokeWidth={2} />
                   </div>
                   <div className="dual-path-header-text">
-                    <h3 className="dual-path-card-title">Become an Advisor</h3>
-                    <p className="dual-path-card-tagline">For doctors, teachers & community connectors</p>
+                    <h3 className="dual-path-card-title">Affiliate Marketing</h3>
+                    <p className="dual-path-card-tagline">For doctors, educators & community connectors</p>
                   </div>
                 </div>
 
@@ -157,15 +157,20 @@ export const DualPathCards: React.FC = () => {
                   </li>
                   <li className="dual-path-feature-item">
                     <CheckCircle2 size={19} strokeWidth={1.8} className="dual-path-check-icon-creative" />
-                    <span className="dual-path-feature-text">Transparent tracking and automated payouts</span>
+                    <span className="dual-path-feature-text">Dedicated Provider Portal & automated tracking</span>
                   </li>
                 </ul>
               </div>
 
               {/* Bottom Button */}
-              <Link to="/creative-workspace" className="dual-path-card-btn">
-                <span>Join as an Advisor →</span>
-              </Link>
+              <a 
+                href="https://sbloom.ottobon.in/provider" 
+                className="dual-path-card-btn"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <span>Join Affiliate Program →</span>
+              </a>
             </div>
           </ScrollReveal>
         </div>
