@@ -249,3 +249,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .fsm-adv-card {
+    padding: 24px 18px;
+  }
+  .fsm-adv-section {
+    padding: 40px 0 50px;
+  }
+}
+

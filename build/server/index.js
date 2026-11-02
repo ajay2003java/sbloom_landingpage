@@ -9351,7 +9351,7 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/root-BDX3QaJa.js",
+			"module": "/assets/root-nplhAlN8.js",
 			"imports": [
 				"/assets/jsx-runtime-AKzw2d0s.js",
 				"/assets/createLucideIcon-BE_H3c3R.js",
@@ -9365,7 +9365,7 @@ var server_manifest_default = {
 				"/assets/phone-tnRz6jd5.js",
 				"/assets/arrow-right-DFZRfGxl.js"
 			],
-			"css": ["/assets/root-CPiTtpRq.css"],
+			"css": ["/assets/root-BljkDv6d.css"],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
 			"clientMiddlewareModule": void 0,
@@ -9384,7 +9384,7 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/home-mYPDJ9fJ.js",
+			"module": "/assets/home-yoYC4srH.js",
 			"imports": [
 				"/assets/jsx-runtime-AKzw2d0s.js",
 				"/assets/ScrollReveal-DvrOvUdv.js",
@@ -9407,7 +9407,7 @@ var server_manifest_default = {
 				"/assets/volume-x-C3rbH2Ha.js",
 				"/assets/x-B0xctCwF.js"
 			],
-			"css": ["/assets/home-gxVwJkC3.css"],
+			"css": ["/assets/home-7rmIQFlG.css"],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
 			"clientMiddlewareModule": void 0,
@@ -9874,8 +9874,8 @@ var server_manifest_default = {
 			"hydrateFallbackModule": void 0
 		}
 	},
-	"url": "/assets/manifest-601e0c9c.js",
-	"version": "601e0c9c",
+	"url": "/assets/manifest-fd09ba0d.js",
+	"version": "fd09ba0d",
 	"sri": void 0
 };
 // \0virtual:react-router/server-build
