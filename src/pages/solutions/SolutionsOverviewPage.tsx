@@ -312,7 +312,7 @@ export const SolutionsOverviewPage: React.FC<SolutionsPageProps> = ({ initialSec
           <ScrollReveal delay={0}>
             <div className="sol-eyebrow-wrap">
               <span className="sol-eyebrow-line" />
-              <span className="sol-eyebrow">360° HYBRID REVENUE MODEL</span>
+              <span className="sol-eyebrow">LEAD GENERATION AGENCY</span>
               <span className="sol-eyebrow-line" />
             </div>
             <h1 className="sol-hero-title">

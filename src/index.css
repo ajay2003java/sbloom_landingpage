@@ -770,53 +770,11 @@ a {
     font-size: 0.94rem;
   }
 
-  /* On mobile phones, render the revenue cockpit smoothly below CTAs */
-  .hero-final-showcase {
-    display: block !important;
-    width: 100%;
-    min-height: auto;
-    height: auto;
-    margin-top: 24px;
-  }
+  /* Hide decorative floating icon scene on mobile phones to prevent awkward overlapping */
+  .hero-final-showcase,
   .hero-floating-icons-container {
     display: none !important;
   }
-}
-
-.hero-trust-chips-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 24px;
-  font-size: 0.82rem;
-  color: #785A46;
-  font-weight: 600;
-  flex-wrap: wrap;
-}
-
-.hero-trust-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.hero-trust-star {
-  color: #C9952E;
-  font-weight: 800;
-}
-
-.hero-trust-gold {
-  color: #C9952E;
-  font-weight: 800;
-}
-
-.hero-trust-green {
-  color: #2F6E50;
-  font-weight: 800;
-}
-
-.hero-trust-dot {
-  opacity: 0.35;
 }
 
 .hero-intro-system {

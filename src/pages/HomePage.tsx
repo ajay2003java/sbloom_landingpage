@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { ScrollReveal } from '../components/ScrollReveal';
-import { HeroRevenueCockpit } from '../components/home/HeroRevenueCockpit';
+import { HeroFloatingIcons } from '../components/home/HeroFloatingIcons';
 import { HeroSubtleCurves } from '../components/home/HeroSubtleCurves';
 import { ModularServicesExplorer } from '../components/home/ModularServicesExplorer';
 import { FsmVsAdvisorComparison } from '../components/home/FsmVsAdvisorComparison';
 import { DualPathCards } from '../components/home/DualPathCards';
-import { RevenueGrowthSimulator } from '../components/home/RevenueGrowthSimulator';
-import { AgencyVsSbloomVisual } from '../components/home/AgencyVsSbloomVisual';
+import { HomePricingSection } from '../components/home/HomePricingSection';
 import { ClientLogoMarquee } from '../components/home/ClientLogoMarquee';
+import { WhyBetter } from '../components/home/WhyBetter';
 import { BottomCornerScrollShowcase } from '../components/home/BottomCornerScrollShowcase';
 
 export const HomePage: React.FC = () => {
   return (
     <div className="home-page">
-      {/* SECTION 1 - Hero (High Graphical Cockpit & 1-Tap Appointment Booker) */}
+      {/* SECTION 1 - Hero (Final Master Implementation) */}
       <section className="hero-final-section">
-        {/* Seamless Vector Silk Wave Layer at the Bottom */}
+        {/* Elegant, Seamless Vector Silk Wave Layer at the Bottom */}
         <div className="hero-bottom-silk-wrapper" aria-hidden="true">
           <svg
             viewBox="0 0 1440 180"
@@ -44,14 +44,17 @@ export const HomePage: React.FC = () => {
                 <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
               </linearGradient>
             </defs>
+            {/* Deep Silk Flow Layer */}
             <path
               d="M 0,60 Q 360,140 720,70 T 1440,90 L 1440,180 L 0,180 Z"
               fill="url(#silkFlow1)"
             />
+            {/* Sheen Highlight Fold */}
             <path
               d="M 0,95 Q 380,40 760,110 T 1440,65 L 1440,180 L 0,180 Z"
               fill="url(#silkFlow2)"
             />
+            {/* Silky Edge Sheen Line */}
             <path
               d="M 0,95 Q 380,40 760,110 T 1440,65"
               stroke="url(#silkSheen)"
@@ -61,14 +64,14 @@ export const HomePage: React.FC = () => {
           </svg>
         </div>
 
-        {/* Delicate Golden Orbital Curves Behind Cockpit */}
+        {/* Delicate Golden Orbital Curves & Tiny Gliding Sparkles (Behind Icons) */}
         <HeroSubtleCurves />
 
         <div className="hero-final-container">
-          {/* Left Column: Sharp Messaging & Direct CTAs */}
+          {/* Left Column: Typography & CTAs */}
           <div className="hero-final-content">
             <div className="hero-final-eyebrow">
-              <span className="eyebrow-text">✦ 360° HYBRID LEAD GENERATION</span>
+              <span className="eyebrow-text">✦ LEAD GENERATION AGENCY</span>
               <span className="eyebrow-line" />
             </div>
 
@@ -92,54 +95,36 @@ export const HomePage: React.FC = () => {
                 Explore 4 Services
               </a>
             </div>
-
-            {/* Micro-Trust Proof Row (Zero Cognitive Load) */}
-            <div className="hero-trust-chips-row">
-              <div className="hero-trust-chip">
-                <span className="hero-trust-star">★ 4.9</span>
-                <span>Client Rating</span>
-              </div>
-              <span className="hero-trust-dot">•</span>
-              <div className="hero-trust-chip">
-                <span className="hero-trust-gold">100%</span>
-                <span>Attributed Revenue</span>
-              </div>
-              <span className="hero-trust-dot">•</span>
-              <div className="hero-trust-chip">
-                <span className="hero-trust-green">Zero</span>
-                <span>Locked Retainers</span>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: High Graphical Live Cockpit & 1-Tap Appointment Booker */}
+          {/* Right Column: Freely Floating Symbols (No Square Containers, Independent Motions) */}
           <div className="hero-final-showcase">
-            <HeroRevenueCockpit />
+            <HeroFloatingIcons />
           </div>
         </div>
       </section>
 
-      {/* LOWER LUXURY SILK WRAPPER */}
+      {/* LOWER LUXURY SILK WRAPPER - Continuous Uninterrupted Background Canvas */}
       <div className="home-lower-silk-wrapper">
-        {/* SECTION 2 - 4 Modular Ways We Bring You Revenue (FSM, Affiliate, Core Digital, Influencers) */}
+        {/* SECTION 2 - 4 Modular Ways We Bring You Revenue (FSM, Advisors, Core Digital, Influencers) */}
         <ModularServicesExplorer />
 
-        {/* SECTION 3 - FSM vs. Affiliate Comparison (Inside Your Team vs. Outside in the Market) */}
+        {/* SECTION 3 - FSM vs. Advisor Comparison (Inside Your Team vs. Outside in the Market) */}
         <FsmVsAdvisorComparison />
 
-        {/* SECTION 4 - Interactive Revenue Simulator & Industry Plan Matcher */}
-        <RevenueGrowthSimulator />
-
-        {/* SECTION 5 - Visual Contrast: Traditional Agency vs. sBLOOM Revenue Partner */}
-        <AgencyVsSbloomVisual />
-
-        {/* SECTION 6 - Dual Paths (Grow My Business vs. Earn as an Affiliate) */}
+        {/* SECTION 4 - Dual Paths (Grow My Business vs. Earn as an Advisor) */}
         <DualPathCards />
+
+        {/* SECTION 5: Why S-Bloom is Best Out of All Digital Marketing Agencies */}
+        <WhyBetter />
+
+        {/* SECTION 6 - Simple Plans. Real Business Growth (Pricing) */}
+        <HomePricingSection />
 
         {/* SECTION 7 - Trusted Clients Logo Cloud (3 Alternating Scrolling Lines) */}
         <ClientLogoMarquee />
 
-        {/* SECTION 8 - Final High-Converting Appointment Callout */}
+        {/* SECTION 8 - Final CTA */}
         <section className="home-final-cta-section">
           <div className="container">
             <ScrollReveal delay={0}>
@@ -155,7 +140,7 @@ export const HomePage: React.FC = () => {
         </section>
       </div>
 
-      {/* Interactive Bottom-Right Corner Scroll Pipeline */}
+      {/* Interactive Bottom-Right Corner Scroll Pipeline: Camera ➔ Reel ➔ Post ➔ Ad ➔ Website ➔ Video */}
       <BottomCornerScrollShowcase />
     </div>
   );
